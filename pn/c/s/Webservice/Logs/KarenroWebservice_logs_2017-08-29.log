@@ -1,0 +1,22 @@
+
+********************  Error Log - 8/29/2017 1:02:53 PM*********************
+
+Exception Type : NullReferenceException
+Error Message : Object reference not set to an instance of an object.
+Error Source : KarenroWebservice
+Error Trace :    at KarenroWebservice.Repo.offerRideRepo.getofferRide(Int32 user_id, String language)
+
+********************  Error Log - 8/29/2017 12:26:49 PM*********************
+
+Exception Type : NullReferenceException
+Error Message : Object reference not set to an instance of an object.
+Error Source : KarenroWebservice
+Error Trace :    at KarenroWebservice.Repo.offerRideRepo.getofferRide(Int32 user_id, String language) in d:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\Repo\offerRideRepo.cs:line 248
+
+********************  Error Log - 8/29/2017 12:20:54 PM*********************
+
+Exception Type : NullReferenceException
+Error Message : Object reference not set to an instance of an object.
+Error Source : KarenroWebservice
+Error Trace :    at KarenroWebservice.Repo.offerRideRepo.getofferRide(Int32 user_id, String language) in d:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\Repo\offerRideRepo.cs:line 248
+

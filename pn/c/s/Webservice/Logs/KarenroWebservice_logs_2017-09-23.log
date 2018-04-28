@@ -1,0 +1,43 @@
+
+********************  Error Log - 9/23/2017 2:03:47 AM*********************
+
+Exception Type : IndexOutOfRangeException
+Error Message : Index was outside the bounds of the array.
+Error Source : KarenroWebservice
+Error Trace :    at KarenroWebservice.Repo.Translator.ToPersianNotificationMessage(String message) in d:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\Repo\Translator.cs:line 301
+   at KarenroWebservice.Repo.OtherRepo.getUsersNotification(Int32 user_id, String language) in d:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\Repo\OtherRepo.cs:line 325
+
+********************  Error Log - 9/23/2017 12:33:03 AM*********************
+
+Exception Type : NullReferenceException
+Error Message : Object reference not set to an instance of an object.
+Error Source : KarenroWebservice
+Error Trace :    at KarenroWebservice.Repo.offerRideRepo.<>c__DisplayClass17.<searchOffers>b__14(tbl_offerRide e) in d:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\Repo\offerRideRepo.cs:line 204
+   at System.Linq.Enumerable.WhereListIterator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at KarenroWebservice.Repo.offerRideRepo.searchOffers(Boolean charter, String datetime, String from_place, String to_place, String from_place_persian, String to_place_persian, Int32 no_seats, String vehicle_type, Int32 user_id, String language, DateTime midnight) in d:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\Repo\offerRideRepo.cs:line 204
+
+********************  Error Log - 9/23/2017 12:04:19 AM*********************
+
+Exception Type : NullReferenceException
+Error Message : Object reference not set to an instance of an object.
+Error Source : KarenroWebservice
+Error Trace :    at KarenroWebservice.Repo.offerRideRepo.<>c__DisplayClass17.<searchOffers>b__14(tbl_offerRide e) in d:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\Repo\offerRideRepo.cs:line 204
+   at System.Linq.Enumerable.WhereListIterator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at KarenroWebservice.Repo.offerRideRepo.searchOffers(Boolean charter, String datetime, String from_place, String to_place, String from_place_persian, String to_place_persian, Int32 no_seats, String vehicle_type, Int32 user_id, String language, DateTime midnight) in d:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\Repo\offerRideRepo.cs:line 204
+
+********************  Error Log - 9/23/2017 12:02:13 AM*********************
+
+Exception Type : NullReferenceException
+Error Message : Object reference not set to an instance of an object.
+Error Source : KarenroWebservice
+Error Trace :    at KarenroWebservice.Repo.offerRideRepo.<>c__DisplayClass17.<searchOffers>b__14(tbl_offerRide e) in d:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\Repo\offerRideRepo.cs:line 204
+   at System.Linq.Enumerable.WhereListIterator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at KarenroWebservice.Repo.offerRideRepo.searchOffers(Boolean charter, String datetime, String from_place, String to_place, String from_place_persian, String to_place_persian, Int32 no_seats, String vehicle_type, Int32 user_id, String language, DateTime midnight) in d:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\Repo\offerRideRepo.cs:line 204
+
+

@@ -1,0 +1,7 @@
+
+********************  Error Log - 4/3/2018 10:10:01 PM*********************
+
+Exception Type : IndexOutOfRangeException
+Error Message : Index was outside the bounds of the array.
+Error Source : Webservice
+Error Trace :    at Webservice.Repo.OtherRepo.getUsersNotification(Int32 user_id)

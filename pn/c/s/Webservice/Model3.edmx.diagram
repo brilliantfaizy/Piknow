@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="18c3084ccecd4c5ab80cf576663df556" Name="Diagram1" ZoomLevel="226">
+        <EntityTypeShape EntityType="FinancialsModel.tbl_company" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinancialsModel.tbl_country" Width="1.5" PointX="6" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinancialsModel.tbl_currencySetting" Width="1.5" PointX="8.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinancialsModel.tbl_loginAs" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinancialsModel.tbl_myCompany" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinancialsModel.tbl_myLogo" Width="1.5" PointX="5.25" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinancialsModel.tbl_userRights" Width="1.5" PointX="5.25" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinancialsModel.tbl_userTypes" Width="1.5" PointX="0.75" PointY="9.375" IsExpanded="true" />
+        <AssociationConnector Association="FinancialsModel.FK_tbl_currencySetting_tbl_company" ManuallyRouted="false" />
+        <AssociationConnector Association="FinancialsModel.FK_tbl_currencySetting_tbl_country" ManuallyRouted="false" />
+        <AssociationConnector Association="FinancialsModel.FK_tbl_currencySetting_tbl_loginAs" ManuallyRouted="false" />
+        <AssociationConnector Association="FinancialsModel.FK_tbl_loginAs_tbl_userTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="FinancialsModel.FK_tbl_myCompany_tbl_loginAs" ManuallyRouted="false" />
+        <AssociationConnector Association="FinancialsModel.FK_tbl_myLogo_tbl_loginAs" ManuallyRouted="false" />
+        <AssociationConnector Association="FinancialsModel.FK_tbl_userRights_tbl_loginAs" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

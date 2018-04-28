@@ -1,0 +1,632 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FinancialsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityType Name="tbl_company">
+          <Key>
+            <PropertyRef Name="companyID" />
+          </Key>
+          <Property Name="companyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="company" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="createdAt" Type="datetime" Nullable="false" />
+          <Property Name="updatedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_country">
+          <Key>
+            <PropertyRef Name="countryID" />
+          </Key>
+          <Property Name="countryID" Type="int" Nullable="false" />
+          <Property Name="country" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="createdAt" Type="datetime" Nullable="false" />
+          <Property Name="updatedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_currencySetting">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="loginID" Type="int" Nullable="false" />
+          <Property Name="countryID" Type="int" Nullable="false" />
+          <Property Name="currencyName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="currencySymbol" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="createdAt" Type="datetime" Nullable="false" />
+          <Property Name="updatedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_loginAs">
+          <Key>
+            <PropertyRef Name="loginID" />
+          </Key>
+          <Property Name="loginID" Type="int" Nullable="false" />
+          <Property Name="companyID" Type="int" Nullable="false" />
+          <Property Name="userTypeID" Type="int" Nullable="false" />
+          <Property Name="fullName" Type="varchar" MaxLength="50" />
+          <Property Name="password" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_myCompany">
+          <Key>
+            <PropertyRef Name="myCompanyID" />
+          </Key>
+          <Property Name="myCompanyID" Type="int" Nullable="false" />
+          <Property Name="loginID" Type="int" Nullable="false" />
+          <Property Name="businessName" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="address" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="phone" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="fax" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="website" Type="varchar" MaxLength="50" />
+          <Property Name="GST_Reg_No" Type="varchar" MaxLength="50" />
+          <Property Name="NTN_No" Type="varchar" MaxLength="50" />
+          <Property Name="dealsIn" Type="varchar" MaxLength="50" />
+          <Property Name="isActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_myLogo">
+          <Key>
+            <PropertyRef Name="logoID" />
+          </Key>
+          <Property Name="logoID" Type="int" Nullable="false" />
+          <Property Name="loginID" Type="int" Nullable="false" />
+          <Property Name="image" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_userRights">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="loginID" Type="int" Nullable="false" />
+          <Property Name="welcomeScreen" Type="bit" Nullable="false" />
+          <Property Name="charOfAccount" Type="bit" Nullable="false" />
+          <Property Name="accountsOpeningBalances" Type="bit" Nullable="false" />
+          <Property Name="charOfInventory" Type="bit" Nullable="false" />
+          <Property Name="inventoryOpeningBalances" Type="bit" Nullable="false" />
+          <Property Name="inventoryBrands" Type="bit" Nullable="false" />
+          <Property Name="inventoryLocations" Type="bit" Nullable="false" />
+          <Property Name="inventoryPriceSettings" Type="bit" Nullable="false" />
+          <Property Name="inventorySalesTaxExciseDutyRates" Type="bit" Nullable="false" />
+          <Property Name="inventoryReOrderLevels" Type="bit" Nullable="false" />
+          <Property Name="inventoryCostValuationMethod" Type="bit" Nullable="false" />
+          <Property Name="postingPreferences" Type="bit" Nullable="false" />
+          <Property Name="inventoryMovementSettings" Type="bit" Nullable="false" />
+          <Property Name="customerRegions" Type="bit" Nullable="false" />
+          <Property Name="businessSectors" Type="bit" Nullable="false" />
+          <Property Name="employees" Type="bit" Nullable="false" />
+          <Property Name="jobCards" Type="bit" Nullable="false" />
+          <Property Name="addPurchaseOrders" Type="bit" Nullable="false" />
+          <Property Name="editPurchaseOrders" Type="bit" Nullable="false" />
+          <Property Name="addPurchasesSalesTax" Type="bit" Nullable="false" />
+          <Property Name="editPurchasesSalesTax" Type="bit" Nullable="false" />
+          <Property Name="addPurchasesNonTax" Type="bit" Nullable="false" />
+          <Property Name="editPurchasesNonTax" Type="bit" Nullable="false" />
+          <Property Name="addPurchasesReturns" Type="bit" Nullable="false" />
+          <Property Name="editPurchasesReturns" Type="bit" Nullable="false" />
+          <Property Name="createdAt" Type="datetime" Nullable="false" />
+          <Property Name="updatedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_userTypes">
+          <Key>
+            <PropertyRef Name="userTypeID" />
+          </Key>
+          <Property Name="userTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="type" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="createdAt" Type="datetime" Nullable="false" />
+          <Property Name="updatedAt" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_tbl_currencySetting_tbl_company">
+          <End Role="tbl_company" Type="Self.tbl_company" Multiplicity="1" />
+          <End Role="tbl_currencySetting" Type="Self.tbl_currencySetting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_company">
+              <PropertyRef Name="companyID" />
+            </Principal>
+            <Dependent Role="tbl_currencySetting">
+              <PropertyRef Name="countryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_currencySetting_tbl_country">
+          <End Role="tbl_country" Type="Self.tbl_country" Multiplicity="1" />
+          <End Role="tbl_currencySetting" Type="Self.tbl_currencySetting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_country">
+              <PropertyRef Name="countryID" />
+            </Principal>
+            <Dependent Role="tbl_currencySetting">
+              <PropertyRef Name="countryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_currencySetting_tbl_loginAs">
+          <End Role="tbl_loginAs" Type="Self.tbl_loginAs" Multiplicity="1" />
+          <End Role="tbl_currencySetting" Type="Self.tbl_currencySetting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_loginAs">
+              <PropertyRef Name="loginID" />
+            </Principal>
+            <Dependent Role="tbl_currencySetting">
+              <PropertyRef Name="loginID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_loginAs_tbl_userTypes">
+          <End Role="tbl_userTypes" Type="Self.tbl_userTypes" Multiplicity="1" />
+          <End Role="tbl_loginAs" Type="Self.tbl_loginAs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_userTypes">
+              <PropertyRef Name="userTypeID" />
+            </Principal>
+            <Dependent Role="tbl_loginAs">
+              <PropertyRef Name="userTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_myCompany_tbl_loginAs">
+          <End Role="tbl_loginAs" Type="Self.tbl_loginAs" Multiplicity="1" />
+          <End Role="tbl_myCompany" Type="Self.tbl_myCompany" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_loginAs">
+              <PropertyRef Name="loginID" />
+            </Principal>
+            <Dependent Role="tbl_myCompany">
+              <PropertyRef Name="loginID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_myLogo_tbl_loginAs">
+          <End Role="tbl_loginAs" Type="Self.tbl_loginAs" Multiplicity="1" />
+          <End Role="tbl_myLogo" Type="Self.tbl_myLogo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_loginAs">
+              <PropertyRef Name="loginID" />
+            </Principal>
+            <Dependent Role="tbl_myLogo">
+              <PropertyRef Name="loginID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_userRights_tbl_loginAs">
+          <End Role="tbl_loginAs" Type="Self.tbl_loginAs" Multiplicity="1" />
+          <End Role="tbl_userRights" Type="Self.tbl_userRights" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_loginAs">
+              <PropertyRef Name="loginID" />
+            </Principal>
+            <Dependent Role="tbl_userRights">
+              <PropertyRef Name="loginID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FinancialsModelStoreContainer">
+          <EntitySet Name="tbl_company" EntityType="Self.tbl_company" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_country" EntityType="Self.tbl_country" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_currencySetting" EntityType="Self.tbl_currencySetting" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_loginAs" EntityType="Self.tbl_loginAs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_myCompany" EntityType="Self.tbl_myCompany" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_myLogo" EntityType="Self.tbl_myLogo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_userRights" EntityType="Self.tbl_userRights" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_userTypes" EntityType="Self.tbl_userTypes" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_tbl_currencySetting_tbl_company" Association="Self.FK_tbl_currencySetting_tbl_company">
+            <End Role="tbl_company" EntitySet="tbl_company" />
+            <End Role="tbl_currencySetting" EntitySet="tbl_currencySetting" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_currencySetting_tbl_country" Association="Self.FK_tbl_currencySetting_tbl_country">
+            <End Role="tbl_country" EntitySet="tbl_country" />
+            <End Role="tbl_currencySetting" EntitySet="tbl_currencySetting" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_currencySetting_tbl_loginAs" Association="Self.FK_tbl_currencySetting_tbl_loginAs">
+            <End Role="tbl_loginAs" EntitySet="tbl_loginAs" />
+            <End Role="tbl_currencySetting" EntitySet="tbl_currencySetting" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_loginAs_tbl_userTypes" Association="Self.FK_tbl_loginAs_tbl_userTypes">
+            <End Role="tbl_userTypes" EntitySet="tbl_userTypes" />
+            <End Role="tbl_loginAs" EntitySet="tbl_loginAs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_myCompany_tbl_loginAs" Association="Self.FK_tbl_myCompany_tbl_loginAs">
+            <End Role="tbl_loginAs" EntitySet="tbl_loginAs" />
+            <End Role="tbl_myCompany" EntitySet="tbl_myCompany" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_myLogo_tbl_loginAs" Association="Self.FK_tbl_myLogo_tbl_loginAs">
+            <End Role="tbl_loginAs" EntitySet="tbl_loginAs" />
+            <End Role="tbl_myLogo" EntitySet="tbl_myLogo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_userRights_tbl_loginAs" Association="Self.FK_tbl_userRights_tbl_loginAs">
+            <End Role="tbl_loginAs" EntitySet="tbl_loginAs" />
+            <End Role="tbl_userRights" EntitySet="tbl_userRights" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FinancialsModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityType Name="tbl_company">
+          <Key>
+            <PropertyRef Name="companyID" />
+          </Key>
+          <Property Name="companyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="company" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="createdAt" Type="DateTime" Nullable="false" />
+          <Property Name="updatedAt" Type="DateTime" />
+          <NavigationProperty Name="tbl_currencySetting" Relationship="Self.FK_tbl_currencySetting_tbl_company" FromRole="tbl_company" ToRole="tbl_currencySetting" />
+        </EntityType>
+        <EntityType Name="tbl_country">
+          <Key>
+            <PropertyRef Name="countryID" />
+          </Key>
+          <Property Name="countryID" Type="Int32" Nullable="false" />
+          <Property Name="country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="createdAt" Type="DateTime" Nullable="false" />
+          <Property Name="updatedAt" Type="DateTime" />
+          <NavigationProperty Name="tbl_currencySetting" Relationship="Self.FK_tbl_currencySetting_tbl_country" FromRole="tbl_country" ToRole="tbl_currencySetting" />
+        </EntityType>
+        <EntityType Name="tbl_currencySetting">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="loginID" Type="Int32" Nullable="false" />
+          <Property Name="countryID" Type="Int32" Nullable="false" />
+          <Property Name="currencyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="currencySymbol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="createdAt" Type="DateTime" Nullable="false" />
+          <Property Name="updatedAt" Type="DateTime" />
+          <NavigationProperty Name="tbl_company" Relationship="Self.FK_tbl_currencySetting_tbl_company" FromRole="tbl_currencySetting" ToRole="tbl_company" />
+          <NavigationProperty Name="tbl_country" Relationship="Self.FK_tbl_currencySetting_tbl_country" FromRole="tbl_currencySetting" ToRole="tbl_country" />
+          <NavigationProperty Name="tbl_loginAs" Relationship="Self.FK_tbl_currencySetting_tbl_loginAs" FromRole="tbl_currencySetting" ToRole="tbl_loginAs" />
+        </EntityType>
+        <EntityType Name="tbl_loginAs">
+          <Key>
+            <PropertyRef Name="loginID" />
+          </Key>
+          <Property Name="loginID" Type="Int32" Nullable="false" />
+          <Property Name="companyID" Type="Int32" Nullable="false" />
+          <Property Name="userTypeID" Type="Int32" Nullable="false" />
+          <Property Name="fullName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_currencySetting" Relationship="Self.FK_tbl_currencySetting_tbl_loginAs" FromRole="tbl_loginAs" ToRole="tbl_currencySetting" />
+          <NavigationProperty Name="tbl_userTypes" Relationship="Self.FK_tbl_loginAs_tbl_userTypes" FromRole="tbl_loginAs" ToRole="tbl_userTypes" />
+          <NavigationProperty Name="tbl_myCompany" Relationship="Self.FK_tbl_myCompany_tbl_loginAs" FromRole="tbl_loginAs" ToRole="tbl_myCompany" />
+          <NavigationProperty Name="tbl_myLogo" Relationship="Self.FK_tbl_myLogo_tbl_loginAs" FromRole="tbl_loginAs" ToRole="tbl_myLogo" />
+          <NavigationProperty Name="tbl_userRights" Relationship="Self.FK_tbl_userRights_tbl_loginAs" FromRole="tbl_loginAs" ToRole="tbl_userRights" />
+        </EntityType>
+        <EntityType Name="tbl_myCompany">
+          <Key>
+            <PropertyRef Name="myCompanyID" />
+          </Key>
+          <Property Name="myCompanyID" Type="Int32" Nullable="false" />
+          <Property Name="loginID" Type="Int32" Nullable="false" />
+          <Property Name="businessName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="address" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fax" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="website" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GST_Reg_No" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NTN_No" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dealsIn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="isActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tbl_loginAs" Relationship="Self.FK_tbl_myCompany_tbl_loginAs" FromRole="tbl_myCompany" ToRole="tbl_loginAs" />
+        </EntityType>
+        <EntityType Name="tbl_myLogo">
+          <Key>
+            <PropertyRef Name="logoID" />
+          </Key>
+          <Property Name="logoID" Type="Int32" Nullable="false" />
+          <Property Name="loginID" Type="Int32" Nullable="false" />
+          <Property Name="image" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="tbl_loginAs" Relationship="Self.FK_tbl_myLogo_tbl_loginAs" FromRole="tbl_myLogo" ToRole="tbl_loginAs" />
+        </EntityType>
+        <EntityType Name="tbl_userRights">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="loginID" Type="Int32" Nullable="false" />
+          <Property Name="welcomeScreen" Type="Boolean" Nullable="false" />
+          <Property Name="charOfAccount" Type="Boolean" Nullable="false" />
+          <Property Name="accountsOpeningBalances" Type="Boolean" Nullable="false" />
+          <Property Name="charOfInventory" Type="Boolean" Nullable="false" />
+          <Property Name="inventoryOpeningBalances" Type="Boolean" Nullable="false" />
+          <Property Name="inventoryBrands" Type="Boolean" Nullable="false" />
+          <Property Name="inventoryLocations" Type="Boolean" Nullable="false" />
+          <Property Name="inventoryPriceSettings" Type="Boolean" Nullable="false" />
+          <Property Name="inventorySalesTaxExciseDutyRates" Type="Boolean" Nullable="false" />
+          <Property Name="inventoryReOrderLevels" Type="Boolean" Nullable="false" />
+          <Property Name="inventoryCostValuationMethod" Type="Boolean" Nullable="false" />
+          <Property Name="postingPreferences" Type="Boolean" Nullable="false" />
+          <Property Name="inventoryMovementSettings" Type="Boolean" Nullable="false" />
+          <Property Name="customerRegions" Type="Boolean" Nullable="false" />
+          <Property Name="businessSectors" Type="Boolean" Nullable="false" />
+          <Property Name="employees" Type="Boolean" Nullable="false" />
+          <Property Name="jobCards" Type="Boolean" Nullable="false" />
+          <Property Name="addPurchaseOrders" Type="Boolean" Nullable="false" />
+          <Property Name="editPurchaseOrders" Type="Boolean" Nullable="false" />
+          <Property Name="addPurchasesSalesTax" Type="Boolean" Nullable="false" />
+          <Property Name="editPurchasesSalesTax" Type="Boolean" Nullable="false" />
+          <Property Name="addPurchasesNonTax" Type="Boolean" Nullable="false" />
+          <Property Name="editPurchasesNonTax" Type="Boolean" Nullable="false" />
+          <Property Name="addPurchasesReturns" Type="Boolean" Nullable="false" />
+          <Property Name="editPurchasesReturns" Type="Boolean" Nullable="false" />
+          <Property Name="createdAt" Type="DateTime" Nullable="false" />
+          <Property Name="updatedAt" Type="DateTime" />
+          <NavigationProperty Name="tbl_loginAs" Relationship="Self.FK_tbl_userRights_tbl_loginAs" FromRole="tbl_userRights" ToRole="tbl_loginAs" />
+        </EntityType>
+        <EntityType Name="tbl_userTypes">
+          <Key>
+            <PropertyRef Name="userTypeID" />
+          </Key>
+          <Property Name="userTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="createdAt" Type="DateTime" Nullable="false" />
+          <Property Name="updatedAt" Type="DateTime" />
+          <NavigationProperty Name="tbl_loginAs" Relationship="Self.FK_tbl_loginAs_tbl_userTypes" FromRole="tbl_userTypes" ToRole="tbl_loginAs" />
+        </EntityType>
+        <Association Name="FK_tbl_currencySetting_tbl_company">
+          <End Role="tbl_company" Type="Self.tbl_company" Multiplicity="1" />
+          <End Role="tbl_currencySetting" Type="Self.tbl_currencySetting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_company">
+              <PropertyRef Name="companyID" />
+            </Principal>
+            <Dependent Role="tbl_currencySetting">
+              <PropertyRef Name="countryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_currencySetting_tbl_country">
+          <End Role="tbl_country" Type="Self.tbl_country" Multiplicity="1" />
+          <End Role="tbl_currencySetting" Type="Self.tbl_currencySetting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_country">
+              <PropertyRef Name="countryID" />
+            </Principal>
+            <Dependent Role="tbl_currencySetting">
+              <PropertyRef Name="countryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_currencySetting_tbl_loginAs">
+          <End Role="tbl_loginAs" Type="Self.tbl_loginAs" Multiplicity="1" />
+          <End Role="tbl_currencySetting" Type="Self.tbl_currencySetting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_loginAs">
+              <PropertyRef Name="loginID" />
+            </Principal>
+            <Dependent Role="tbl_currencySetting">
+              <PropertyRef Name="loginID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_loginAs_tbl_userTypes">
+          <End Role="tbl_userTypes" Type="Self.tbl_userTypes" Multiplicity="1" />
+          <End Role="tbl_loginAs" Type="Self.tbl_loginAs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_userTypes">
+              <PropertyRef Name="userTypeID" />
+            </Principal>
+            <Dependent Role="tbl_loginAs">
+              <PropertyRef Name="userTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_myCompany_tbl_loginAs">
+          <End Role="tbl_loginAs" Type="Self.tbl_loginAs" Multiplicity="1" />
+          <End Role="tbl_myCompany" Type="Self.tbl_myCompany" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_loginAs">
+              <PropertyRef Name="loginID" />
+            </Principal>
+            <Dependent Role="tbl_myCompany">
+              <PropertyRef Name="loginID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_myLogo_tbl_loginAs">
+          <End Role="tbl_loginAs" Type="Self.tbl_loginAs" Multiplicity="1" />
+          <End Role="tbl_myLogo" Type="Self.tbl_myLogo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_loginAs">
+              <PropertyRef Name="loginID" />
+            </Principal>
+            <Dependent Role="tbl_myLogo">
+              <PropertyRef Name="loginID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_userRights_tbl_loginAs">
+          <End Role="tbl_loginAs" Type="Self.tbl_loginAs" Multiplicity="1" />
+          <End Role="tbl_userRights" Type="Self.tbl_userRights" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_loginAs">
+              <PropertyRef Name="loginID" />
+            </Principal>
+            <Dependent Role="tbl_userRights">
+              <PropertyRef Name="loginID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FinancialsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_company" EntityType="Self.tbl_company" />
+          <EntitySet Name="tbl_country" EntityType="Self.tbl_country" />
+          <EntitySet Name="tbl_currencySetting" EntityType="Self.tbl_currencySetting" />
+          <EntitySet Name="tbl_loginAs" EntityType="Self.tbl_loginAs" />
+          <EntitySet Name="tbl_myCompany" EntityType="Self.tbl_myCompany" />
+          <EntitySet Name="tbl_myLogo" EntityType="Self.tbl_myLogo" />
+          <EntitySet Name="tbl_userRights" EntityType="Self.tbl_userRights" />
+          <EntitySet Name="tbl_userTypes" EntityType="Self.tbl_userTypes" />
+          <AssociationSet Name="FK_tbl_currencySetting_tbl_company" Association="Self.FK_tbl_currencySetting_tbl_company">
+            <End Role="tbl_company" EntitySet="tbl_company" />
+            <End Role="tbl_currencySetting" EntitySet="tbl_currencySetting" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_currencySetting_tbl_country" Association="Self.FK_tbl_currencySetting_tbl_country">
+            <End Role="tbl_country" EntitySet="tbl_country" />
+            <End Role="tbl_currencySetting" EntitySet="tbl_currencySetting" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_currencySetting_tbl_loginAs" Association="Self.FK_tbl_currencySetting_tbl_loginAs">
+            <End Role="tbl_loginAs" EntitySet="tbl_loginAs" />
+            <End Role="tbl_currencySetting" EntitySet="tbl_currencySetting" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_loginAs_tbl_userTypes" Association="Self.FK_tbl_loginAs_tbl_userTypes">
+            <End Role="tbl_userTypes" EntitySet="tbl_userTypes" />
+            <End Role="tbl_loginAs" EntitySet="tbl_loginAs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_myCompany_tbl_loginAs" Association="Self.FK_tbl_myCompany_tbl_loginAs">
+            <End Role="tbl_loginAs" EntitySet="tbl_loginAs" />
+            <End Role="tbl_myCompany" EntitySet="tbl_myCompany" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_myLogo_tbl_loginAs" Association="Self.FK_tbl_myLogo_tbl_loginAs">
+            <End Role="tbl_loginAs" EntitySet="tbl_loginAs" />
+            <End Role="tbl_myLogo" EntitySet="tbl_myLogo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_userRights_tbl_loginAs" Association="Self.FK_tbl_userRights_tbl_loginAs">
+            <End Role="tbl_loginAs" EntitySet="tbl_loginAs" />
+            <End Role="tbl_userRights" EntitySet="tbl_userRights" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FinancialsModelStoreContainer" CdmEntityContainer="FinancialsEntities">
+          <EntitySetMapping Name="tbl_company">
+            <EntityTypeMapping TypeName="FinancialsModel.tbl_company">
+              <MappingFragment StoreEntitySet="tbl_company">
+                <ScalarProperty Name="companyID" ColumnName="companyID" />
+                <ScalarProperty Name="company" ColumnName="company" />
+                <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+                <ScalarProperty Name="updatedAt" ColumnName="updatedAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_country">
+            <EntityTypeMapping TypeName="FinancialsModel.tbl_country">
+              <MappingFragment StoreEntitySet="tbl_country">
+                <ScalarProperty Name="countryID" ColumnName="countryID" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+                <ScalarProperty Name="updatedAt" ColumnName="updatedAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_currencySetting">
+            <EntityTypeMapping TypeName="FinancialsModel.tbl_currencySetting">
+              <MappingFragment StoreEntitySet="tbl_currencySetting">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="loginID" ColumnName="loginID" />
+                <ScalarProperty Name="countryID" ColumnName="countryID" />
+                <ScalarProperty Name="currencyName" ColumnName="currencyName" />
+                <ScalarProperty Name="currencySymbol" ColumnName="currencySymbol" />
+                <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+                <ScalarProperty Name="updatedAt" ColumnName="updatedAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_loginAs">
+            <EntityTypeMapping TypeName="FinancialsModel.tbl_loginAs">
+              <MappingFragment StoreEntitySet="tbl_loginAs">
+                <ScalarProperty Name="loginID" ColumnName="loginID" />
+                <ScalarProperty Name="companyID" ColumnName="companyID" />
+                <ScalarProperty Name="userTypeID" ColumnName="userTypeID" />
+                <ScalarProperty Name="fullName" ColumnName="fullName" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_myCompany">
+            <EntityTypeMapping TypeName="FinancialsModel.tbl_myCompany">
+              <MappingFragment StoreEntitySet="tbl_myCompany">
+                <ScalarProperty Name="myCompanyID" ColumnName="myCompanyID" />
+                <ScalarProperty Name="loginID" ColumnName="loginID" />
+                <ScalarProperty Name="businessName" ColumnName="businessName" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="fax" ColumnName="fax" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="website" ColumnName="website" />
+                <ScalarProperty Name="GST_Reg_No" ColumnName="GST_Reg_No" />
+                <ScalarProperty Name="NTN_No" ColumnName="NTN_No" />
+                <ScalarProperty Name="dealsIn" ColumnName="dealsIn" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_myLogo">
+            <EntityTypeMapping TypeName="FinancialsModel.tbl_myLogo">
+              <MappingFragment StoreEntitySet="tbl_myLogo">
+                <ScalarProperty Name="logoID" ColumnName="logoID" />
+                <ScalarProperty Name="loginID" ColumnName="loginID" />
+                <ScalarProperty Name="image" ColumnName="image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_userRights">
+            <EntityTypeMapping TypeName="FinancialsModel.tbl_userRights">
+              <MappingFragment StoreEntitySet="tbl_userRights">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="loginID" ColumnName="loginID" />
+                <ScalarProperty Name="welcomeScreen" ColumnName="welcomeScreen" />
+                <ScalarProperty Name="charOfAccount" ColumnName="charOfAccount" />
+                <ScalarProperty Name="accountsOpeningBalances" ColumnName="accountsOpeningBalances" />
+                <ScalarProperty Name="charOfInventory" ColumnName="charOfInventory" />
+                <ScalarProperty Name="inventoryOpeningBalances" ColumnName="inventoryOpeningBalances" />
+                <ScalarProperty Name="inventoryBrands" ColumnName="inventoryBrands" />
+                <ScalarProperty Name="inventoryLocations" ColumnName="inventoryLocations" />
+                <ScalarProperty Name="inventoryPriceSettings" ColumnName="inventoryPriceSettings" />
+                <ScalarProperty Name="inventorySalesTaxExciseDutyRates" ColumnName="inventorySalesTaxExciseDutyRates" />
+                <ScalarProperty Name="inventoryReOrderLevels" ColumnName="inventoryReOrderLevels" />
+                <ScalarProperty Name="inventoryCostValuationMethod" ColumnName="inventoryCostValuationMethod" />
+                <ScalarProperty Name="postingPreferences" ColumnName="postingPreferences" />
+                <ScalarProperty Name="inventoryMovementSettings" ColumnName="inventoryMovementSettings" />
+                <ScalarProperty Name="customerRegions" ColumnName="customerRegions" />
+                <ScalarProperty Name="businessSectors" ColumnName="businessSectors" />
+                <ScalarProperty Name="employees" ColumnName="employees" />
+                <ScalarProperty Name="jobCards" ColumnName="jobCards" />
+                <ScalarProperty Name="addPurchaseOrders" ColumnName="addPurchaseOrders" />
+                <ScalarProperty Name="editPurchaseOrders" ColumnName="editPurchaseOrders" />
+                <ScalarProperty Name="addPurchasesSalesTax" ColumnName="addPurchasesSalesTax" />
+                <ScalarProperty Name="editPurchasesSalesTax" ColumnName="editPurchasesSalesTax" />
+                <ScalarProperty Name="addPurchasesNonTax" ColumnName="addPurchasesNonTax" />
+                <ScalarProperty Name="editPurchasesNonTax" ColumnName="editPurchasesNonTax" />
+                <ScalarProperty Name="addPurchasesReturns" ColumnName="addPurchasesReturns" />
+                <ScalarProperty Name="editPurchasesReturns" ColumnName="editPurchasesReturns" />
+                <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+                <ScalarProperty Name="updatedAt" ColumnName="updatedAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_userTypes">
+            <EntityTypeMapping TypeName="FinancialsModel.tbl_userTypes">
+              <MappingFragment StoreEntitySet="tbl_userTypes">
+                <ScalarProperty Name="userTypeID" ColumnName="userTypeID" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+                <ScalarProperty Name="updatedAt" ColumnName="updatedAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,75 @@
+
+********************  Error Log - 7/20/2017 6:22:31 PM*********************
+
+Exception Type : FormatException
+Error Message : Input string was not in a correct format.
+Error Source : mscorlib
+Error Trace :    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at KarenroWebservice.Repo.OtherRepo.walletRecharge(tbl_WalletTransaction data) in d:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\Repo\OtherRepo.cs:line 318
+
+********************  Error Log - 7/20/2017 6:20:40 PM*********************
+
+Exception Type : FormatException
+Error Message : Input string was not in a correct format.
+Error Source : mscorlib
+Error Trace :    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at KarenroWebservice.Repo.OtherRepo.walletRecharge(tbl_WalletTransaction data) in d:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\Repo\OtherRepo.cs:line 318
+
+********************  Error Log - 7/20/2017 1:17:38 PM*********************
+
+Exception Type : FormatException
+Error Message : Input string was not in a correct format.
+Error Source : mscorlib
+Error Trace :    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at KarenroWebservice.services.test(String user_id) in d:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\services.asmx.cs:line 760
+
+********************  Error Log - 7/20/2017 1:08:10 PM*********************
+
+Exception Type : FormatException
+Error Message : Input string was not in a correct format.
+Error Source : mscorlib
+Error Trace :    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at KarenroWebservice.services.test(String user_id) in d:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\services.asmx.cs:line 756
+
+********************  Error Log - 7/20/2017 10:52:56 AM*********************
+
+Exception Type : FormatException
+Error Message : Input string was not in a correct format.
+Error Source : mscorlib
+Error Trace :    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at KarenroWebservice.services.test(String user_id) in d:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\services.asmx.cs:line 537
+
+********************  Error Log - 7/20/2017 10:37:07 AM*********************
+
+Exception Type : FormatException
+Error Message : Input string was not in a correct format.
+Error Source : mscorlib
+Error Trace :    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at KarenroWebservice.services.test(String user_id) in d:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\services.asmx.cs:line 537
+
+********************  Error Log - 7/20/2017 10:37:45 AM*********************
+
+Exception Type : FormatException
+Error Message : Input string was not in a correct format.
+Error Source : mscorlib
+Error Trace :    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at KarenroWebservice.services.test(String user_id) in d:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\services.asmx.cs:line 537
+
+
+
+
+

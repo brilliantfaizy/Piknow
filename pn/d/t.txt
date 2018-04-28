@@ -1,0 +1,7 @@
+CMS and Service Revisions: 
+Add CNIC image frant and back in the registration. done from service
+CNIC Verification and Vahicle notification. 
+1000 wallet minimun. 
+wallet add api 10 miles distance 
+driver and passenger chat real time location.
+isFemale check on create ride.

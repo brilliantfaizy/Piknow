@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2ebc05b553184f49891e9fc951543628" Name="Diagram1">
+        <EntityTypeShape EntityType="PN_Model.tbl_accountDetail" Width="1.5" PointX="3" PointY="17.75" />
+        <EntityTypeShape EntityType="PN_Model.tbl_admin" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="PN_Model.tbl_adminBank" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="PN_Model.tbl_adminTransaction" Width="1.5" PointX="3" PointY="38.125" />
+        <EntityTypeShape EntityType="PN_Model.tbl_autoCharges" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="PN_Model.tbl_book" Width="1.5" PointX="8" PointY="32.125" />
+        <EntityTypeShape EntityType="PN_Model.tbl_chat" Width="1.5" PointX="3" PointY="59.125" />
+        <EntityTypeShape EntityType="PN_Model.tbl_chatDetails" Width="1.5" PointX="8.25" PointY="39.875" />
+        <EntityTypeShape EntityType="PN_Model.tbl_cities" Width="1.5" PointX="0.75" PointY="1.375" />
+        <EntityTypeShape EntityType="PN_Model.tbl_commissionFee" Width="1.5" PointX="4.75" PointY="4.75" />
+        <EntityTypeShape EntityType="PN_Model.tbl_company" Width="1.5" PointX="5.75" PointY="35.625" />
+        <EntityTypeShape EntityType="PN_Model.tbl_companyDetail" Width="1.5" PointX="8" PointY="29.5" />
+        <EntityTypeShape EntityType="PN_Model.tbl_complaint" Width="1.5" PointX="3" PointY="28.25" />
+        <EntityTypeShape EntityType="PN_Model.tbl_discountCode" Width="1.5" PointX="5.75" PointY="18.125" />
+        <EntityTypeShape EntityType="PN_Model.tbl_discountDetails" Width="1.5" PointX="8" PointY="26.5" />
+        <EntityTypeShape EntityType="PN_Model.tbl_fastRide" Width="1.5" PointX="3" PointY="20.875" />
+        <EntityTypeShape EntityType="PN_Model.tbl_fastRide_canceled" Width="1.5" PointX="5.25" PointY="26.5" />
+        <EntityTypeShape EntityType="PN_Model.tbl_fastRideDetails" Width="1.5" PointX="5.25" PointY="41.75" />
+        <EntityTypeShape EntityType="PN_Model.tbl_fastTrack" Width="1.5" PointX="5.25" PointY="46.875" />
+        <EntityTypeShape EntityType="PN_Model.tbl_fastTransDetails" Width="1.5" PointX="5.25" PointY="31.875" />
+        <EntityTypeShape EntityType="PN_Model.tbl_fastUserRating" Width="1.5" PointX="5.25" PointY="21.75" />
+        <EntityTypeShape EntityType="PN_Model.tbl_general" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PN_Model.tbl_government" Width="1.5" PointX="5.75" PointY="51.25" />
+        <EntityTypeShape EntityType="PN_Model.tbl_governmentDetail" Width="1.5" PointX="8" PointY="36.5" />
+        <EntityTypeShape EntityType="PN_Model.tbl_kmCharges" Width="1.5" PointX="6.75" PointY="4.75" />
+        <EntityTypeShape EntityType="PN_Model.tbl_Notification" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PN_Model.tbl_offerRide" Width="1.5" PointX="8.25" PointY="43.25" />
+        <EntityTypeShape EntityType="PN_Model.tbl_profile" Width="1.5" PointX="0.75" PointY="26.625" />
+        <EntityTypeShape EntityType="PN_Model.tbl_transDetails" Width="1.5" PointX="6.75" PointY="7.75" />
+        <EntityTypeShape EntityType="PN_Model.tbl_userComesFrom" Width="1.5" PointX="3" PointY="56.375" />
+        <EntityTypeShape EntityType="PN_Model.tbl_userRating" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="PN_Model.tbl_vehicle" Width="1.5" PointX="3" PointY="62.25" />
+        <EntityTypeShape EntityType="PN_Model.tbl_vehicleBrands" Width="1.5" PointX="2.75" PointY="8.75" />
+        <EntityTypeShape EntityType="PN_Model.tbl_vehicleColors" Width="1.5" PointX="8.75" PointY="3.75" />
+        <EntityTypeShape EntityType="PN_Model.tbl_vehicleTypes" Width="1.5" PointX="8.75" PointY="6.75" />
+        <EntityTypeShape EntityType="PN_Model.tbl_WalletTransaction" Width="1.5" PointX="3" PointY="31.75" />
+        <AssociationConnector Association="PN_Model.FK_tbl_accountDetail_tbl_profile" />
+        <AssociationConnector Association="PN_Model.FK_tbl_adminTransaction_tbl_profile" />
+        <AssociationConnector Association="PN_Model.FK_tbl_autoCharges_tbl_cities" />
+        <AssociationConnector Association="PN_Model.FK_tbl_autoCharges_tbl_cities1" />
+        <AssociationConnector Association="PN_Model.FK_tbl_book_tbl_offerRide" />
+        <AssociationConnector Association="PN_Model.FK_tbl_book_tbl_profile" />
+        <AssociationConnector Association="PN_Model.FK_tbl_chat_tbl_profile" />
+        <AssociationConnector Association="PN_Model.FK_tbl_chatDetails_tbl_chat" />
+        <AssociationConnector Association="PN_Model.FK_tbl_chatDetails_tbl_profile" />
+        <AssociationConnector Association="PN_Model.FK_tbl_companyDetail_tbl_company" />
+        <AssociationConnector Association="PN_Model.FK_tbl_governmentDetail_tbl_company" />
+        <AssociationConnector Association="PN_Model.FK_tbl_companyDetail_tbl_profile" />
+        <AssociationConnector Association="PN_Model.FK_tbl_complaint_tbl_offerRide" />
+        <AssociationConnector Association="PN_Model.FK_tbl_complaint_tbl_profile" />
+        <AssociationConnector Association="PN_Model.FK_tbl_discountDetails_tbl_discountCode" />
+        <AssociationConnector Association="PN_Model.FK_tbl_discountDetails_tbl_profile" />
+        <AssociationConnector Association="PN_Model.FK_tbl_fastRide_canceled_tbl_fastRide" />
+        <AssociationConnector Association="PN_Model.FK_tbl_fastRide_tbl_profile" />
+        <AssociationConnector Association="PN_Model.FK_tbl_fastRideDetails_tbl_fastRide" />
+        <AssociationConnector Association="PN_Model.FK_tbl_fastUserRating_tbl_fastRide" />
+        <AssociationConnector Association="PN_Model.FK_tbl_fastRide_canceled_tbl_profile" />
+        <AssociationConnector Association="PN_Model.FK_tbl_fastRideDetails_tbl_profile" />
+        <AssociationConnector Association="PN_Model.FK_tbl_fastRideDetails_tbl_vehicle" />
+        <AssociationConnector Association="PN_Model.FK_tbl_fastTrack_tbl_profile" />
+        <AssociationConnector Association="PN_Model.FK_tbl_fastTrack_tbl_vehicle" />
+        <AssociationConnector Association="PN_Model.FK_tbl_fastTransDetails_tbl_WalletTransaction" />
+        <AssociationConnector Association="PN_Model.FK_tbl_governmentDetail_tbl_government" />
+        <AssociationConnector Association="PN_Model.FK_tbl_offerRide_tbl_profile" />
+        <AssociationConnector Association="PN_Model.FK_tbl_offerRide_tbl_vehicle" />
+        <AssociationConnector Association="PN_Model.FK_tbl_userComesFrom_tbl_profile" />
+        <AssociationConnector Association="PN_Model.FK_tbl_vehicle_tbl_profile" />
+        <AssociationConnector Association="PN_Model.FK_tbl_WalletTransaction_tbl_profile" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a78880b4bd48425e9f8e0d5d498768f9" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="Karenro_DBModel.tbl_admin" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="Karenro_DBModel.tbl_adminBank" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="Karenro_DBModel.tbl_adminTransaction" Width="1.5" PointX="3" PointY="43.125" />
+        <EntityTypeShape EntityType="Karenro_DBModel.tbl_autoCharges" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="Karenro_DBModel.tbl_book" Width="1.5" PointX="3" PointY="24.75" />
+        <EntityTypeShape EntityType="Karenro_DBModel.tbl_cities" Width="1.5" PointX="0.75" PointY="1.375" />
+        <EntityTypeShape EntityType="Karenro_DBModel.tbl_commissionFee" Width="1.5" PointX="4.75" PointY="4.75" />
+        <EntityTypeShape EntityType="Karenro_DBModel.tbl_company" Width="1.5" PointX="5" PointY="0.5" />
+        <EntityTypeShape EntityType="Karenro_DBModel.tbl_complaint" Width="1.5" PointX="6" PointY="22.875" />
+        <EntityTypeShape EntityType="Karenro_DBModel.tbl_discountCode" Width="1.5" PointX="0.75" PointY="15.75" />
+        <EntityTypeShape EntityType="Karenro_DBModel.tbl_discountDetails" Width="1.5" PointX="3" PointY="22.125" />
+        <EntityTypeShape EntityType="Karenro_DBModel.tbl_fastRide" Width="1.5" PointX="3" PointY="15" />
+        <EntityTypeShape EntityType="Karenro_DBModel.tbl_fastRide_canceled" Width="1.5" PointX="5.25" PointY="19.625" />
+        <EntityTypeShape EntityType="Karenro_DBModel.tbl_fastRideDetails" Width="1.5" PointX="5.25" PointY="27" />
+        <EntityTypeShape EntityType="Karenro_DBModel.tbl_fastTrack" Width="1.5" PointX="8.25" PointY="29.625" />
+        <EntityTypeShape EntityType="Karenro_DBModel.tbl_fastTransDetails" Width="1.5" PointX="5.25" PointY="47" />
+        <EntityTypeShape EntityType="Karenro_DBModel.tbl_fastUserRating" Width="1.5" PointX="5.25" PointY="15.75" />
+        <EntityTypeShape EntityType="Karenro_DBModel.tbl_general" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="Karenro_DBModel.tbl_kmCharges" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Karenro_DBModel.tbl_Notification" Width="1.5" PointX="6.75" PointY="7.75" />
+        <EntityTypeShape EntityType="Karenro_DBModel.tbl_offerRide" Width="1.5" PointX="5.25" PointY="31.5" />
+        <EntityTypeShape EntityType="Karenro_DBModel.tbl_profile" Width="1.5" PointX="0.75" PointY="19.75" />
+        <EntityTypeShape EntityType="Karenro_DBModel.tbl_transDetails" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="Karenro_DBModel.tbl_userComesFrom" Width="1.5" PointX="2.75" PointY="8.75" />
+        <EntityTypeShape EntityType="Karenro_DBModel.tbl_userRating" Width="1.5" PointX="8.75" PointY="3.75" />
+        <EntityTypeShape EntityType="Karenro_DBModel.tbl_vehicle" Width="1.5" PointX="3" PointY="38.25" />
+        <EntityTypeShape EntityType="Karenro_DBModel.tbl_vehicleBrands" Width="1.5" PointX="8.75" PointY="6.75" />
+        <EntityTypeShape EntityType="Karenro_DBModel.tbl_WalletTransaction" Width="1.5" PointX="3" PointY="46.875" />
+        <AssociationConnector Association="Karenro_DBModel.FK_tbl_adminTransaction_tbl_profile" />
+        <AssociationConnector Association="Karenro_DBModel.FK_tbl_autoCharges_tbl_cities" />
+        <AssociationConnector Association="Karenro_DBModel.FK_tbl_autoCharges_tbl_cities1" />
+        <AssociationConnector Association="Karenro_DBModel.FK_tbl_book_tbl_offerRide" />
+        <AssociationConnector Association="Karenro_DBModel.FK_tbl_book_tbl_profile" />
+        <AssociationConnector Association="Karenro_DBModel.FK_tbl_complaint_tbl_offerRide" />
+        <AssociationConnector Association="Karenro_DBModel.FK_tbl_complaint_tbl_profile" />
+        <AssociationConnector Association="Karenro_DBModel.FK_tbl_discountDetails_tbl_discountCode" />
+        <AssociationConnector Association="Karenro_DBModel.FK_tbl_discountDetails_tbl_profile" />
+        <AssociationConnector Association="Karenro_DBModel.FK_tbl_fastRide_canceled_tbl_fastRide" />
+        <AssociationConnector Association="Karenro_DBModel.FK_tbl_fastRide_tbl_profile" />
+        <AssociationConnector Association="Karenro_DBModel.FK_tbl_fastRideDetails_tbl_fastRide" />
+        <AssociationConnector Association="Karenro_DBModel.FK_tbl_fastUserRating_tbl_fastRide" />
+        <AssociationConnector Association="Karenro_DBModel.FK_tbl_fastRide_canceled_tbl_profile" />
+        <AssociationConnector Association="Karenro_DBModel.FK_tbl_fastRideDetails_tbl_profile" />
+        <AssociationConnector Association="Karenro_DBModel.FK_tbl_fastRideDetails_tbl_vehicle" />
+        <AssociationConnector Association="Karenro_DBModel.FK_tbl_fastTrack_tbl_profile" />
+        <AssociationConnector Association="Karenro_DBModel.FK_tbl_fastTrack_tbl_vehicle" />
+        <AssociationConnector Association="Karenro_DBModel.FK_tbl_fastTransDetails_tbl_WalletTransaction" />
+        <AssociationConnector Association="Karenro_DBModel.FK_tbl_offerRide_tbl_profile" />
+        <AssociationConnector Association="Karenro_DBModel.FK_tbl_offerRide_tbl_vehicle" />
+        <AssociationConnector Association="Karenro_DBModel.FK_tbl_vehicle_tbl_profile" />
+        <AssociationConnector Association="Karenro_DBModel.FK_tbl_WalletTransaction_tbl_profile" />
+        <EntityTypeShape EntityType="Karenro_DBModel.tbl_government" Width="1.5" PointX="9.375" PointY="9.75" />
+        <EntityTypeShape EntityType="Karenro_DBModel.tbl_companyDetail" Width="1.5" PointX="8" PointY="12.75" />
+        <AssociationConnector Association="Karenro_DBModel.FK_tbl_companyDetail_tbl_company" />
+        <AssociationConnector Association="Karenro_DBModel.FK_tbl_companyDetail_tbl_profile" />
+        <AssociationConnector Association="Karenro_DBModel.FK_tbl_userComesFrom_tbl_profile" />
+        <EntityTypeShape EntityType="Karenro_DBModel.tbl_governmentDetail" Width="1.5" PointX="11.625" PointY="5.125" />
+        <AssociationConnector Association="Karenro_DBModel.FK_tbl_governmentDetail_tbl_company" />
+        <AssociationConnector Association="Karenro_DBModel.FK_tbl_governmentDetail_tbl_government" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

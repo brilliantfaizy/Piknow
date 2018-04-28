@@ -1,0 +1,11 @@
+G:\Desktop Data\pn\c\w\w\bin\w.dll.config
+G:\Desktop Data\pn\c\w\w\bin\w.dll
+G:\Desktop Data\pn\c\w\w\bin\w.pdb
+G:\Desktop Data\pn\c\w\w\obj\Debug\w.dll
+G:\Desktop Data\pn\c\w\w\obj\Debug\w.pdb
+D:\Visual Studio Projects\pn\c\w\w\bin\w.dll.config
+D:\Visual Studio Projects\pn\c\w\w\bin\w.dll
+D:\Visual Studio Projects\pn\c\w\w\bin\w.pdb
+D:\Visual Studio Projects\pn\c\w\w\obj\Debug\w.csprojResolveAssemblyReference.cache
+D:\Visual Studio Projects\pn\c\w\w\obj\Debug\w.dll
+D:\Visual Studio Projects\pn\c\w\w\obj\Debug\w.pdb

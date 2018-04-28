@@ -1,0 +1,7 @@
+
+********************  Error Log - 8/31/2017 6:06:05 PM*********************
+
+Exception Type : NullReferenceException
+Error Message : Object reference not set to an instance of an object.
+Error Source : KarenroWebservice
+Error Trace :    at KarenroWebservice.Repo.OtherRepo.getGeneraldata(String language) in d:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\Repo\OtherRepo.cs:line 86

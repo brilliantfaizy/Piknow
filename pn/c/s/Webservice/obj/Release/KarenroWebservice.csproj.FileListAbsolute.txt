@@ -1,0 +1,9 @@
+D:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\bin\KarenroWebservice.dll.config
+D:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\bin\KarenroWebservice.dll
+D:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\bin\KarenroWebservice.pdb
+D:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\bin\EntityFramework.dll
+D:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\bin\Newtonsoft.Json.dll
+D:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\bin\EntityFramework.xml
+D:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\bin\Newtonsoft.Json.xml
+D:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\obj\Release\KarenroWebservice.dll
+D:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\obj\Release\KarenroWebservice.pdb

@@ -1,0 +1,56 @@
+
+********************  Error Log - 9/5/2017 1:49:46 PM*********************
+
+Exception Type : ArgumentOutOfRangeException
+Error Message : Month must be between one and twelve.
+Parameter name: month
+Error Source : mscorlib
+Error Trace :    at System.Globalization.PersianCalendar.CheckYearMonthRange(Int32 year, Int32 month, Int32 era)
+   at System.Globalization.PersianCalendar.GetDaysInMonth(Int32 year, Int32 month, Int32 era)
+   at System.Globalization.PersianCalendar.ToDateTime(Int32 year, Int32 month, Int32 day, Int32 hour, Int32 minute, Int32 second, Int32 millisecond, Int32 era)
+   at System.Globalization.Calendar.ToDateTime(Int32 year, Int32 month, Int32 day, Int32 hour, Int32 minute, Int32 second, Int32 millisecond)
+   at System.DateTime..ctor(Int32 year, Int32 month, Int32 day, Int32 hour, Int32 minute, Int32 second, Calendar calendar)
+   at KarenroWebservice.services.searchOfferRide() in d:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\services.asmx.cs:line 415
+
+********************  Error Log - 9/5/2017 1:48:19 PM*********************
+
+Exception Type : ArgumentOutOfRangeException
+Error Message : Month must be between one and twelve.
+Parameter name: month
+Error Source : mscorlib
+Error Trace :    at System.Globalization.PersianCalendar.CheckYearMonthRange(Int32 year, Int32 month, Int32 era)
+   at System.Globalization.PersianCalendar.GetDaysInMonth(Int32 year, Int32 month, Int32 era)
+   at System.Globalization.PersianCalendar.ToDateTime(Int32 year, Int32 month, Int32 day, Int32 hour, Int32 minute, Int32 second, Int32 millisecond, Int32 era)
+   at System.Globalization.Calendar.ToDateTime(Int32 year, Int32 month, Int32 day, Int32 hour, Int32 minute, Int32 second, Int32 millisecond)
+   at System.DateTime..ctor(Int32 year, Int32 month, Int32 day, Int32 hour, Int32 minute, Int32 second, Calendar calendar)
+   at KarenroWebservice.services.searchOfferRide() in d:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\services.asmx.cs:line 415
+
+********************  Error Log - 9/5/2017 1:47:57 PM*********************
+
+Exception Type : ArgumentOutOfRangeException
+Error Message : Month must be between one and twelve.
+Parameter name: month
+Error Source : mscorlib
+Error Trace :    at System.Globalization.PersianCalendar.CheckYearMonthRange(Int32 year, Int32 month, Int32 era)
+   at System.Globalization.PersianCalendar.GetDaysInMonth(Int32 year, Int32 month, Int32 era)
+   at System.Globalization.PersianCalendar.ToDateTime(Int32 year, Int32 month, Int32 day, Int32 hour, Int32 minute, Int32 second, Int32 millisecond, Int32 era)
+   at System.Globalization.Calendar.ToDateTime(Int32 year, Int32 month, Int32 day, Int32 hour, Int32 minute, Int32 second, Int32 millisecond)
+   at System.DateTime..ctor(Int32 year, Int32 month, Int32 day, Int32 hour, Int32 minute, Int32 second, Calendar calendar)
+   at KarenroWebservice.services.searchOfferRide() in d:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\services.asmx.cs:line 415
+
+********************  Error Log - 9/5/2017 12:13:50 PM*********************
+
+Exception Type : NullReferenceException
+Error Message : Object reference not set to an instance of an object.
+Error Source : KarenroWebservice
+Error Trace :    at KarenroWebservice.services.addofferRide() in d:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\services.asmx.cs:line 318
+
+********************  Error Log - 9/5/2017 12:08:52 PM*********************
+
+Exception Type : NullReferenceException
+Error Message : Object reference not set to an instance of an object.
+Error Source : KarenroWebservice
+Error Trace :    at KarenroWebservice.services.addofferRide() in d:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\services.asmx.cs:line 299
+
+
+

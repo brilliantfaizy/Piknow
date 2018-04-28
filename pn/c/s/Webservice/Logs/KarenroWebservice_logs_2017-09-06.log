@@ -1,0 +1,7 @@
+
+********************  Error Log - 9/6/2017 2:11:42 PM*********************
+
+Exception Type : NullReferenceException
+Error Message : Object reference not set to an instance of an object.
+Error Source : KarenroWebservice
+Error Trace :    at KarenroWebservice.services.addofferRide() in d:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\services.asmx.cs:line 318

@@ -1,0 +1,16 @@
+
+********************  Error Log - 7/22/2017 3:27:44 PM*********************
+
+Exception Type : WebException
+Error Message : The remote server returned an error: (500) Internal Server Error.
+Error Source : System
+Error Trace :    at System.Net.HttpWebRequest.GetResponse()
+   at KarenroWebservice.helper.notificationCls.sendSMS(String number, String message) in d:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\helper\notificationCls.cs:line 122
+
+********************  Error Log - 7/22/2017 3:26:26 PM*********************
+
+Exception Type : WebException
+Error Message : The remote server returned an error: (500) Internal Server Error.
+Error Source : System
+Error Trace :    at System.Net.HttpWebRequest.GetResponse()
+   at KarenroWebservice.helper.notificationCls.sendSMS(String number, String message) in d:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\helper\notificationCls.cs:line 122

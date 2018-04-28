@@ -1,0 +1,16 @@
+D:\Visual Studio Projects\KarenroPortal\KarenroPortal\bin\KarenroPortal.dll.config
+D:\Visual Studio Projects\KarenroPortal\KarenroPortal\bin\KarenroPortal.dll
+D:\Visual Studio Projects\KarenroPortal\KarenroPortal\bin\KarenroPortal.pdb
+D:\Visual Studio Projects\KarenroPortal\KarenroPortal\bin\EntityFramework.dll
+D:\Visual Studio Projects\KarenroPortal\KarenroPortal\bin\EntityFramework.xml
+D:\Visual Studio Projects\KarenroPortal\KarenroPortal\obj\Debug\KarenroPortal.dll
+D:\Visual Studio Projects\KarenroPortal\KarenroPortal\obj\Debug\KarenroPortal.pdb
+D:\Visual Studio Projects\KarenroPortal\KarenroPortal\obj\Debug\KarenroPortal.csprojResolveAssemblyReference.cache
+D:\Visual Studio Projects\pn\c\p\Portal\bin\KarenroPortal.dll.config
+D:\Visual Studio Projects\pn\c\p\Portal\bin\KarenroPortal.dll
+D:\Visual Studio Projects\pn\c\p\Portal\bin\KarenroPortal.pdb
+D:\Visual Studio Projects\pn\c\p\Portal\bin\EntityFramework.dll
+D:\Visual Studio Projects\pn\c\p\Portal\bin\EntityFramework.xml
+D:\Visual Studio Projects\pn\c\p\Portal\obj\Debug\KarenroPortal.csprojResolveAssemblyReference.cache
+D:\Visual Studio Projects\pn\c\p\Portal\obj\Debug\KarenroPortal.dll
+D:\Visual Studio Projects\pn\c\p\Portal\obj\Debug\KarenroPortal.pdb

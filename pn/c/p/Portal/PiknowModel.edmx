@@ -1,0 +1,2570 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PN_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityType Name="tbl_accountDetail">
+          <Key>
+            <PropertyRef Name="AccountDetail_ID" />
+          </Key>
+          <Property Name="AccountDetail_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="accountNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="bankName" Type="nvarchar" MaxLength="50" />
+          <Property Name="shabaNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="accountHolder" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_admin">
+          <Key>
+            <PropertyRef Name="admin_id" />
+          </Key>
+          <Property Name="admin_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_adminBank">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="amount" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="userType" Type="varchar" MaxLength="10" />
+          <Property Name="offerRide_ID" Type="int" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="paymentStatus" Type="varchar" MaxLength="20" />
+          <Property Name="transaction_ID" Type="int" />
+          <Property Name="book_id" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_adminTransaction">
+          <Key>
+            <PropertyRef Name="transaction_ID" />
+          </Key>
+          <Property Name="transaction_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id" Type="int" />
+          <Property Name="type" Type="varchar" MaxLength="20" />
+          <Property Name="transaction_Title" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="transaction_datetime" Type="datetime" Nullable="false" />
+          <Property Name="receivedCommission" Type="varchar" MaxLength="50" />
+          <Property Name="Debit" Type="varchar" MaxLength="50" />
+          <Property Name="Credit" Type="varchar" MaxLength="50" />
+          <Property Name="Balance" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_autoCharges">
+          <Key>
+            <PropertyRef Name="chargesID" />
+          </Key>
+          <Property Name="chargesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="from_city" Type="int" Nullable="false" />
+          <Property Name="to_city" Type="int" Nullable="false" />
+          <Property Name="charges" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="type" Type="varchar" MaxLength="50" />
+          <Property Name="VehicleTypeIsNormal" Type="bit" />
+          <Property Name="createdAt" Type="datetime" Nullable="false" />
+          <Property Name="updatedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_book">
+          <Key>
+            <PropertyRef Name="book_id" />
+          </Key>
+          <Property Name="book_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="offerRide_ID" Type="int" Nullable="false" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="datetime" Type="datetime" />
+          <Property Name="passengerCode" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="tbl_chat">
+          <Key>
+            <PropertyRef Name="chat_ID" />
+          </Key>
+          <Property Name="chat_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="offerRide_ID" Type="int" Nullable="false" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="userType" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="createdAt" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_chatDetails">
+          <Key>
+            <PropertyRef Name="chatDetail_id" />
+          </Key>
+          <Property Name="chatDetail_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="chat_ID" Type="int" Nullable="false" />
+          <Property Name="message" Type="varchar(max)" Nullable="false" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="createdAt" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_cities">
+          <Key>
+            <PropertyRef Name="cityID" />
+          </Key>
+          <Property Name="cityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cityName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="createdAt" Type="datetime" Nullable="false" />
+          <Property Name="updatedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_commissionFee">
+          <Key>
+            <PropertyRef Name="FeeID" />
+          </Key>
+          <Property Name="FeeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="driversFee" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="persianPassengerFee" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="foreignPassengerFee" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="minFastInBalance" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="createdAt" Type="datetime" />
+          <Property Name="updatedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_company">
+          <Key>
+            <PropertyRef Name="company_id" />
+          </Key>
+          <Property Name="company_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="company_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="phoneNumber" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="comeFrom" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ceoID_path" Type="varchar(max)" Nullable="false" />
+          <Property Name="permissions_path" Type="varchar(max)" Nullable="false" />
+          <Property Name="companyCertificate_path" Type="varchar(max)" Nullable="false" />
+          <Property Name="isConfirmed" Type="bit" Nullable="false" />
+          <Property Name="createdAt" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_companyDetail">
+          <Key>
+            <PropertyRef Name="companyDetail_id" />
+          </Key>
+          <Property Name="companyDetail_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="company_id" Type="int" Nullable="false" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_complaint">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="offerRide_ID" Type="int" Nullable="false" />
+          <Property Name="message" Type="varchar(max)" Nullable="false" />
+          <Property Name="datetime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_discountCode">
+          <Key>
+            <PropertyRef Name="discountID" />
+          </Key>
+          <Property Name="discountID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="discountFee" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="discountCode" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="availableNumber" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="expireDate" Type="date" Nullable="false" />
+          <Property Name="createdAt" Type="datetime" Nullable="false" />
+          <Property Name="updatedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_discountDetails">
+          <Key>
+            <PropertyRef Name="discountDetailsID" />
+          </Key>
+          <Property Name="discountDetailsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="discountID" Type="int" Nullable="false" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_fastRide">
+          <Key>
+            <PropertyRef Name="fastRide_ID" />
+          </Key>
+          <Property Name="fastRide_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="from_place" Type="varchar" MaxLength="200" />
+          <Property Name="to_place" Type="varchar" MaxLength="200" />
+          <Property Name="from_place_persian" Type="nvarchar" MaxLength="200" />
+          <Property Name="to_place_persian" Type="nvarchar" MaxLength="200" />
+          <Property Name="statusType" Type="varchar" MaxLength="50" />
+          <Property Name="LatLong" Type="varchar" MaxLength="50" />
+          <Property Name="createdAt" Type="datetime" />
+          <Property Name="vehicleType" Type="varchar" MaxLength="20" />
+          <Property Name="VehicleTypeIsNormal" Type="bit" />
+          <Property Name="from_LatLong" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="to_LatLong" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_fastRide_canceled">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fastRide_ID" Type="int" Nullable="false" />
+          <Property Name="driver_id" Type="int" Nullable="false" />
+          <Property Name="createdAt" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_fastRideDetails">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fastRide_ID" Type="int" Nullable="false" />
+          <Property Name="driver_id" Type="int" Nullable="false" />
+          <Property Name="vehicle_id" Type="int" Nullable="false" />
+          <Property Name="startAt" Type="datetime" />
+          <Property Name="endAt" Type="datetime" />
+          <Property Name="startLatLong" Type="varchar" MaxLength="50" />
+          <Property Name="endLatLong" Type="varchar" MaxLength="50" />
+          <Property Name="price" Type="varchar" MaxLength="20" />
+          <Property Name="PayBy" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="tbl_fastTrack">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="userType" Type="varchar" MaxLength="50" />
+          <Property Name="InDatetime" Type="datetime" />
+          <Property Name="OutDatetime" Type="datetime" />
+          <Property Name="status" Type="varchar" MaxLength="50" />
+          <Property Name="LatLong" Type="varchar" MaxLength="50" />
+          <Property Name="vehicle_id" Type="int" />
+          <Property Name="cityName" Type="nvarchar" MaxLength="50" />
+          <Property Name="cityName_persian" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_fastTransDetails">
+          <Key>
+            <PropertyRef Name="transDetail_ID" />
+          </Key>
+          <Property Name="transDetail_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="transaction_ID" Type="int" Nullable="false" />
+          <Property Name="fastRide_ID" Type="int" Nullable="false" />
+          <Property Name="userType" Type="varchar" MaxLength="20" />
+          <Property Name="amount" Type="varchar" MaxLength="20" />
+          <Property Name="KarenroDetect" Type="varchar" MaxLength="20" />
+          <Property Name="total" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="tbl_fastUserRating">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ratingCount" Type="int" Nullable="false" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="rate_user_id" Type="int" Nullable="false" />
+          <Property Name="rateDatetime" Type="datetime" />
+          <Property Name="fastRide_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_general">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="percentDetect" Type="varchar" MaxLength="10" />
+          <Property Name="passengerDetect" Type="varchar" MaxLength="20" />
+          <Property Name="fastTrackAmount" Type="varchar" MaxLength="20" />
+          <Property Name="perKM" Type="varchar" MaxLength="20" />
+          <Property Name="hostAddress" Type="varchar" MaxLength="200" />
+          <Property Name="termConditionPath" Type="varchar" MaxLength="200" />
+          <Property Name="aboutPath" Type="varchar" MaxLength="200" />
+          <Property Name="privacyPolicyPath" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="tbl_government">
+          <Key>
+            <PropertyRef Name="government_id" />
+          </Key>
+          <Property Name="government_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="government_code" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="50" />
+          <Property Name="password" Type="varchar" MaxLength="50" />
+          <Property Name="createdAt" Type="datetime" Nullable="false" />
+          <Property Name="updatedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_governmentDetail">
+          <Key>
+            <PropertyRef Name="govDetail_id" />
+          </Key>
+          <Property Name="govDetail_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="government_id" Type="int" Nullable="false" />
+          <Property Name="company_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_kmCharges">
+          <Key>
+            <PropertyRef Name="chargesID" />
+          </Key>
+          <Property Name="chargesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="charges" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="type" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="VehicleTypeIsNormal" Type="bit" Nullable="false" />
+          <Property Name="createdAt" Type="datetime" Nullable="false" />
+          <Property Name="updatedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_Notification">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="notification_user_id" Type="int" Nullable="false" />
+          <Property Name="message" Type="varchar(max)" Nullable="false" />
+          <Property Name="notificationDatetime" Type="datetime" />
+          <Property Name="isDeleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="tbl_offerRide">
+          <Key>
+            <PropertyRef Name="offerRide_ID" />
+          </Key>
+          <Property Name="offerRide_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="vehicle_id" Type="int" />
+          <Property Name="from_place" Type="text" Nullable="false" />
+          <Property Name="to_place" Type="text" Nullable="false" />
+          <Property Name="from_place_persian" Type="nvarchar" MaxLength="200" />
+          <Property Name="to_place_persian" Type="nvarchar" MaxLength="200" />
+          <Property Name="datetime" Type="datetime" />
+          <Property Name="vehicle_type" Type="varchar" MaxLength="50" />
+          <Property Name="no_seats" Type="int" />
+          <Property Name="middleSeat" Type="bit" Nullable="false" />
+          <Property Name="charter" Type="bit" />
+          <Property Name="ride_comment" Type="nvarchar(max)" />
+          <Property Name="price" Type="varchar" MaxLength="10" />
+          <Property Name="status" Type="bit" />
+          <Property Name="statusType" Type="varchar" MaxLength="10" />
+          <Property Name="Cigarette" Type="bit" />
+          <Property Name="Music" Type="bit" />
+          <Property Name="AC" Type="bit" />
+          <Property Name="complaint" Type="bit" />
+          <Property Name="createdAt" Type="datetime" Nullable="false" />
+          <Property Name="from_latlong" Type="varchar" MaxLength="50" />
+          <Property Name="to_latlong" Type="varchar" MaxLength="50" />
+          <Property Name="isAllowFemale" Type="bit" />
+        </EntityType>
+        <EntityType Name="tbl_profile">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="full_name" Type="varchar" MaxLength="50" />
+          <Property Name="number" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="birthday" Type="varchar" MaxLength="50" />
+          <Property Name="profile_pic" Type="varchar" MaxLength="255" />
+          <Property Name="country" Type="varchar" MaxLength="50" />
+          <Property Name="type" Type="varchar" MaxLength="50" />
+          <Property Name="status" Type="varchar" MaxLength="20" />
+          <Property Name="gender" Type="varchar" MaxLength="6" />
+          <Property Name="approved" Type="bit" />
+          <Property Name="deviceToken" Type="varchar" MaxLength="200" />
+          <Property Name="createdAt" Type="datetime" />
+          <Property Name="forgetPasswordToken" Type="varchar(max)" />
+          <Property Name="cnic_frant" Type="varchar" MaxLength="200" />
+          <Property Name="cnic_back" Type="varchar" MaxLength="200" />
+          <Property Name="latLong" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="tbl_transDetails">
+          <Key>
+            <PropertyRef Name="transDetail_ID" />
+          </Key>
+          <Property Name="transDetail_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="transaction_ID" Type="int" Nullable="false" />
+          <Property Name="offerRide_ID" Type="int" Nullable="false" />
+          <Property Name="userType" Type="varchar" MaxLength="20" />
+          <Property Name="amount" Type="varchar" MaxLength="20" />
+          <Property Name="KarenroDetect" Type="varchar" MaxLength="20" />
+          <Property Name="total" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="tbl_userComesFrom">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="company_id" Type="int" />
+          <Property Name="individual" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_userRating">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ratingCount" Type="int" Nullable="false" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="rate_user_id" Type="int" Nullable="false" />
+          <Property Name="rateDatetime" Type="datetime" />
+          <Property Name="offerRide_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_vehicle">
+          <Key>
+            <PropertyRef Name="vehicle_id" />
+          </Key>
+          <Property Name="vehicle_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="brand" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="model" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="color" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="plateNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="type" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="approved" Type="bit" Nullable="false" />
+          <Property Name="carPhoto" Type="varchar(max)" Nullable="false" />
+          <Property Name="carLicense" Type="varchar(max)" Nullable="false" />
+          <Property Name="createdAt" Type="datetime" Nullable="false" />
+          <Property Name="updatedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_vehicleBrands">
+          <Key>
+            <PropertyRef Name="brand_id" />
+          </Key>
+          <Property Name="brand_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="brand" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="model" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="createdAt" Type="datetime" Nullable="false" />
+          <Property Name="updatedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_vehicleColors">
+          <Key>
+            <PropertyRef Name="color_id" />
+          </Key>
+          <Property Name="color_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="color" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="createdAt" Type="datetime" Nullable="false" />
+          <Property Name="updatedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_vehicleTypes">
+          <Key>
+            <PropertyRef Name="type_id" />
+          </Key>
+          <Property Name="type_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="type" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="createdAt" Type="datetime" Nullable="false" />
+          <Property Name="updatedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_WalletTransaction">
+          <Key>
+            <PropertyRef Name="transaction_ID" />
+          </Key>
+          <Property Name="transaction_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="transaction_Title" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="transaction_datetime" Type="datetime" Nullable="false" />
+          <Property Name="Debit" Type="varchar" MaxLength="50" />
+          <Property Name="Credit" Type="varchar" MaxLength="50" />
+          <Property Name="Balance" Type="varchar" MaxLength="50" />
+          <Property Name="rechargedBy" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <Association Name="FK_tbl_accountDetail_tbl_profile">
+          <End Role="tbl_profile" Type="Self.tbl_profile" Multiplicity="1" />
+          <End Role="tbl_accountDetail" Type="Self.tbl_accountDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_profile">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="tbl_accountDetail">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_adminTransaction_tbl_profile">
+          <End Role="tbl_profile" Type="Self.tbl_profile" Multiplicity="0..1" />
+          <End Role="tbl_adminTransaction" Type="Self.tbl_adminTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_profile">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="tbl_adminTransaction">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_autoCharges_tbl_cities">
+          <End Role="tbl_cities" Type="Self.tbl_cities" Multiplicity="1" />
+          <End Role="tbl_autoCharges" Type="Self.tbl_autoCharges" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_cities">
+              <PropertyRef Name="cityID" />
+            </Principal>
+            <Dependent Role="tbl_autoCharges">
+              <PropertyRef Name="from_city" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_autoCharges_tbl_cities1">
+          <End Role="tbl_cities" Type="Self.tbl_cities" Multiplicity="1" />
+          <End Role="tbl_autoCharges" Type="Self.tbl_autoCharges" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_cities">
+              <PropertyRef Name="cityID" />
+            </Principal>
+            <Dependent Role="tbl_autoCharges">
+              <PropertyRef Name="to_city" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_book_tbl_offerRide">
+          <End Role="tbl_offerRide" Type="Self.tbl_offerRide" Multiplicity="1" />
+          <End Role="tbl_book" Type="Self.tbl_book" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_offerRide">
+              <PropertyRef Name="offerRide_ID" />
+            </Principal>
+            <Dependent Role="tbl_book">
+              <PropertyRef Name="offerRide_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_book_tbl_profile">
+          <End Role="tbl_profile" Type="Self.tbl_profile" Multiplicity="1" />
+          <End Role="tbl_book" Type="Self.tbl_book" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_profile">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="tbl_book">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_chat_tbl_profile">
+          <End Role="tbl_profile" Type="Self.tbl_profile" Multiplicity="1" />
+          <End Role="tbl_chat" Type="Self.tbl_chat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_profile">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="tbl_chat">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_chatDetails_tbl_chat">
+          <End Role="tbl_chat" Type="Self.tbl_chat" Multiplicity="1" />
+          <End Role="tbl_chatDetails" Type="Self.tbl_chatDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_chat">
+              <PropertyRef Name="chat_ID" />
+            </Principal>
+            <Dependent Role="tbl_chatDetails">
+              <PropertyRef Name="chat_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_chatDetails_tbl_profile">
+          <End Role="tbl_profile" Type="Self.tbl_profile" Multiplicity="1" />
+          <End Role="tbl_chatDetails" Type="Self.tbl_chatDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_profile">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="tbl_chatDetails">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_companyDetail_tbl_company">
+          <End Role="tbl_company" Type="Self.tbl_company" Multiplicity="1" />
+          <End Role="tbl_companyDetail" Type="Self.tbl_companyDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_company">
+              <PropertyRef Name="company_id" />
+            </Principal>
+            <Dependent Role="tbl_companyDetail">
+              <PropertyRef Name="company_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_companyDetail_tbl_profile">
+          <End Role="tbl_profile" Type="Self.tbl_profile" Multiplicity="1" />
+          <End Role="tbl_companyDetail" Type="Self.tbl_companyDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_profile">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="tbl_companyDetail">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_complaint_tbl_offerRide">
+          <End Role="tbl_offerRide" Type="Self.tbl_offerRide" Multiplicity="1" />
+          <End Role="tbl_complaint" Type="Self.tbl_complaint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_offerRide">
+              <PropertyRef Name="offerRide_ID" />
+            </Principal>
+            <Dependent Role="tbl_complaint">
+              <PropertyRef Name="offerRide_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_complaint_tbl_profile">
+          <End Role="tbl_profile" Type="Self.tbl_profile" Multiplicity="1" />
+          <End Role="tbl_complaint" Type="Self.tbl_complaint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_profile">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="tbl_complaint">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_discountDetails_tbl_discountCode">
+          <End Role="tbl_discountCode" Type="Self.tbl_discountCode" Multiplicity="1" />
+          <End Role="tbl_discountDetails" Type="Self.tbl_discountDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_discountCode">
+              <PropertyRef Name="discountID" />
+            </Principal>
+            <Dependent Role="tbl_discountDetails">
+              <PropertyRef Name="discountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_discountDetails_tbl_profile">
+          <End Role="tbl_profile" Type="Self.tbl_profile" Multiplicity="1" />
+          <End Role="tbl_discountDetails" Type="Self.tbl_discountDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_profile">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="tbl_discountDetails">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_fastRide_canceled_tbl_fastRide">
+          <End Role="tbl_fastRide" Type="Self.tbl_fastRide" Multiplicity="1" />
+          <End Role="tbl_fastRide_canceled" Type="Self.tbl_fastRide_canceled" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_fastRide">
+              <PropertyRef Name="fastRide_ID" />
+            </Principal>
+            <Dependent Role="tbl_fastRide_canceled">
+              <PropertyRef Name="fastRide_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_fastRide_canceled_tbl_profile">
+          <End Role="tbl_profile" Type="Self.tbl_profile" Multiplicity="1" />
+          <End Role="tbl_fastRide_canceled" Type="Self.tbl_fastRide_canceled" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_profile">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="tbl_fastRide_canceled">
+              <PropertyRef Name="driver_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_fastRide_tbl_profile">
+          <End Role="tbl_profile" Type="Self.tbl_profile" Multiplicity="1" />
+          <End Role="tbl_fastRide" Type="Self.tbl_fastRide" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_profile">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="tbl_fastRide">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_fastRideDetails_tbl_fastRide">
+          <End Role="tbl_fastRide" Type="Self.tbl_fastRide" Multiplicity="1" />
+          <End Role="tbl_fastRideDetails" Type="Self.tbl_fastRideDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_fastRide">
+              <PropertyRef Name="fastRide_ID" />
+            </Principal>
+            <Dependent Role="tbl_fastRideDetails">
+              <PropertyRef Name="fastRide_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_fastRideDetails_tbl_profile">
+          <End Role="tbl_profile" Type="Self.tbl_profile" Multiplicity="1" />
+          <End Role="tbl_fastRideDetails" Type="Self.tbl_fastRideDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_profile">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="tbl_fastRideDetails">
+              <PropertyRef Name="driver_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_fastRideDetails_tbl_vehicle">
+          <End Role="tbl_vehicle" Type="Self.tbl_vehicle" Multiplicity="1" />
+          <End Role="tbl_fastRideDetails" Type="Self.tbl_fastRideDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_vehicle">
+              <PropertyRef Name="vehicle_id" />
+            </Principal>
+            <Dependent Role="tbl_fastRideDetails">
+              <PropertyRef Name="vehicle_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_fastTrack_tbl_profile">
+          <End Role="tbl_profile" Type="Self.tbl_profile" Multiplicity="1" />
+          <End Role="tbl_fastTrack" Type="Self.tbl_fastTrack" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_profile">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="tbl_fastTrack">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_fastTrack_tbl_vehicle">
+          <End Role="tbl_vehicle" Type="Self.tbl_vehicle" Multiplicity="0..1" />
+          <End Role="tbl_fastTrack" Type="Self.tbl_fastTrack" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_vehicle">
+              <PropertyRef Name="vehicle_id" />
+            </Principal>
+            <Dependent Role="tbl_fastTrack">
+              <PropertyRef Name="vehicle_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_fastTransDetails_tbl_WalletTransaction">
+          <End Role="tbl_WalletTransaction" Type="Self.tbl_WalletTransaction" Multiplicity="1" />
+          <End Role="tbl_fastTransDetails" Type="Self.tbl_fastTransDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_WalletTransaction">
+              <PropertyRef Name="transaction_ID" />
+            </Principal>
+            <Dependent Role="tbl_fastTransDetails">
+              <PropertyRef Name="transaction_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_fastUserRating_tbl_fastRide">
+          <End Role="tbl_fastRide" Type="Self.tbl_fastRide" Multiplicity="0..1" />
+          <End Role="tbl_fastUserRating" Type="Self.tbl_fastUserRating" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_fastRide">
+              <PropertyRef Name="fastRide_ID" />
+            </Principal>
+            <Dependent Role="tbl_fastUserRating">
+              <PropertyRef Name="fastRide_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_governmentDetail_tbl_company">
+          <End Role="tbl_company" Type="Self.tbl_company" Multiplicity="1" />
+          <End Role="tbl_governmentDetail" Type="Self.tbl_governmentDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_company">
+              <PropertyRef Name="company_id" />
+            </Principal>
+            <Dependent Role="tbl_governmentDetail">
+              <PropertyRef Name="company_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_governmentDetail_tbl_government">
+          <End Role="tbl_government" Type="Self.tbl_government" Multiplicity="1" />
+          <End Role="tbl_governmentDetail" Type="Self.tbl_governmentDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_government">
+              <PropertyRef Name="government_id" />
+            </Principal>
+            <Dependent Role="tbl_governmentDetail">
+              <PropertyRef Name="government_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_offerRide_tbl_profile">
+          <End Role="tbl_profile" Type="Self.tbl_profile" Multiplicity="1" />
+          <End Role="tbl_offerRide" Type="Self.tbl_offerRide" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_profile">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="tbl_offerRide">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_offerRide_tbl_vehicle">
+          <End Role="tbl_vehicle" Type="Self.tbl_vehicle" Multiplicity="0..1" />
+          <End Role="tbl_offerRide" Type="Self.tbl_offerRide" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_vehicle">
+              <PropertyRef Name="vehicle_id" />
+            </Principal>
+            <Dependent Role="tbl_offerRide">
+              <PropertyRef Name="vehicle_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_userComesFrom_tbl_profile">
+          <End Role="tbl_profile" Type="Self.tbl_profile" Multiplicity="1" />
+          <End Role="tbl_userComesFrom" Type="Self.tbl_userComesFrom" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_profile">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="tbl_userComesFrom">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_vehicle_tbl_profile">
+          <End Role="tbl_profile" Type="Self.tbl_profile" Multiplicity="1" />
+          <End Role="tbl_vehicle" Type="Self.tbl_vehicle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_profile">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="tbl_vehicle">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_WalletTransaction_tbl_profile">
+          <End Role="tbl_profile" Type="Self.tbl_profile" Multiplicity="1" />
+          <End Role="tbl_WalletTransaction" Type="Self.tbl_WalletTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_profile">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="tbl_WalletTransaction">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PN_ModelStoreContainer">
+          <EntitySet Name="tbl_accountDetail" EntityType="Self.tbl_accountDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_admin" EntityType="Self.tbl_admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_adminBank" EntityType="Self.tbl_adminBank" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_adminTransaction" EntityType="Self.tbl_adminTransaction" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_autoCharges" EntityType="Self.tbl_autoCharges" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_book" EntityType="Self.tbl_book" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_chat" EntityType="Self.tbl_chat" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_chatDetails" EntityType="Self.tbl_chatDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_cities" EntityType="Self.tbl_cities" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_commissionFee" EntityType="Self.tbl_commissionFee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_company" EntityType="Self.tbl_company" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_companyDetail" EntityType="Self.tbl_companyDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_complaint" EntityType="Self.tbl_complaint" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_discountCode" EntityType="Self.tbl_discountCode" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_discountDetails" EntityType="Self.tbl_discountDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_fastRide" EntityType="Self.tbl_fastRide" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_fastRide_canceled" EntityType="Self.tbl_fastRide_canceled" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_fastRideDetails" EntityType="Self.tbl_fastRideDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_fastTrack" EntityType="Self.tbl_fastTrack" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_fastTransDetails" EntityType="Self.tbl_fastTransDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_fastUserRating" EntityType="Self.tbl_fastUserRating" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_general" EntityType="Self.tbl_general" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_government" EntityType="Self.tbl_government" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_governmentDetail" EntityType="Self.tbl_governmentDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_kmCharges" EntityType="Self.tbl_kmCharges" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Notification" EntityType="Self.tbl_Notification" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_offerRide" EntityType="Self.tbl_offerRide" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_profile" EntityType="Self.tbl_profile" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_transDetails" EntityType="Self.tbl_transDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_userComesFrom" EntityType="Self.tbl_userComesFrom" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_userRating" EntityType="Self.tbl_userRating" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_vehicle" EntityType="Self.tbl_vehicle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_vehicleBrands" EntityType="Self.tbl_vehicleBrands" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_vehicleColors" EntityType="Self.tbl_vehicleColors" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_vehicleTypes" EntityType="Self.tbl_vehicleTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_WalletTransaction" EntityType="Self.tbl_WalletTransaction" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_tbl_accountDetail_tbl_profile" Association="Self.FK_tbl_accountDetail_tbl_profile">
+            <End Role="tbl_profile" EntitySet="tbl_profile" />
+            <End Role="tbl_accountDetail" EntitySet="tbl_accountDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_adminTransaction_tbl_profile" Association="Self.FK_tbl_adminTransaction_tbl_profile">
+            <End Role="tbl_profile" EntitySet="tbl_profile" />
+            <End Role="tbl_adminTransaction" EntitySet="tbl_adminTransaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_autoCharges_tbl_cities" Association="Self.FK_tbl_autoCharges_tbl_cities">
+            <End Role="tbl_cities" EntitySet="tbl_cities" />
+            <End Role="tbl_autoCharges" EntitySet="tbl_autoCharges" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_autoCharges_tbl_cities1" Association="Self.FK_tbl_autoCharges_tbl_cities1">
+            <End Role="tbl_cities" EntitySet="tbl_cities" />
+            <End Role="tbl_autoCharges" EntitySet="tbl_autoCharges" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_book_tbl_offerRide" Association="Self.FK_tbl_book_tbl_offerRide">
+            <End Role="tbl_offerRide" EntitySet="tbl_offerRide" />
+            <End Role="tbl_book" EntitySet="tbl_book" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_book_tbl_profile" Association="Self.FK_tbl_book_tbl_profile">
+            <End Role="tbl_profile" EntitySet="tbl_profile" />
+            <End Role="tbl_book" EntitySet="tbl_book" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_chat_tbl_profile" Association="Self.FK_tbl_chat_tbl_profile">
+            <End Role="tbl_profile" EntitySet="tbl_profile" />
+            <End Role="tbl_chat" EntitySet="tbl_chat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_chatDetails_tbl_chat" Association="Self.FK_tbl_chatDetails_tbl_chat">
+            <End Role="tbl_chat" EntitySet="tbl_chat" />
+            <End Role="tbl_chatDetails" EntitySet="tbl_chatDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_chatDetails_tbl_profile" Association="Self.FK_tbl_chatDetails_tbl_profile">
+            <End Role="tbl_profile" EntitySet="tbl_profile" />
+            <End Role="tbl_chatDetails" EntitySet="tbl_chatDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_companyDetail_tbl_company" Association="Self.FK_tbl_companyDetail_tbl_company">
+            <End Role="tbl_company" EntitySet="tbl_company" />
+            <End Role="tbl_companyDetail" EntitySet="tbl_companyDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_companyDetail_tbl_profile" Association="Self.FK_tbl_companyDetail_tbl_profile">
+            <End Role="tbl_profile" EntitySet="tbl_profile" />
+            <End Role="tbl_companyDetail" EntitySet="tbl_companyDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_complaint_tbl_offerRide" Association="Self.FK_tbl_complaint_tbl_offerRide">
+            <End Role="tbl_offerRide" EntitySet="tbl_offerRide" />
+            <End Role="tbl_complaint" EntitySet="tbl_complaint" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_complaint_tbl_profile" Association="Self.FK_tbl_complaint_tbl_profile">
+            <End Role="tbl_profile" EntitySet="tbl_profile" />
+            <End Role="tbl_complaint" EntitySet="tbl_complaint" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_discountDetails_tbl_discountCode" Association="Self.FK_tbl_discountDetails_tbl_discountCode">
+            <End Role="tbl_discountCode" EntitySet="tbl_discountCode" />
+            <End Role="tbl_discountDetails" EntitySet="tbl_discountDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_discountDetails_tbl_profile" Association="Self.FK_tbl_discountDetails_tbl_profile">
+            <End Role="tbl_profile" EntitySet="tbl_profile" />
+            <End Role="tbl_discountDetails" EntitySet="tbl_discountDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_fastRide_canceled_tbl_fastRide" Association="Self.FK_tbl_fastRide_canceled_tbl_fastRide">
+            <End Role="tbl_fastRide" EntitySet="tbl_fastRide" />
+            <End Role="tbl_fastRide_canceled" EntitySet="tbl_fastRide_canceled" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_fastRide_canceled_tbl_profile" Association="Self.FK_tbl_fastRide_canceled_tbl_profile">
+            <End Role="tbl_profile" EntitySet="tbl_profile" />
+            <End Role="tbl_fastRide_canceled" EntitySet="tbl_fastRide_canceled" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_fastRide_tbl_profile" Association="Self.FK_tbl_fastRide_tbl_profile">
+            <End Role="tbl_profile" EntitySet="tbl_profile" />
+            <End Role="tbl_fastRide" EntitySet="tbl_fastRide" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_fastRideDetails_tbl_fastRide" Association="Self.FK_tbl_fastRideDetails_tbl_fastRide">
+            <End Role="tbl_fastRide" EntitySet="tbl_fastRide" />
+            <End Role="tbl_fastRideDetails" EntitySet="tbl_fastRideDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_fastRideDetails_tbl_profile" Association="Self.FK_tbl_fastRideDetails_tbl_profile">
+            <End Role="tbl_profile" EntitySet="tbl_profile" />
+            <End Role="tbl_fastRideDetails" EntitySet="tbl_fastRideDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_fastRideDetails_tbl_vehicle" Association="Self.FK_tbl_fastRideDetails_tbl_vehicle">
+            <End Role="tbl_vehicle" EntitySet="tbl_vehicle" />
+            <End Role="tbl_fastRideDetails" EntitySet="tbl_fastRideDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_fastTrack_tbl_profile" Association="Self.FK_tbl_fastTrack_tbl_profile">
+            <End Role="tbl_profile" EntitySet="tbl_profile" />
+            <End Role="tbl_fastTrack" EntitySet="tbl_fastTrack" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_fastTrack_tbl_vehicle" Association="Self.FK_tbl_fastTrack_tbl_vehicle">
+            <End Role="tbl_vehicle" EntitySet="tbl_vehicle" />
+            <End Role="tbl_fastTrack" EntitySet="tbl_fastTrack" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_fastTransDetails_tbl_WalletTransaction" Association="Self.FK_tbl_fastTransDetails_tbl_WalletTransaction">
+            <End Role="tbl_WalletTransaction" EntitySet="tbl_WalletTransaction" />
+            <End Role="tbl_fastTransDetails" EntitySet="tbl_fastTransDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_fastUserRating_tbl_fastRide" Association="Self.FK_tbl_fastUserRating_tbl_fastRide">
+            <End Role="tbl_fastRide" EntitySet="tbl_fastRide" />
+            <End Role="tbl_fastUserRating" EntitySet="tbl_fastUserRating" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_governmentDetail_tbl_company" Association="Self.FK_tbl_governmentDetail_tbl_company">
+            <End Role="tbl_company" EntitySet="tbl_company" />
+            <End Role="tbl_governmentDetail" EntitySet="tbl_governmentDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_governmentDetail_tbl_government" Association="Self.FK_tbl_governmentDetail_tbl_government">
+            <End Role="tbl_government" EntitySet="tbl_government" />
+            <End Role="tbl_governmentDetail" EntitySet="tbl_governmentDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_offerRide_tbl_profile" Association="Self.FK_tbl_offerRide_tbl_profile">
+            <End Role="tbl_profile" EntitySet="tbl_profile" />
+            <End Role="tbl_offerRide" EntitySet="tbl_offerRide" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_offerRide_tbl_vehicle" Association="Self.FK_tbl_offerRide_tbl_vehicle">
+            <End Role="tbl_vehicle" EntitySet="tbl_vehicle" />
+            <End Role="tbl_offerRide" EntitySet="tbl_offerRide" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_userComesFrom_tbl_profile" Association="Self.FK_tbl_userComesFrom_tbl_profile">
+            <End Role="tbl_profile" EntitySet="tbl_profile" />
+            <End Role="tbl_userComesFrom" EntitySet="tbl_userComesFrom" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_vehicle_tbl_profile" Association="Self.FK_tbl_vehicle_tbl_profile">
+            <End Role="tbl_profile" EntitySet="tbl_profile" />
+            <End Role="tbl_vehicle" EntitySet="tbl_vehicle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_WalletTransaction_tbl_profile" Association="Self.FK_tbl_WalletTransaction_tbl_profile">
+            <End Role="tbl_profile" EntitySet="tbl_profile" />
+            <End Role="tbl_WalletTransaction" EntitySet="tbl_WalletTransaction" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PN_Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="PN_Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_accountDetail" EntityType="PN_Model.tbl_accountDetail" />
+          <EntitySet Name="tbl_admin" EntityType="PN_Model.tbl_admin" />
+          <EntitySet Name="tbl_adminBank" EntityType="PN_Model.tbl_adminBank" />
+          <EntitySet Name="tbl_adminTransaction" EntityType="PN_Model.tbl_adminTransaction" />
+          <EntitySet Name="tbl_autoCharges" EntityType="PN_Model.tbl_autoCharges" />
+          <EntitySet Name="tbl_book" EntityType="PN_Model.tbl_book" />
+          <EntitySet Name="tbl_chat" EntityType="PN_Model.tbl_chat" />
+          <EntitySet Name="tbl_chatDetails" EntityType="PN_Model.tbl_chatDetails" />
+          <EntitySet Name="tbl_cities" EntityType="PN_Model.tbl_cities" />
+          <EntitySet Name="tbl_commissionFee" EntityType="PN_Model.tbl_commissionFee" />
+          <EntitySet Name="tbl_company" EntityType="PN_Model.tbl_company" />
+          <EntitySet Name="tbl_companyDetail" EntityType="PN_Model.tbl_companyDetail" />
+          <EntitySet Name="tbl_complaint" EntityType="PN_Model.tbl_complaint" />
+          <EntitySet Name="tbl_discountCode" EntityType="PN_Model.tbl_discountCode" />
+          <EntitySet Name="tbl_discountDetails" EntityType="PN_Model.tbl_discountDetails" />
+          <EntitySet Name="tbl_fastRide" EntityType="PN_Model.tbl_fastRide" />
+          <EntitySet Name="tbl_fastRide_canceled" EntityType="PN_Model.tbl_fastRide_canceled" />
+          <EntitySet Name="tbl_fastRideDetails" EntityType="PN_Model.tbl_fastRideDetails" />
+          <EntitySet Name="tbl_fastTrack" EntityType="PN_Model.tbl_fastTrack" />
+          <EntitySet Name="tbl_fastTransDetails" EntityType="PN_Model.tbl_fastTransDetails" />
+          <EntitySet Name="tbl_fastUserRating" EntityType="PN_Model.tbl_fastUserRating" />
+          <EntitySet Name="tbl_general" EntityType="PN_Model.tbl_general" />
+          <EntitySet Name="tbl_government" EntityType="PN_Model.tbl_government" />
+          <EntitySet Name="tbl_governmentDetail" EntityType="PN_Model.tbl_governmentDetail" />
+          <EntitySet Name="tbl_kmCharges" EntityType="PN_Model.tbl_kmCharges" />
+          <EntitySet Name="tbl_Notification" EntityType="PN_Model.tbl_Notification" />
+          <EntitySet Name="tbl_offerRide" EntityType="PN_Model.tbl_offerRide" />
+          <EntitySet Name="tbl_profile" EntityType="PN_Model.tbl_profile" />
+          <EntitySet Name="tbl_transDetails" EntityType="PN_Model.tbl_transDetails" />
+          <EntitySet Name="tbl_userComesFrom" EntityType="PN_Model.tbl_userComesFrom" />
+          <EntitySet Name="tbl_userRating" EntityType="PN_Model.tbl_userRating" />
+          <EntitySet Name="tbl_vehicle" EntityType="PN_Model.tbl_vehicle" />
+          <EntitySet Name="tbl_vehicleBrands" EntityType="PN_Model.tbl_vehicleBrands" />
+          <EntitySet Name="tbl_vehicleColors" EntityType="PN_Model.tbl_vehicleColors" />
+          <EntitySet Name="tbl_vehicleTypes" EntityType="PN_Model.tbl_vehicleTypes" />
+          <EntitySet Name="tbl_WalletTransaction" EntityType="PN_Model.tbl_WalletTransaction" />
+          <AssociationSet Name="FK_tbl_accountDetail_tbl_profile" Association="PN_Model.FK_tbl_accountDetail_tbl_profile">
+            <End Role="tbl_profile" EntitySet="tbl_profile" />
+            <End Role="tbl_accountDetail" EntitySet="tbl_accountDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_adminTransaction_tbl_profile" Association="PN_Model.FK_tbl_adminTransaction_tbl_profile">
+            <End Role="tbl_profile" EntitySet="tbl_profile" />
+            <End Role="tbl_adminTransaction" EntitySet="tbl_adminTransaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_autoCharges_tbl_cities" Association="PN_Model.FK_tbl_autoCharges_tbl_cities">
+            <End Role="tbl_cities" EntitySet="tbl_cities" />
+            <End Role="tbl_autoCharges" EntitySet="tbl_autoCharges" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_autoCharges_tbl_cities1" Association="PN_Model.FK_tbl_autoCharges_tbl_cities1">
+            <End Role="tbl_cities" EntitySet="tbl_cities" />
+            <End Role="tbl_autoCharges" EntitySet="tbl_autoCharges" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_book_tbl_offerRide" Association="PN_Model.FK_tbl_book_tbl_offerRide">
+            <End Role="tbl_offerRide" EntitySet="tbl_offerRide" />
+            <End Role="tbl_book" EntitySet="tbl_book" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_book_tbl_profile" Association="PN_Model.FK_tbl_book_tbl_profile">
+            <End Role="tbl_profile" EntitySet="tbl_profile" />
+            <End Role="tbl_book" EntitySet="tbl_book" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_chat_tbl_profile" Association="PN_Model.FK_tbl_chat_tbl_profile">
+            <End Role="tbl_profile" EntitySet="tbl_profile" />
+            <End Role="tbl_chat" EntitySet="tbl_chat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_chatDetails_tbl_chat" Association="PN_Model.FK_tbl_chatDetails_tbl_chat">
+            <End Role="tbl_chat" EntitySet="tbl_chat" />
+            <End Role="tbl_chatDetails" EntitySet="tbl_chatDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_chatDetails_tbl_profile" Association="PN_Model.FK_tbl_chatDetails_tbl_profile">
+            <End Role="tbl_profile" EntitySet="tbl_profile" />
+            <End Role="tbl_chatDetails" EntitySet="tbl_chatDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_companyDetail_tbl_company" Association="PN_Model.FK_tbl_companyDetail_tbl_company">
+            <End Role="tbl_company" EntitySet="tbl_company" />
+            <End Role="tbl_companyDetail" EntitySet="tbl_companyDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_governmentDetail_tbl_company" Association="PN_Model.FK_tbl_governmentDetail_tbl_company">
+            <End Role="tbl_company" EntitySet="tbl_company" />
+            <End Role="tbl_governmentDetail" EntitySet="tbl_governmentDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_companyDetail_tbl_profile" Association="PN_Model.FK_tbl_companyDetail_tbl_profile">
+            <End Role="tbl_profile" EntitySet="tbl_profile" />
+            <End Role="tbl_companyDetail" EntitySet="tbl_companyDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_complaint_tbl_offerRide" Association="PN_Model.FK_tbl_complaint_tbl_offerRide">
+            <End Role="tbl_offerRide" EntitySet="tbl_offerRide" />
+            <End Role="tbl_complaint" EntitySet="tbl_complaint" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_complaint_tbl_profile" Association="PN_Model.FK_tbl_complaint_tbl_profile">
+            <End Role="tbl_profile" EntitySet="tbl_profile" />
+            <End Role="tbl_complaint" EntitySet="tbl_complaint" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_discountDetails_tbl_discountCode" Association="PN_Model.FK_tbl_discountDetails_tbl_discountCode">
+            <End Role="tbl_discountCode" EntitySet="tbl_discountCode" />
+            <End Role="tbl_discountDetails" EntitySet="tbl_discountDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_discountDetails_tbl_profile" Association="PN_Model.FK_tbl_discountDetails_tbl_profile">
+            <End Role="tbl_profile" EntitySet="tbl_profile" />
+            <End Role="tbl_discountDetails" EntitySet="tbl_discountDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_fastRide_canceled_tbl_fastRide" Association="PN_Model.FK_tbl_fastRide_canceled_tbl_fastRide">
+            <End Role="tbl_fastRide" EntitySet="tbl_fastRide" />
+            <End Role="tbl_fastRide_canceled" EntitySet="tbl_fastRide_canceled" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_fastRide_tbl_profile" Association="PN_Model.FK_tbl_fastRide_tbl_profile">
+            <End Role="tbl_profile" EntitySet="tbl_profile" />
+            <End Role="tbl_fastRide" EntitySet="tbl_fastRide" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_fastRideDetails_tbl_fastRide" Association="PN_Model.FK_tbl_fastRideDetails_tbl_fastRide">
+            <End Role="tbl_fastRide" EntitySet="tbl_fastRide" />
+            <End Role="tbl_fastRideDetails" EntitySet="tbl_fastRideDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_fastUserRating_tbl_fastRide" Association="PN_Model.FK_tbl_fastUserRating_tbl_fastRide">
+            <End Role="tbl_fastRide" EntitySet="tbl_fastRide" />
+            <End Role="tbl_fastUserRating" EntitySet="tbl_fastUserRating" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_fastRide_canceled_tbl_profile" Association="PN_Model.FK_tbl_fastRide_canceled_tbl_profile">
+            <End Role="tbl_profile" EntitySet="tbl_profile" />
+            <End Role="tbl_fastRide_canceled" EntitySet="tbl_fastRide_canceled" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_fastRideDetails_tbl_profile" Association="PN_Model.FK_tbl_fastRideDetails_tbl_profile">
+            <End Role="tbl_profile" EntitySet="tbl_profile" />
+            <End Role="tbl_fastRideDetails" EntitySet="tbl_fastRideDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_fastRideDetails_tbl_vehicle" Association="PN_Model.FK_tbl_fastRideDetails_tbl_vehicle">
+            <End Role="tbl_vehicle" EntitySet="tbl_vehicle" />
+            <End Role="tbl_fastRideDetails" EntitySet="tbl_fastRideDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_fastTrack_tbl_profile" Association="PN_Model.FK_tbl_fastTrack_tbl_profile">
+            <End Role="tbl_profile" EntitySet="tbl_profile" />
+            <End Role="tbl_fastTrack" EntitySet="tbl_fastTrack" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_fastTrack_tbl_vehicle" Association="PN_Model.FK_tbl_fastTrack_tbl_vehicle">
+            <End Role="tbl_vehicle" EntitySet="tbl_vehicle" />
+            <End Role="tbl_fastTrack" EntitySet="tbl_fastTrack" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_fastTransDetails_tbl_WalletTransaction" Association="PN_Model.FK_tbl_fastTransDetails_tbl_WalletTransaction">
+            <End Role="tbl_WalletTransaction" EntitySet="tbl_WalletTransaction" />
+            <End Role="tbl_fastTransDetails" EntitySet="tbl_fastTransDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_governmentDetail_tbl_government" Association="PN_Model.FK_tbl_governmentDetail_tbl_government">
+            <End Role="tbl_government" EntitySet="tbl_government" />
+            <End Role="tbl_governmentDetail" EntitySet="tbl_governmentDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_offerRide_tbl_profile" Association="PN_Model.FK_tbl_offerRide_tbl_profile">
+            <End Role="tbl_profile" EntitySet="tbl_profile" />
+            <End Role="tbl_offerRide" EntitySet="tbl_offerRide" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_offerRide_tbl_vehicle" Association="PN_Model.FK_tbl_offerRide_tbl_vehicle">
+            <End Role="tbl_vehicle" EntitySet="tbl_vehicle" />
+            <End Role="tbl_offerRide" EntitySet="tbl_offerRide" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_userComesFrom_tbl_profile" Association="PN_Model.FK_tbl_userComesFrom_tbl_profile">
+            <End Role="tbl_profile" EntitySet="tbl_profile" />
+            <End Role="tbl_userComesFrom" EntitySet="tbl_userComesFrom" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_vehicle_tbl_profile" Association="PN_Model.FK_tbl_vehicle_tbl_profile">
+            <End Role="tbl_profile" EntitySet="tbl_profile" />
+            <End Role="tbl_vehicle" EntitySet="tbl_vehicle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_WalletTransaction_tbl_profile" Association="PN_Model.FK_tbl_WalletTransaction_tbl_profile">
+            <End Role="tbl_profile" EntitySet="tbl_profile" />
+            <End Role="tbl_WalletTransaction" EntitySet="tbl_WalletTransaction" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="tbl_accountDetail">
+          <Key>
+            <PropertyRef Name="AccountDetail_ID" />
+          </Key>
+          <Property Name="AccountDetail_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="accountNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="bankName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="shabaNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="accountHolder" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tbl_profile" Relationship="PN_Model.FK_tbl_accountDetail_tbl_profile" FromRole="tbl_accountDetail" ToRole="tbl_profile" />
+        </EntityType>
+        <EntityType Name="tbl_admin">
+          <Key>
+            <PropertyRef Name="admin_id" />
+          </Key>
+          <Property Name="admin_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_adminBank">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="amount" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="userType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="offerRide_ID" Type="Int32" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="paymentStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="transaction_ID" Type="Int32" />
+          <Property Name="book_id" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tbl_adminTransaction">
+          <Key>
+            <PropertyRef Name="transaction_ID" />
+          </Key>
+          <Property Name="transaction_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="Int32" />
+          <Property Name="type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="transaction_Title" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="transaction_datetime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="receivedCommission" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Debit" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Credit" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Balance" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_profile" Relationship="PN_Model.FK_tbl_adminTransaction_tbl_profile" FromRole="tbl_adminTransaction" ToRole="tbl_profile" />
+        </EntityType>
+        <EntityType Name="tbl_autoCharges">
+          <Key>
+            <PropertyRef Name="chargesID" />
+          </Key>
+          <Property Name="chargesID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="from_city" Type="Int32" Nullable="false" />
+          <Property Name="to_city" Type="Int32" Nullable="false" />
+          <Property Name="charges" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VehicleTypeIsNormal" Type="Boolean" />
+          <Property Name="createdAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="updatedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tbl_cities" Relationship="PN_Model.FK_tbl_autoCharges_tbl_cities" FromRole="tbl_autoCharges" ToRole="tbl_cities" />
+          <NavigationProperty Name="tbl_cities1" Relationship="PN_Model.FK_tbl_autoCharges_tbl_cities1" FromRole="tbl_autoCharges" ToRole="tbl_cities" />
+        </EntityType>
+        <EntityType Name="tbl_book">
+          <Key>
+            <PropertyRef Name="book_id" />
+          </Key>
+          <Property Name="book_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="offerRide_ID" Type="Int32" Nullable="false" />
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="status" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="datetime" Type="DateTime" Precision="3" />
+          <Property Name="passengerCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tbl_offerRide" Relationship="PN_Model.FK_tbl_book_tbl_offerRide" FromRole="tbl_book" ToRole="tbl_offerRide" />
+          <NavigationProperty Name="tbl_profile" Relationship="PN_Model.FK_tbl_book_tbl_profile" FromRole="tbl_book" ToRole="tbl_profile" />
+        </EntityType>
+        <EntityType Name="tbl_chat">
+          <Key>
+            <PropertyRef Name="chat_ID" />
+          </Key>
+          <Property Name="chat_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="offerRide_ID" Type="Int32" Nullable="false" />
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="userType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createdAt" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="tbl_profile" Relationship="PN_Model.FK_tbl_chat_tbl_profile" FromRole="tbl_chat" ToRole="tbl_profile" />
+          <NavigationProperty Name="tbl_chatDetails" Relationship="PN_Model.FK_tbl_chatDetails_tbl_chat" FromRole="tbl_chat" ToRole="tbl_chatDetails" />
+        </EntityType>
+        <EntityType Name="tbl_chatDetails">
+          <Key>
+            <PropertyRef Name="chatDetail_id" />
+          </Key>
+          <Property Name="chatDetail_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="chat_ID" Type="Int32" Nullable="false" />
+          <Property Name="message" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="createdAt" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="tbl_chat" Relationship="PN_Model.FK_tbl_chatDetails_tbl_chat" FromRole="tbl_chatDetails" ToRole="tbl_chat" />
+          <NavigationProperty Name="tbl_profile" Relationship="PN_Model.FK_tbl_chatDetails_tbl_profile" FromRole="tbl_chatDetails" ToRole="tbl_profile" />
+        </EntityType>
+        <EntityType Name="tbl_cities">
+          <Key>
+            <PropertyRef Name="cityID" />
+          </Key>
+          <Property Name="cityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cityName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createdAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="updatedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tbl_autoCharges" Relationship="PN_Model.FK_tbl_autoCharges_tbl_cities" FromRole="tbl_cities" ToRole="tbl_autoCharges" />
+          <NavigationProperty Name="tbl_autoCharges1" Relationship="PN_Model.FK_tbl_autoCharges_tbl_cities1" FromRole="tbl_cities" ToRole="tbl_autoCharges" />
+        </EntityType>
+        <EntityType Name="tbl_commissionFee">
+          <Key>
+            <PropertyRef Name="FeeID" />
+          </Key>
+          <Property Name="FeeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="driversFee" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="persianPassengerFee" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="foreignPassengerFee" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="minFastInBalance" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createdAt" Type="DateTime" Precision="3" />
+          <Property Name="updatedAt" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_company">
+          <Key>
+            <PropertyRef Name="company_id" />
+          </Key>
+          <Property Name="company_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="company_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="phoneNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="comeFrom" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ceoID_path" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="permissions_path" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="companyCertificate_path" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="isConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="createdAt" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="tbl_companyDetail" Relationship="PN_Model.FK_tbl_companyDetail_tbl_company" FromRole="tbl_company" ToRole="tbl_companyDetail" />
+          <NavigationProperty Name="tbl_governmentDetail" Relationship="PN_Model.FK_tbl_governmentDetail_tbl_company" FromRole="tbl_company" ToRole="tbl_governmentDetail" />
+        </EntityType>
+        <EntityType Name="tbl_companyDetail">
+          <Key>
+            <PropertyRef Name="companyDetail_id" />
+          </Key>
+          <Property Name="companyDetail_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="company_id" Type="Int32" Nullable="false" />
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tbl_company" Relationship="PN_Model.FK_tbl_companyDetail_tbl_company" FromRole="tbl_companyDetail" ToRole="tbl_company" />
+          <NavigationProperty Name="tbl_profile" Relationship="PN_Model.FK_tbl_companyDetail_tbl_profile" FromRole="tbl_companyDetail" ToRole="tbl_profile" />
+        </EntityType>
+        <EntityType Name="tbl_complaint">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="offerRide_ID" Type="Int32" Nullable="false" />
+          <Property Name="message" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="datetime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tbl_offerRide" Relationship="PN_Model.FK_tbl_complaint_tbl_offerRide" FromRole="tbl_complaint" ToRole="tbl_offerRide" />
+          <NavigationProperty Name="tbl_profile" Relationship="PN_Model.FK_tbl_complaint_tbl_profile" FromRole="tbl_complaint" ToRole="tbl_profile" />
+        </EntityType>
+        <EntityType Name="tbl_discountCode">
+          <Key>
+            <PropertyRef Name="discountID" />
+          </Key>
+          <Property Name="discountID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="discountFee" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="discountCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="availableNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="expireDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="createdAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="updatedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tbl_discountDetails" Relationship="PN_Model.FK_tbl_discountDetails_tbl_discountCode" FromRole="tbl_discountCode" ToRole="tbl_discountDetails" />
+        </EntityType>
+        <EntityType Name="tbl_discountDetails">
+          <Key>
+            <PropertyRef Name="discountDetailsID" />
+          </Key>
+          <Property Name="discountDetailsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="discountID" Type="Int32" Nullable="false" />
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tbl_discountCode" Relationship="PN_Model.FK_tbl_discountDetails_tbl_discountCode" FromRole="tbl_discountDetails" ToRole="tbl_discountCode" />
+          <NavigationProperty Name="tbl_profile" Relationship="PN_Model.FK_tbl_discountDetails_tbl_profile" FromRole="tbl_discountDetails" ToRole="tbl_profile" />
+        </EntityType>
+        <EntityType Name="tbl_fastRide">
+          <Key>
+            <PropertyRef Name="fastRide_ID" />
+          </Key>
+          <Property Name="fastRide_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="from_place" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="to_place" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="from_place_persian" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="to_place_persian" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="statusType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LatLong" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createdAt" Type="DateTime" Precision="3" />
+          <Property Name="vehicleType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="VehicleTypeIsNormal" Type="Boolean" />
+          <Property Name="from_LatLong" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="to_LatLong" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_fastRide_canceled" Relationship="PN_Model.FK_tbl_fastRide_canceled_tbl_fastRide" FromRole="tbl_fastRide" ToRole="tbl_fastRide_canceled" />
+          <NavigationProperty Name="tbl_profile" Relationship="PN_Model.FK_tbl_fastRide_tbl_profile" FromRole="tbl_fastRide" ToRole="tbl_profile" />
+          <NavigationProperty Name="tbl_fastRideDetails" Relationship="PN_Model.FK_tbl_fastRideDetails_tbl_fastRide" FromRole="tbl_fastRide" ToRole="tbl_fastRideDetails" />
+          <NavigationProperty Name="tbl_fastUserRating" Relationship="PN_Model.FK_tbl_fastUserRating_tbl_fastRide" FromRole="tbl_fastRide" ToRole="tbl_fastUserRating" />
+        </EntityType>
+        <EntityType Name="tbl_fastRide_canceled">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fastRide_ID" Type="Int32" Nullable="false" />
+          <Property Name="driver_id" Type="Int32" Nullable="false" />
+          <Property Name="createdAt" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="tbl_fastRide" Relationship="PN_Model.FK_tbl_fastRide_canceled_tbl_fastRide" FromRole="tbl_fastRide_canceled" ToRole="tbl_fastRide" />
+          <NavigationProperty Name="tbl_profile" Relationship="PN_Model.FK_tbl_fastRide_canceled_tbl_profile" FromRole="tbl_fastRide_canceled" ToRole="tbl_profile" />
+        </EntityType>
+        <EntityType Name="tbl_fastRideDetails">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fastRide_ID" Type="Int32" Nullable="false" />
+          <Property Name="driver_id" Type="Int32" Nullable="false" />
+          <Property Name="vehicle_id" Type="Int32" Nullable="false" />
+          <Property Name="startAt" Type="DateTime" Precision="3" />
+          <Property Name="endAt" Type="DateTime" Precision="3" />
+          <Property Name="startLatLong" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="endLatLong" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="price" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PayBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_fastRide" Relationship="PN_Model.FK_tbl_fastRideDetails_tbl_fastRide" FromRole="tbl_fastRideDetails" ToRole="tbl_fastRide" />
+          <NavigationProperty Name="tbl_profile" Relationship="PN_Model.FK_tbl_fastRideDetails_tbl_profile" FromRole="tbl_fastRideDetails" ToRole="tbl_profile" />
+          <NavigationProperty Name="tbl_vehicle" Relationship="PN_Model.FK_tbl_fastRideDetails_tbl_vehicle" FromRole="tbl_fastRideDetails" ToRole="tbl_vehicle" />
+        </EntityType>
+        <EntityType Name="tbl_fastTrack">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="userType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="InDatetime" Type="DateTime" Precision="3" />
+          <Property Name="OutDatetime" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LatLong" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="vehicle_id" Type="Int32" />
+          <Property Name="cityName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cityName_persian" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tbl_profile" Relationship="PN_Model.FK_tbl_fastTrack_tbl_profile" FromRole="tbl_fastTrack" ToRole="tbl_profile" />
+          <NavigationProperty Name="tbl_vehicle" Relationship="PN_Model.FK_tbl_fastTrack_tbl_vehicle" FromRole="tbl_fastTrack" ToRole="tbl_vehicle" />
+        </EntityType>
+        <EntityType Name="tbl_fastTransDetails">
+          <Key>
+            <PropertyRef Name="transDetail_ID" />
+          </Key>
+          <Property Name="transDetail_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="transaction_ID" Type="Int32" Nullable="false" />
+          <Property Name="fastRide_ID" Type="Int32" Nullable="false" />
+          <Property Name="userType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="amount" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="KarenroDetect" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="total" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_WalletTransaction" Relationship="PN_Model.FK_tbl_fastTransDetails_tbl_WalletTransaction" FromRole="tbl_fastTransDetails" ToRole="tbl_WalletTransaction" />
+        </EntityType>
+        <EntityType Name="tbl_fastUserRating">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ratingCount" Type="Int32" Nullable="false" />
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="rate_user_id" Type="Int32" Nullable="false" />
+          <Property Name="rateDatetime" Type="DateTime" Precision="3" />
+          <Property Name="fastRide_ID" Type="Int32" />
+          <NavigationProperty Name="tbl_fastRide" Relationship="PN_Model.FK_tbl_fastUserRating_tbl_fastRide" FromRole="tbl_fastUserRating" ToRole="tbl_fastRide" />
+        </EntityType>
+        <EntityType Name="tbl_general">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="percentDetect" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="passengerDetect" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fastTrackAmount" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="perKM" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="hostAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="termConditionPath" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="aboutPath" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="privacyPolicyPath" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_government">
+          <Key>
+            <PropertyRef Name="government_id" />
+          </Key>
+          <Property Name="government_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="government_code" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createdAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="updatedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tbl_governmentDetail" Relationship="PN_Model.FK_tbl_governmentDetail_tbl_government" FromRole="tbl_government" ToRole="tbl_governmentDetail" />
+        </EntityType>
+        <EntityType Name="tbl_governmentDetail">
+          <Key>
+            <PropertyRef Name="govDetail_id" />
+          </Key>
+          <Property Name="govDetail_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="government_id" Type="Int32" Nullable="false" />
+          <Property Name="company_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tbl_company" Relationship="PN_Model.FK_tbl_governmentDetail_tbl_company" FromRole="tbl_governmentDetail" ToRole="tbl_company" />
+          <NavigationProperty Name="tbl_government" Relationship="PN_Model.FK_tbl_governmentDetail_tbl_government" FromRole="tbl_governmentDetail" ToRole="tbl_government" />
+        </EntityType>
+        <EntityType Name="tbl_kmCharges">
+          <Key>
+            <PropertyRef Name="chargesID" />
+          </Key>
+          <Property Name="chargesID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="charges" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VehicleTypeIsNormal" Type="Boolean" Nullable="false" />
+          <Property Name="createdAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="updatedAt" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_Notification">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="notification_user_id" Type="Int32" Nullable="false" />
+          <Property Name="message" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="notificationDatetime" Type="DateTime" Precision="3" />
+          <Property Name="isDeleted" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tbl_offerRide">
+          <Key>
+            <PropertyRef Name="offerRide_ID" />
+          </Key>
+          <Property Name="offerRide_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="vehicle_id" Type="Int32" />
+          <Property Name="from_place" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="to_place" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="from_place_persian" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="to_place_persian" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="datetime" Type="DateTime" Precision="3" />
+          <Property Name="vehicle_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="no_seats" Type="Int32" />
+          <Property Name="middleSeat" Type="Boolean" Nullable="false" />
+          <Property Name="charter" Type="Boolean" />
+          <Property Name="ride_comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="price" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Boolean" />
+          <Property Name="statusType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Cigarette" Type="Boolean" />
+          <Property Name="Music" Type="Boolean" />
+          <Property Name="AC" Type="Boolean" />
+          <Property Name="complaint" Type="Boolean" />
+          <Property Name="createdAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="from_latlong" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="to_latlong" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="isAllowFemale" Type="Boolean" />
+          <NavigationProperty Name="tbl_book" Relationship="PN_Model.FK_tbl_book_tbl_offerRide" FromRole="tbl_offerRide" ToRole="tbl_book" />
+          <NavigationProperty Name="tbl_complaint" Relationship="PN_Model.FK_tbl_complaint_tbl_offerRide" FromRole="tbl_offerRide" ToRole="tbl_complaint" />
+          <NavigationProperty Name="tbl_profile" Relationship="PN_Model.FK_tbl_offerRide_tbl_profile" FromRole="tbl_offerRide" ToRole="tbl_profile" />
+          <NavigationProperty Name="tbl_vehicle" Relationship="PN_Model.FK_tbl_offerRide_tbl_vehicle" FromRole="tbl_offerRide" ToRole="tbl_vehicle" />
+        </EntityType>
+        <EntityType Name="tbl_profile">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="full_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="birthday" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="profile_pic" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="gender" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="approved" Type="Boolean" />
+          <Property Name="deviceToken" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="createdAt" Type="DateTime" Precision="3" />
+          <Property Name="forgetPasswordToken" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="cnic_frant" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="cnic_back" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="latLong" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_accountDetail" Relationship="PN_Model.FK_tbl_accountDetail_tbl_profile" FromRole="tbl_profile" ToRole="tbl_accountDetail" />
+          <NavigationProperty Name="tbl_adminTransaction" Relationship="PN_Model.FK_tbl_adminTransaction_tbl_profile" FromRole="tbl_profile" ToRole="tbl_adminTransaction" />
+          <NavigationProperty Name="tbl_book" Relationship="PN_Model.FK_tbl_book_tbl_profile" FromRole="tbl_profile" ToRole="tbl_book" />
+          <NavigationProperty Name="tbl_chat" Relationship="PN_Model.FK_tbl_chat_tbl_profile" FromRole="tbl_profile" ToRole="tbl_chat" />
+          <NavigationProperty Name="tbl_chatDetails" Relationship="PN_Model.FK_tbl_chatDetails_tbl_profile" FromRole="tbl_profile" ToRole="tbl_chatDetails" />
+          <NavigationProperty Name="tbl_companyDetail" Relationship="PN_Model.FK_tbl_companyDetail_tbl_profile" FromRole="tbl_profile" ToRole="tbl_companyDetail" />
+          <NavigationProperty Name="tbl_complaint" Relationship="PN_Model.FK_tbl_complaint_tbl_profile" FromRole="tbl_profile" ToRole="tbl_complaint" />
+          <NavigationProperty Name="tbl_discountDetails" Relationship="PN_Model.FK_tbl_discountDetails_tbl_profile" FromRole="tbl_profile" ToRole="tbl_discountDetails" />
+          <NavigationProperty Name="tbl_fastRide" Relationship="PN_Model.FK_tbl_fastRide_tbl_profile" FromRole="tbl_profile" ToRole="tbl_fastRide" />
+          <NavigationProperty Name="tbl_fastRide_canceled" Relationship="PN_Model.FK_tbl_fastRide_canceled_tbl_profile" FromRole="tbl_profile" ToRole="tbl_fastRide_canceled" />
+          <NavigationProperty Name="tbl_fastRideDetails" Relationship="PN_Model.FK_tbl_fastRideDetails_tbl_profile" FromRole="tbl_profile" ToRole="tbl_fastRideDetails" />
+          <NavigationProperty Name="tbl_fastTrack" Relationship="PN_Model.FK_tbl_fastTrack_tbl_profile" FromRole="tbl_profile" ToRole="tbl_fastTrack" />
+          <NavigationProperty Name="tbl_offerRide" Relationship="PN_Model.FK_tbl_offerRide_tbl_profile" FromRole="tbl_profile" ToRole="tbl_offerRide" />
+          <NavigationProperty Name="tbl_userComesFrom" Relationship="PN_Model.FK_tbl_userComesFrom_tbl_profile" FromRole="tbl_profile" ToRole="tbl_userComesFrom" />
+          <NavigationProperty Name="tbl_vehicle" Relationship="PN_Model.FK_tbl_vehicle_tbl_profile" FromRole="tbl_profile" ToRole="tbl_vehicle" />
+          <NavigationProperty Name="tbl_WalletTransaction" Relationship="PN_Model.FK_tbl_WalletTransaction_tbl_profile" FromRole="tbl_profile" ToRole="tbl_WalletTransaction" />
+        </EntityType>
+        <EntityType Name="tbl_transDetails">
+          <Key>
+            <PropertyRef Name="transDetail_ID" />
+          </Key>
+          <Property Name="transDetail_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="transaction_ID" Type="Int32" Nullable="false" />
+          <Property Name="offerRide_ID" Type="Int32" Nullable="false" />
+          <Property Name="userType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="amount" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="KarenroDetect" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="total" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_userComesFrom">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="company_id" Type="Int32" />
+          <Property Name="individual" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tbl_profile" Relationship="PN_Model.FK_tbl_userComesFrom_tbl_profile" FromRole="tbl_userComesFrom" ToRole="tbl_profile" />
+        </EntityType>
+        <EntityType Name="tbl_userRating">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ratingCount" Type="Int32" Nullable="false" />
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="rate_user_id" Type="Int32" Nullable="false" />
+          <Property Name="rateDatetime" Type="DateTime" Precision="3" />
+          <Property Name="offerRide_ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tbl_vehicle">
+          <Key>
+            <PropertyRef Name="vehicle_id" />
+          </Key>
+          <Property Name="vehicle_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="brand" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="model" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="color" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="plateNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="approved" Type="Boolean" Nullable="false" />
+          <Property Name="carPhoto" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="carLicense" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="createdAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="updatedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tbl_fastRideDetails" Relationship="PN_Model.FK_tbl_fastRideDetails_tbl_vehicle" FromRole="tbl_vehicle" ToRole="tbl_fastRideDetails" />
+          <NavigationProperty Name="tbl_fastTrack" Relationship="PN_Model.FK_tbl_fastTrack_tbl_vehicle" FromRole="tbl_vehicle" ToRole="tbl_fastTrack" />
+          <NavigationProperty Name="tbl_offerRide" Relationship="PN_Model.FK_tbl_offerRide_tbl_vehicle" FromRole="tbl_vehicle" ToRole="tbl_offerRide" />
+          <NavigationProperty Name="tbl_profile" Relationship="PN_Model.FK_tbl_vehicle_tbl_profile" FromRole="tbl_vehicle" ToRole="tbl_profile" />
+        </EntityType>
+        <EntityType Name="tbl_vehicleBrands">
+          <Key>
+            <PropertyRef Name="brand_id" />
+          </Key>
+          <Property Name="brand_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="brand" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="model" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createdAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="updatedAt" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_vehicleColors">
+          <Key>
+            <PropertyRef Name="color_id" />
+          </Key>
+          <Property Name="color_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="color" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createdAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="updatedAt" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_vehicleTypes">
+          <Key>
+            <PropertyRef Name="type_id" />
+          </Key>
+          <Property Name="type_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createdAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="updatedAt" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_WalletTransaction">
+          <Key>
+            <PropertyRef Name="transaction_ID" />
+          </Key>
+          <Property Name="transaction_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="transaction_Title" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="transaction_datetime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Debit" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Credit" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Balance" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="rechargedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_fastTransDetails" Relationship="PN_Model.FK_tbl_fastTransDetails_tbl_WalletTransaction" FromRole="tbl_WalletTransaction" ToRole="tbl_fastTransDetails" />
+          <NavigationProperty Name="tbl_profile" Relationship="PN_Model.FK_tbl_WalletTransaction_tbl_profile" FromRole="tbl_WalletTransaction" ToRole="tbl_profile" />
+        </EntityType>
+        <Association Name="FK_tbl_accountDetail_tbl_profile">
+          <End Type="PN_Model.tbl_profile" Role="tbl_profile" Multiplicity="1" />
+          <End Type="PN_Model.tbl_accountDetail" Role="tbl_accountDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_profile">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="tbl_accountDetail">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_adminTransaction_tbl_profile">
+          <End Type="PN_Model.tbl_profile" Role="tbl_profile" Multiplicity="0..1" />
+          <End Type="PN_Model.tbl_adminTransaction" Role="tbl_adminTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_profile">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="tbl_adminTransaction">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_autoCharges_tbl_cities">
+          <End Type="PN_Model.tbl_cities" Role="tbl_cities" Multiplicity="1" />
+          <End Type="PN_Model.tbl_autoCharges" Role="tbl_autoCharges" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_cities">
+              <PropertyRef Name="cityID" />
+            </Principal>
+            <Dependent Role="tbl_autoCharges">
+              <PropertyRef Name="from_city" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_autoCharges_tbl_cities1">
+          <End Type="PN_Model.tbl_cities" Role="tbl_cities" Multiplicity="1" />
+          <End Type="PN_Model.tbl_autoCharges" Role="tbl_autoCharges" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_cities">
+              <PropertyRef Name="cityID" />
+            </Principal>
+            <Dependent Role="tbl_autoCharges">
+              <PropertyRef Name="to_city" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_book_tbl_offerRide">
+          <End Type="PN_Model.tbl_offerRide" Role="tbl_offerRide" Multiplicity="1" />
+          <End Type="PN_Model.tbl_book" Role="tbl_book" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_offerRide">
+              <PropertyRef Name="offerRide_ID" />
+            </Principal>
+            <Dependent Role="tbl_book">
+              <PropertyRef Name="offerRide_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_book_tbl_profile">
+          <End Type="PN_Model.tbl_profile" Role="tbl_profile" Multiplicity="1" />
+          <End Type="PN_Model.tbl_book" Role="tbl_book" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_profile">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="tbl_book">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_chat_tbl_profile">
+          <End Type="PN_Model.tbl_profile" Role="tbl_profile" Multiplicity="1" />
+          <End Type="PN_Model.tbl_chat" Role="tbl_chat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_profile">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="tbl_chat">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_chatDetails_tbl_chat">
+          <End Type="PN_Model.tbl_chat" Role="tbl_chat" Multiplicity="1" />
+          <End Type="PN_Model.tbl_chatDetails" Role="tbl_chatDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_chat">
+              <PropertyRef Name="chat_ID" />
+            </Principal>
+            <Dependent Role="tbl_chatDetails">
+              <PropertyRef Name="chat_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_chatDetails_tbl_profile">
+          <End Type="PN_Model.tbl_profile" Role="tbl_profile" Multiplicity="1" />
+          <End Type="PN_Model.tbl_chatDetails" Role="tbl_chatDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_profile">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="tbl_chatDetails">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_companyDetail_tbl_company">
+          <End Type="PN_Model.tbl_company" Role="tbl_company" Multiplicity="1" />
+          <End Type="PN_Model.tbl_companyDetail" Role="tbl_companyDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_company">
+              <PropertyRef Name="company_id" />
+            </Principal>
+            <Dependent Role="tbl_companyDetail">
+              <PropertyRef Name="company_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_governmentDetail_tbl_company">
+          <End Type="PN_Model.tbl_company" Role="tbl_company" Multiplicity="1" />
+          <End Type="PN_Model.tbl_governmentDetail" Role="tbl_governmentDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_company">
+              <PropertyRef Name="company_id" />
+            </Principal>
+            <Dependent Role="tbl_governmentDetail">
+              <PropertyRef Name="company_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_companyDetail_tbl_profile">
+          <End Type="PN_Model.tbl_profile" Role="tbl_profile" Multiplicity="1" />
+          <End Type="PN_Model.tbl_companyDetail" Role="tbl_companyDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_profile">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="tbl_companyDetail">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_complaint_tbl_offerRide">
+          <End Type="PN_Model.tbl_offerRide" Role="tbl_offerRide" Multiplicity="1" />
+          <End Type="PN_Model.tbl_complaint" Role="tbl_complaint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_offerRide">
+              <PropertyRef Name="offerRide_ID" />
+            </Principal>
+            <Dependent Role="tbl_complaint">
+              <PropertyRef Name="offerRide_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_complaint_tbl_profile">
+          <End Type="PN_Model.tbl_profile" Role="tbl_profile" Multiplicity="1" />
+          <End Type="PN_Model.tbl_complaint" Role="tbl_complaint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_profile">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="tbl_complaint">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_discountDetails_tbl_discountCode">
+          <End Type="PN_Model.tbl_discountCode" Role="tbl_discountCode" Multiplicity="1" />
+          <End Type="PN_Model.tbl_discountDetails" Role="tbl_discountDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_discountCode">
+              <PropertyRef Name="discountID" />
+            </Principal>
+            <Dependent Role="tbl_discountDetails">
+              <PropertyRef Name="discountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_discountDetails_tbl_profile">
+          <End Type="PN_Model.tbl_profile" Role="tbl_profile" Multiplicity="1" />
+          <End Type="PN_Model.tbl_discountDetails" Role="tbl_discountDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_profile">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="tbl_discountDetails">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_fastRide_canceled_tbl_fastRide">
+          <End Type="PN_Model.tbl_fastRide" Role="tbl_fastRide" Multiplicity="1" />
+          <End Type="PN_Model.tbl_fastRide_canceled" Role="tbl_fastRide_canceled" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_fastRide">
+              <PropertyRef Name="fastRide_ID" />
+            </Principal>
+            <Dependent Role="tbl_fastRide_canceled">
+              <PropertyRef Name="fastRide_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_fastRide_tbl_profile">
+          <End Type="PN_Model.tbl_profile" Role="tbl_profile" Multiplicity="1" />
+          <End Type="PN_Model.tbl_fastRide" Role="tbl_fastRide" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_profile">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="tbl_fastRide">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_fastRideDetails_tbl_fastRide">
+          <End Type="PN_Model.tbl_fastRide" Role="tbl_fastRide" Multiplicity="1" />
+          <End Type="PN_Model.tbl_fastRideDetails" Role="tbl_fastRideDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_fastRide">
+              <PropertyRef Name="fastRide_ID" />
+            </Principal>
+            <Dependent Role="tbl_fastRideDetails">
+              <PropertyRef Name="fastRide_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_fastUserRating_tbl_fastRide">
+          <End Type="PN_Model.tbl_fastRide" Role="tbl_fastRide" Multiplicity="0..1" />
+          <End Type="PN_Model.tbl_fastUserRating" Role="tbl_fastUserRating" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_fastRide">
+              <PropertyRef Name="fastRide_ID" />
+            </Principal>
+            <Dependent Role="tbl_fastUserRating">
+              <PropertyRef Name="fastRide_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_fastRide_canceled_tbl_profile">
+          <End Type="PN_Model.tbl_profile" Role="tbl_profile" Multiplicity="1" />
+          <End Type="PN_Model.tbl_fastRide_canceled" Role="tbl_fastRide_canceled" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_profile">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="tbl_fastRide_canceled">
+              <PropertyRef Name="driver_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_fastRideDetails_tbl_profile">
+          <End Type="PN_Model.tbl_profile" Role="tbl_profile" Multiplicity="1" />
+          <End Type="PN_Model.tbl_fastRideDetails" Role="tbl_fastRideDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_profile">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="tbl_fastRideDetails">
+              <PropertyRef Name="driver_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_fastRideDetails_tbl_vehicle">
+          <End Type="PN_Model.tbl_vehicle" Role="tbl_vehicle" Multiplicity="1" />
+          <End Type="PN_Model.tbl_fastRideDetails" Role="tbl_fastRideDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_vehicle">
+              <PropertyRef Name="vehicle_id" />
+            </Principal>
+            <Dependent Role="tbl_fastRideDetails">
+              <PropertyRef Name="vehicle_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_fastTrack_tbl_profile">
+          <End Type="PN_Model.tbl_profile" Role="tbl_profile" Multiplicity="1" />
+          <End Type="PN_Model.tbl_fastTrack" Role="tbl_fastTrack" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_profile">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="tbl_fastTrack">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_fastTrack_tbl_vehicle">
+          <End Type="PN_Model.tbl_vehicle" Role="tbl_vehicle" Multiplicity="0..1" />
+          <End Type="PN_Model.tbl_fastTrack" Role="tbl_fastTrack" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_vehicle">
+              <PropertyRef Name="vehicle_id" />
+            </Principal>
+            <Dependent Role="tbl_fastTrack">
+              <PropertyRef Name="vehicle_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_fastTransDetails_tbl_WalletTransaction">
+          <End Type="PN_Model.tbl_WalletTransaction" Role="tbl_WalletTransaction" Multiplicity="1" />
+          <End Type="PN_Model.tbl_fastTransDetails" Role="tbl_fastTransDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_WalletTransaction">
+              <PropertyRef Name="transaction_ID" />
+            </Principal>
+            <Dependent Role="tbl_fastTransDetails">
+              <PropertyRef Name="transaction_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_governmentDetail_tbl_government">
+          <End Type="PN_Model.tbl_government" Role="tbl_government" Multiplicity="1" />
+          <End Type="PN_Model.tbl_governmentDetail" Role="tbl_governmentDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_government">
+              <PropertyRef Name="government_id" />
+            </Principal>
+            <Dependent Role="tbl_governmentDetail">
+              <PropertyRef Name="government_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_offerRide_tbl_profile">
+          <End Type="PN_Model.tbl_profile" Role="tbl_profile" Multiplicity="1" />
+          <End Type="PN_Model.tbl_offerRide" Role="tbl_offerRide" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_profile">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="tbl_offerRide">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_offerRide_tbl_vehicle">
+          <End Type="PN_Model.tbl_vehicle" Role="tbl_vehicle" Multiplicity="0..1" />
+          <End Type="PN_Model.tbl_offerRide" Role="tbl_offerRide" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_vehicle">
+              <PropertyRef Name="vehicle_id" />
+            </Principal>
+            <Dependent Role="tbl_offerRide">
+              <PropertyRef Name="vehicle_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_userComesFrom_tbl_profile">
+          <End Type="PN_Model.tbl_profile" Role="tbl_profile" Multiplicity="1" />
+          <End Type="PN_Model.tbl_userComesFrom" Role="tbl_userComesFrom" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_profile">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="tbl_userComesFrom">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_vehicle_tbl_profile">
+          <End Type="PN_Model.tbl_profile" Role="tbl_profile" Multiplicity="1" />
+          <End Type="PN_Model.tbl_vehicle" Role="tbl_vehicle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_profile">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="tbl_vehicle">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_WalletTransaction_tbl_profile">
+          <End Type="PN_Model.tbl_profile" Role="tbl_profile" Multiplicity="1" />
+          <End Type="PN_Model.tbl_WalletTransaction" Role="tbl_WalletTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_profile">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="tbl_WalletTransaction">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PN_ModelStoreContainer" CdmEntityContainer="PN_Entities">
+          <EntitySetMapping Name="tbl_accountDetail">
+            <EntityTypeMapping TypeName="PN_Model.tbl_accountDetail">
+              <MappingFragment StoreEntitySet="tbl_accountDetail">
+                <ScalarProperty Name="accountHolder" ColumnName="accountHolder" />
+                <ScalarProperty Name="shabaNumber" ColumnName="shabaNumber" />
+                <ScalarProperty Name="bankName" ColumnName="bankName" />
+                <ScalarProperty Name="accountNumber" ColumnName="accountNumber" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="AccountDetail_ID" ColumnName="AccountDetail_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_admin">
+            <EntityTypeMapping TypeName="PN_Model.tbl_admin">
+              <MappingFragment StoreEntitySet="tbl_admin">
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="admin_id" ColumnName="admin_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_adminBank">
+            <EntityTypeMapping TypeName="PN_Model.tbl_adminBank">
+              <MappingFragment StoreEntitySet="tbl_adminBank">
+                <ScalarProperty Name="book_id" ColumnName="book_id" />
+                <ScalarProperty Name="transaction_ID" ColumnName="transaction_ID" />
+                <ScalarProperty Name="paymentStatus" ColumnName="paymentStatus" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="offerRide_ID" ColumnName="offerRide_ID" />
+                <ScalarProperty Name="userType" ColumnName="userType" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_adminTransaction">
+            <EntityTypeMapping TypeName="PN_Model.tbl_adminTransaction">
+              <MappingFragment StoreEntitySet="tbl_adminTransaction">
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="Credit" ColumnName="Credit" />
+                <ScalarProperty Name="Debit" ColumnName="Debit" />
+                <ScalarProperty Name="receivedCommission" ColumnName="receivedCommission" />
+                <ScalarProperty Name="transaction_datetime" ColumnName="transaction_datetime" />
+                <ScalarProperty Name="transaction_Title" ColumnName="transaction_Title" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="transaction_ID" ColumnName="transaction_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_autoCharges">
+            <EntityTypeMapping TypeName="PN_Model.tbl_autoCharges">
+              <MappingFragment StoreEntitySet="tbl_autoCharges">
+                <ScalarProperty Name="updatedAt" ColumnName="updatedAt" />
+                <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+                <ScalarProperty Name="VehicleTypeIsNormal" ColumnName="VehicleTypeIsNormal" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="charges" ColumnName="charges" />
+                <ScalarProperty Name="to_city" ColumnName="to_city" />
+                <ScalarProperty Name="from_city" ColumnName="from_city" />
+                <ScalarProperty Name="chargesID" ColumnName="chargesID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_book">
+            <EntityTypeMapping TypeName="PN_Model.tbl_book">
+              <MappingFragment StoreEntitySet="tbl_book">
+                <ScalarProperty Name="passengerCode" ColumnName="passengerCode" />
+                <ScalarProperty Name="datetime" ColumnName="datetime" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="offerRide_ID" ColumnName="offerRide_ID" />
+                <ScalarProperty Name="book_id" ColumnName="book_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_chat">
+            <EntityTypeMapping TypeName="PN_Model.tbl_chat">
+              <MappingFragment StoreEntitySet="tbl_chat">
+                <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+                <ScalarProperty Name="userType" ColumnName="userType" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="offerRide_ID" ColumnName="offerRide_ID" />
+                <ScalarProperty Name="chat_ID" ColumnName="chat_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_chatDetails">
+            <EntityTypeMapping TypeName="PN_Model.tbl_chatDetails">
+              <MappingFragment StoreEntitySet="tbl_chatDetails">
+                <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="message" ColumnName="message" />
+                <ScalarProperty Name="chat_ID" ColumnName="chat_ID" />
+                <ScalarProperty Name="chatDetail_id" ColumnName="chatDetail_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_cities">
+            <EntityTypeMapping TypeName="PN_Model.tbl_cities">
+              <MappingFragment StoreEntitySet="tbl_cities">
+                <ScalarProperty Name="updatedAt" ColumnName="updatedAt" />
+                <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+                <ScalarProperty Name="cityName" ColumnName="cityName" />
+                <ScalarProperty Name="cityID" ColumnName="cityID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_commissionFee">
+            <EntityTypeMapping TypeName="PN_Model.tbl_commissionFee">
+              <MappingFragment StoreEntitySet="tbl_commissionFee">
+                <ScalarProperty Name="updatedAt" ColumnName="updatedAt" />
+                <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+                <ScalarProperty Name="minFastInBalance" ColumnName="minFastInBalance" />
+                <ScalarProperty Name="foreignPassengerFee" ColumnName="foreignPassengerFee" />
+                <ScalarProperty Name="persianPassengerFee" ColumnName="persianPassengerFee" />
+                <ScalarProperty Name="driversFee" ColumnName="driversFee" />
+                <ScalarProperty Name="FeeID" ColumnName="FeeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_company">
+            <EntityTypeMapping TypeName="PN_Model.tbl_company">
+              <MappingFragment StoreEntitySet="tbl_company">
+                <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+                <ScalarProperty Name="isConfirmed" ColumnName="isConfirmed" />
+                <ScalarProperty Name="companyCertificate_path" ColumnName="companyCertificate_path" />
+                <ScalarProperty Name="permissions_path" ColumnName="permissions_path" />
+                <ScalarProperty Name="ceoID_path" ColumnName="ceoID_path" />
+                <ScalarProperty Name="comeFrom" ColumnName="comeFrom" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="company_name" ColumnName="company_name" />
+                <ScalarProperty Name="company_id" ColumnName="company_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_companyDetail">
+            <EntityTypeMapping TypeName="PN_Model.tbl_companyDetail">
+              <MappingFragment StoreEntitySet="tbl_companyDetail">
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="company_id" ColumnName="company_id" />
+                <ScalarProperty Name="companyDetail_id" ColumnName="companyDetail_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_complaint">
+            <EntityTypeMapping TypeName="PN_Model.tbl_complaint">
+              <MappingFragment StoreEntitySet="tbl_complaint">
+                <ScalarProperty Name="datetime" ColumnName="datetime" />
+                <ScalarProperty Name="message" ColumnName="message" />
+                <ScalarProperty Name="offerRide_ID" ColumnName="offerRide_ID" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_discountCode">
+            <EntityTypeMapping TypeName="PN_Model.tbl_discountCode">
+              <MappingFragment StoreEntitySet="tbl_discountCode">
+                <ScalarProperty Name="updatedAt" ColumnName="updatedAt" />
+                <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+                <ScalarProperty Name="expireDate" ColumnName="expireDate" />
+                <ScalarProperty Name="availableNumber" ColumnName="availableNumber" />
+                <ScalarProperty Name="discountCode" ColumnName="discountCode" />
+                <ScalarProperty Name="discountFee" ColumnName="discountFee" />
+                <ScalarProperty Name="discountID" ColumnName="discountID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_discountDetails">
+            <EntityTypeMapping TypeName="PN_Model.tbl_discountDetails">
+              <MappingFragment StoreEntitySet="tbl_discountDetails">
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="discountID" ColumnName="discountID" />
+                <ScalarProperty Name="discountDetailsID" ColumnName="discountDetailsID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_fastRide">
+            <EntityTypeMapping TypeName="PN_Model.tbl_fastRide">
+              <MappingFragment StoreEntitySet="tbl_fastRide">
+                <ScalarProperty Name="to_LatLong" ColumnName="to_LatLong" />
+                <ScalarProperty Name="from_LatLong" ColumnName="from_LatLong" />
+                <ScalarProperty Name="VehicleTypeIsNormal" ColumnName="VehicleTypeIsNormal" />
+                <ScalarProperty Name="vehicleType" ColumnName="vehicleType" />
+                <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+                <ScalarProperty Name="LatLong" ColumnName="LatLong" />
+                <ScalarProperty Name="statusType" ColumnName="statusType" />
+                <ScalarProperty Name="to_place_persian" ColumnName="to_place_persian" />
+                <ScalarProperty Name="from_place_persian" ColumnName="from_place_persian" />
+                <ScalarProperty Name="to_place" ColumnName="to_place" />
+                <ScalarProperty Name="from_place" ColumnName="from_place" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="fastRide_ID" ColumnName="fastRide_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_fastRide_canceled">
+            <EntityTypeMapping TypeName="PN_Model.tbl_fastRide_canceled">
+              <MappingFragment StoreEntitySet="tbl_fastRide_canceled">
+                <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+                <ScalarProperty Name="driver_id" ColumnName="driver_id" />
+                <ScalarProperty Name="fastRide_ID" ColumnName="fastRide_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_fastRideDetails">
+            <EntityTypeMapping TypeName="PN_Model.tbl_fastRideDetails">
+              <MappingFragment StoreEntitySet="tbl_fastRideDetails">
+                <ScalarProperty Name="PayBy" ColumnName="PayBy" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="endLatLong" ColumnName="endLatLong" />
+                <ScalarProperty Name="startLatLong" ColumnName="startLatLong" />
+                <ScalarProperty Name="endAt" ColumnName="endAt" />
+                <ScalarProperty Name="startAt" ColumnName="startAt" />
+                <ScalarProperty Name="vehicle_id" ColumnName="vehicle_id" />
+                <ScalarProperty Name="driver_id" ColumnName="driver_id" />
+                <ScalarProperty Name="fastRide_ID" ColumnName="fastRide_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_fastTrack">
+            <EntityTypeMapping TypeName="PN_Model.tbl_fastTrack">
+              <MappingFragment StoreEntitySet="tbl_fastTrack">
+                <ScalarProperty Name="cityName_persian" ColumnName="cityName_persian" />
+                <ScalarProperty Name="cityName" ColumnName="cityName" />
+                <ScalarProperty Name="vehicle_id" ColumnName="vehicle_id" />
+                <ScalarProperty Name="LatLong" ColumnName="LatLong" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="OutDatetime" ColumnName="OutDatetime" />
+                <ScalarProperty Name="InDatetime" ColumnName="InDatetime" />
+                <ScalarProperty Name="userType" ColumnName="userType" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_fastTransDetails">
+            <EntityTypeMapping TypeName="PN_Model.tbl_fastTransDetails">
+              <MappingFragment StoreEntitySet="tbl_fastTransDetails">
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="KarenroDetect" ColumnName="KarenroDetect" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="userType" ColumnName="userType" />
+                <ScalarProperty Name="fastRide_ID" ColumnName="fastRide_ID" />
+                <ScalarProperty Name="transaction_ID" ColumnName="transaction_ID" />
+                <ScalarProperty Name="transDetail_ID" ColumnName="transDetail_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_fastUserRating">
+            <EntityTypeMapping TypeName="PN_Model.tbl_fastUserRating">
+              <MappingFragment StoreEntitySet="tbl_fastUserRating">
+                <ScalarProperty Name="fastRide_ID" ColumnName="fastRide_ID" />
+                <ScalarProperty Name="rateDatetime" ColumnName="rateDatetime" />
+                <ScalarProperty Name="rate_user_id" ColumnName="rate_user_id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="ratingCount" ColumnName="ratingCount" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_general">
+            <EntityTypeMapping TypeName="PN_Model.tbl_general">
+              <MappingFragment StoreEntitySet="tbl_general">
+                <ScalarProperty Name="privacyPolicyPath" ColumnName="privacyPolicyPath" />
+                <ScalarProperty Name="aboutPath" ColumnName="aboutPath" />
+                <ScalarProperty Name="termConditionPath" ColumnName="termConditionPath" />
+                <ScalarProperty Name="hostAddress" ColumnName="hostAddress" />
+                <ScalarProperty Name="perKM" ColumnName="perKM" />
+                <ScalarProperty Name="fastTrackAmount" ColumnName="fastTrackAmount" />
+                <ScalarProperty Name="passengerDetect" ColumnName="passengerDetect" />
+                <ScalarProperty Name="percentDetect" ColumnName="percentDetect" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_government">
+            <EntityTypeMapping TypeName="PN_Model.tbl_government">
+              <MappingFragment StoreEntitySet="tbl_government">
+                <ScalarProperty Name="updatedAt" ColumnName="updatedAt" />
+                <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="government_code" ColumnName="government_code" />
+                <ScalarProperty Name="government_id" ColumnName="government_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_governmentDetail">
+            <EntityTypeMapping TypeName="PN_Model.tbl_governmentDetail">
+              <MappingFragment StoreEntitySet="tbl_governmentDetail">
+                <ScalarProperty Name="company_id" ColumnName="company_id" />
+                <ScalarProperty Name="government_id" ColumnName="government_id" />
+                <ScalarProperty Name="govDetail_id" ColumnName="govDetail_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_kmCharges">
+            <EntityTypeMapping TypeName="PN_Model.tbl_kmCharges">
+              <MappingFragment StoreEntitySet="tbl_kmCharges">
+                <ScalarProperty Name="updatedAt" ColumnName="updatedAt" />
+                <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+                <ScalarProperty Name="VehicleTypeIsNormal" ColumnName="VehicleTypeIsNormal" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="charges" ColumnName="charges" />
+                <ScalarProperty Name="chargesID" ColumnName="chargesID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Notification">
+            <EntityTypeMapping TypeName="PN_Model.tbl_Notification">
+              <MappingFragment StoreEntitySet="tbl_Notification">
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="notificationDatetime" ColumnName="notificationDatetime" />
+                <ScalarProperty Name="message" ColumnName="message" />
+                <ScalarProperty Name="notification_user_id" ColumnName="notification_user_id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_offerRide">
+            <EntityTypeMapping TypeName="PN_Model.tbl_offerRide">
+              <MappingFragment StoreEntitySet="tbl_offerRide">
+                <ScalarProperty Name="isAllowFemale" ColumnName="isAllowFemale" />
+                <ScalarProperty Name="to_latlong" ColumnName="to_latlong" />
+                <ScalarProperty Name="from_latlong" ColumnName="from_latlong" />
+                <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+                <ScalarProperty Name="complaint" ColumnName="complaint" />
+                <ScalarProperty Name="AC" ColumnName="AC" />
+                <ScalarProperty Name="Music" ColumnName="Music" />
+                <ScalarProperty Name="Cigarette" ColumnName="Cigarette" />
+                <ScalarProperty Name="statusType" ColumnName="statusType" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="ride_comment" ColumnName="ride_comment" />
+                <ScalarProperty Name="charter" ColumnName="charter" />
+                <ScalarProperty Name="middleSeat" ColumnName="middleSeat" />
+                <ScalarProperty Name="no_seats" ColumnName="no_seats" />
+                <ScalarProperty Name="vehicle_type" ColumnName="vehicle_type" />
+                <ScalarProperty Name="datetime" ColumnName="datetime" />
+                <ScalarProperty Name="to_place_persian" ColumnName="to_place_persian" />
+                <ScalarProperty Name="from_place_persian" ColumnName="from_place_persian" />
+                <ScalarProperty Name="to_place" ColumnName="to_place" />
+                <ScalarProperty Name="from_place" ColumnName="from_place" />
+                <ScalarProperty Name="vehicle_id" ColumnName="vehicle_id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="offerRide_ID" ColumnName="offerRide_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_profile">
+            <EntityTypeMapping TypeName="PN_Model.tbl_profile">
+              <MappingFragment StoreEntitySet="tbl_profile">
+                <ScalarProperty Name="latLong" ColumnName="latLong" />
+                <ScalarProperty Name="cnic_back" ColumnName="cnic_back" />
+                <ScalarProperty Name="cnic_frant" ColumnName="cnic_frant" />
+                <ScalarProperty Name="forgetPasswordToken" ColumnName="forgetPasswordToken" />
+                <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+                <ScalarProperty Name="deviceToken" ColumnName="deviceToken" />
+                <ScalarProperty Name="approved" ColumnName="approved" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="profile_pic" ColumnName="profile_pic" />
+                <ScalarProperty Name="birthday" ColumnName="birthday" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="number" ColumnName="number" />
+                <ScalarProperty Name="full_name" ColumnName="full_name" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_transDetails">
+            <EntityTypeMapping TypeName="PN_Model.tbl_transDetails">
+              <MappingFragment StoreEntitySet="tbl_transDetails">
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="KarenroDetect" ColumnName="KarenroDetect" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="userType" ColumnName="userType" />
+                <ScalarProperty Name="offerRide_ID" ColumnName="offerRide_ID" />
+                <ScalarProperty Name="transaction_ID" ColumnName="transaction_ID" />
+                <ScalarProperty Name="transDetail_ID" ColumnName="transDetail_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_userComesFrom">
+            <EntityTypeMapping TypeName="PN_Model.tbl_userComesFrom">
+              <MappingFragment StoreEntitySet="tbl_userComesFrom">
+                <ScalarProperty Name="individual" ColumnName="individual" />
+                <ScalarProperty Name="company_id" ColumnName="company_id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_userRating">
+            <EntityTypeMapping TypeName="PN_Model.tbl_userRating">
+              <MappingFragment StoreEntitySet="tbl_userRating">
+                <ScalarProperty Name="offerRide_ID" ColumnName="offerRide_ID" />
+                <ScalarProperty Name="rateDatetime" ColumnName="rateDatetime" />
+                <ScalarProperty Name="rate_user_id" ColumnName="rate_user_id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="ratingCount" ColumnName="ratingCount" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_vehicle">
+            <EntityTypeMapping TypeName="PN_Model.tbl_vehicle">
+              <MappingFragment StoreEntitySet="tbl_vehicle">
+                <ScalarProperty Name="updatedAt" ColumnName="updatedAt" />
+                <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+                <ScalarProperty Name="carLicense" ColumnName="carLicense" />
+                <ScalarProperty Name="carPhoto" ColumnName="carPhoto" />
+                <ScalarProperty Name="approved" ColumnName="approved" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="plateNumber" ColumnName="plateNumber" />
+                <ScalarProperty Name="color" ColumnName="color" />
+                <ScalarProperty Name="model" ColumnName="model" />
+                <ScalarProperty Name="brand" ColumnName="brand" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="vehicle_id" ColumnName="vehicle_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_vehicleBrands">
+            <EntityTypeMapping TypeName="PN_Model.tbl_vehicleBrands">
+              <MappingFragment StoreEntitySet="tbl_vehicleBrands">
+                <ScalarProperty Name="updatedAt" ColumnName="updatedAt" />
+                <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+                <ScalarProperty Name="model" ColumnName="model" />
+                <ScalarProperty Name="brand" ColumnName="brand" />
+                <ScalarProperty Name="brand_id" ColumnName="brand_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_vehicleColors">
+            <EntityTypeMapping TypeName="PN_Model.tbl_vehicleColors">
+              <MappingFragment StoreEntitySet="tbl_vehicleColors">
+                <ScalarProperty Name="updatedAt" ColumnName="updatedAt" />
+                <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+                <ScalarProperty Name="color" ColumnName="color" />
+                <ScalarProperty Name="color_id" ColumnName="color_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_vehicleTypes">
+            <EntityTypeMapping TypeName="PN_Model.tbl_vehicleTypes">
+              <MappingFragment StoreEntitySet="tbl_vehicleTypes">
+                <ScalarProperty Name="updatedAt" ColumnName="updatedAt" />
+                <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="type_id" ColumnName="type_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_WalletTransaction">
+            <EntityTypeMapping TypeName="PN_Model.tbl_WalletTransaction">
+              <MappingFragment StoreEntitySet="tbl_WalletTransaction">
+                <ScalarProperty Name="rechargedBy" ColumnName="rechargedBy" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="Credit" ColumnName="Credit" />
+                <ScalarProperty Name="Debit" ColumnName="Debit" />
+                <ScalarProperty Name="transaction_datetime" ColumnName="transaction_datetime" />
+                <ScalarProperty Name="transaction_Title" ColumnName="transaction_Title" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="transaction_ID" ColumnName="transaction_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

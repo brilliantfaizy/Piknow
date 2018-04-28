@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CleaningSolutionsModelStoreContainer" CdmEntityContainer="CleaningSolutions_Entities">
+    <EntitySetMapping Name="tbl_brand">
+      <EntityTypeMapping TypeName="CleaningSolutionsModel.tbl_brand">
+        <MappingFragment StoreEntitySet="tbl_brand">
+          <ScalarProperty Name="brandID" ColumnName="brandID" />
+          <ScalarProperty Name="brand" ColumnName="brand" />
+          <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+          <ScalarProperty Name="updatedAt" ColumnName="updatedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_product">
+      <EntityTypeMapping TypeName="CleaningSolutionsModel.tbl_product">
+        <MappingFragment StoreEntitySet="tbl_product">
+          <ScalarProperty Name="productID" ColumnName="productID" />
+          <ScalarProperty Name="brandID" ColumnName="brandID" />
+          <ScalarProperty Name="product" ColumnName="product" />
+          <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+          <ScalarProperty Name="updatedAt" ColumnName="updatedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_users">
+      <EntityTypeMapping TypeName="CleaningSolutionsModel.tbl_users">
+        <MappingFragment StoreEntitySet="tbl_users">
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="fullName" ColumnName="fullName" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="userType" ColumnName="userType" />
+          <ScalarProperty Name="activeStatus" ColumnName="activeStatus" />
+          <ScalarProperty Name="deleteStatus" ColumnName="deleteStatus" />
+          <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+          <ScalarProperty Name="updatedAt" ColumnName="updatedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_userType">
+      <EntityTypeMapping TypeName="CleaningSolutionsModel.tbl_userType">
+        <MappingFragment StoreEntitySet="tbl_userType">
+          <ScalarProperty Name="typeId" ColumnName="typeId" />
+          <ScalarProperty Name="userType" ColumnName="userType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_update">
+      <EntityTypeMapping TypeName="CleaningSolutionsModel.tbl_update">
+        <MappingFragment StoreEntitySet="tbl_update">
+          <ScalarProperty Name="updatedOn" ColumnName="updatedOn" />
+          <ScalarProperty Name="updateVersion" ColumnName="updateVersion" />
+          <ScalarProperty Name="endpoint" ColumnName="endpoint" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_detergent">
+      <EntityTypeMapping TypeName="CleaningSolutionsModel.tbl_detergent">
+        <MappingFragment StoreEntitySet="tbl_detergent">
+          <ScalarProperty Name="updatedAt" ColumnName="updatedAt" />
+          <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+          <ScalarProperty Name="uploaded" ColumnName="uploaded" />
+          <ScalarProperty Name="scanImage" ColumnName="scanImage" />
+          <ScalarProperty Name="totalPrice" ColumnName="totalPrice" />
+          <ScalarProperty Name="priceBy" ColumnName="priceBy" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="sizeOfProduct" ColumnName="sizeOfProduct" />
+          <ScalarProperty Name="datetime" ColumnName="datetime" />
+          <ScalarProperty Name="latLong" ColumnName="latLong" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="distributor" ColumnName="distributor" />
+          <ScalarProperty Name="product" ColumnName="product" />
+          <ScalarProperty Name="brand" ColumnName="brand" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="productId" ColumnName="productId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_checkInOut">
+      <EntityTypeMapping TypeName="CleaningSolutionsModel.tbl_checkInOut">
+        <MappingFragment StoreEntitySet="tbl_checkInOut">
+          <ScalarProperty Name="updatedAt" ColumnName="updatedAt" />
+          <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+          <ScalarProperty Name="uploaded" ColumnName="uploaded" />
+          <ScalarProperty Name="checkOut" ColumnName="checkOut" />
+          <ScalarProperty Name="checkIn" ColumnName="checkIn" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="checkId" ColumnName="checkId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_detectGPS">
+      <EntityTypeMapping TypeName="CleaningSolutionsModel.tbl_detectGPS">
+        <MappingFragment StoreEntitySet="tbl_detectGPS">
+          <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+          <ScalarProperty Name="uploaded" ColumnName="uploaded" />
+          <ScalarProperty Name="LatLong" ColumnName="LatLong" />
+          <ScalarProperty Name="checkId" ColumnName="checkId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CleaningSolutionsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityType Name="tbl_brand">
+    <Key>
+      <PropertyRef Name="brandID" />
+    </Key>
+    <Property Name="brandID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="brand" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="createdAt" Type="datetime" Nullable="false" />
+    <Property Name="updatedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_checkInOut">
+    <Key>
+      <PropertyRef Name="checkId" />
+    </Key>
+    <Property Name="checkId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="uid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="checkIn" Type="datetime" Nullable="false" />
+    <Property Name="checkOut" Type="datetime" />
+    <Property Name="uploaded" Type="bit" Nullable="false" />
+    <Property Name="createdAt" Type="datetime" Nullable="false" />
+    <Property Name="updatedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_detectGPS">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="checkId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LatLong" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="uploaded" Type="bit" Nullable="false" />
+    <Property Name="createdAt" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_detergent">
+    <Key>
+      <PropertyRef Name="productId" />
+    </Key>
+    <Property Name="productId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="uid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="brand" Type="varchar" MaxLength="50" />
+    <Property Name="product" Type="varchar" MaxLength="50" />
+    <Property Name="distributor" Type="varchar" MaxLength="50" />
+    <Property Name="location" Type="varchar" MaxLength="50" />
+    <Property Name="latLong" Type="varchar" MaxLength="50" />
+    <Property Name="datetime" Type="datetime" />
+    <Property Name="sizeOfProduct" Type="varchar" MaxLength="50" />
+    <Property Name="quantity" Type="int" />
+    <Property Name="price" Type="float" />
+    <Property Name="priceBy" Type="varchar" MaxLength="50" />
+    <Property Name="totalPrice" Type="float" />
+    <Property Name="scanImage" Type="varbinary(max)" />
+    <Property Name="uploaded" Type="bit" Nullable="false" />
+    <Property Name="createdAt" Type="datetime" Nullable="false" />
+    <Property Name="updatedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_product">
+    <Key>
+      <PropertyRef Name="productID" />
+    </Key>
+    <Property Name="productID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="brandID" Type="int" Nullable="false" />
+    <Property Name="product" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="createdAt" Type="datetime" Nullable="false" />
+    <Property Name="updatedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_update">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="endpoint" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="updateVersion" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="updatedOn" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_users">
+    <Key>
+      <PropertyRef Name="uid" />
+    </Key>
+    <Property Name="uid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="fullName" Type="varchar" MaxLength="50" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="password" Type="varchar" MaxLength="50" />
+    <Property Name="userType" Type="int" Nullable="false" />
+    <Property Name="activeStatus" Type="bit" Nullable="false" />
+    <Property Name="deleteStatus" Type="bit" Nullable="false" />
+    <Property Name="createdAt" Type="datetime" Nullable="false" />
+    <Property Name="updatedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_userType">
+    <Key>
+      <PropertyRef Name="typeId" />
+    </Key>
+    <Property Name="typeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userType" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_tbl_checkInOut_tbl_users">
+    <End Role="tbl_users" Type="Self.tbl_users" Multiplicity="1" />
+    <End Role="tbl_checkInOut" Type="Self.tbl_checkInOut" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_users">
+        <PropertyRef Name="uid" />
+      </Principal>
+      <Dependent Role="tbl_checkInOut">
+        <PropertyRef Name="uid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_detectGPS_tbl_checkInOut">
+    <End Role="tbl_checkInOut" Type="Self.tbl_checkInOut" Multiplicity="1" />
+    <End Role="tbl_detectGPS" Type="Self.tbl_detectGPS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_checkInOut">
+        <PropertyRef Name="checkId" />
+      </Principal>
+      <Dependent Role="tbl_detectGPS">
+        <PropertyRef Name="checkId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_detergent_tbl_users">
+    <End Role="tbl_users" Type="Self.tbl_users" Multiplicity="1" />
+    <End Role="tbl_detergent" Type="Self.tbl_detergent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_users">
+        <PropertyRef Name="uid" />
+      </Principal>
+      <Dependent Role="tbl_detergent">
+        <PropertyRef Name="uid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_product_tbl_brand">
+    <End Role="tbl_brand" Type="Self.tbl_brand" Multiplicity="1" />
+    <End Role="tbl_product" Type="Self.tbl_product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_brand">
+        <PropertyRef Name="brandID" />
+      </Principal>
+      <Dependent Role="tbl_product">
+        <PropertyRef Name="brandID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_users_tbl_userType">
+    <End Role="tbl_userType" Type="Self.tbl_userType" Multiplicity="1" />
+    <End Role="tbl_users" Type="Self.tbl_users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_userType">
+        <PropertyRef Name="typeId" />
+      </Principal>
+      <Dependent Role="tbl_users">
+        <PropertyRef Name="userType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CleaningSolutionsModelStoreContainer">
+    <EntitySet Name="tbl_brand" EntityType="Self.tbl_brand" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_checkInOut" EntityType="Self.tbl_checkInOut" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_detectGPS" EntityType="Self.tbl_detectGPS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_detergent" EntityType="Self.tbl_detergent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_product" EntityType="Self.tbl_product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_update" EntityType="Self.tbl_update" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_users" EntityType="Self.tbl_users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_userType" EntityType="Self.tbl_userType" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tbl_checkInOut_tbl_users" Association="Self.FK_tbl_checkInOut_tbl_users">
+      <End Role="tbl_users" EntitySet="tbl_users" />
+      <End Role="tbl_checkInOut" EntitySet="tbl_checkInOut" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_detectGPS_tbl_checkInOut" Association="Self.FK_tbl_detectGPS_tbl_checkInOut">
+      <End Role="tbl_checkInOut" EntitySet="tbl_checkInOut" />
+      <End Role="tbl_detectGPS" EntitySet="tbl_detectGPS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_detergent_tbl_users" Association="Self.FK_tbl_detergent_tbl_users">
+      <End Role="tbl_users" EntitySet="tbl_users" />
+      <End Role="tbl_detergent" EntitySet="tbl_detergent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_product_tbl_brand" Association="Self.FK_tbl_product_tbl_brand">
+      <End Role="tbl_brand" EntitySet="tbl_brand" />
+      <End Role="tbl_product" EntitySet="tbl_product" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_users_tbl_userType" Association="Self.FK_tbl_users_tbl_userType">
+      <End Role="tbl_userType" EntitySet="tbl_userType" />
+      <End Role="tbl_users" EntitySet="tbl_users" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

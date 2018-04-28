@@ -1,0 +1,1060 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Karenro_DBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="Service_DBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbl_accountDetail" EntityType="Karenro_DBModel.tbl_accountDetail" />
+    <EntitySet Name="tbl_admin" EntityType="Karenro_DBModel.tbl_admin" />
+    <EntitySet Name="tbl_adminBank" EntityType="Karenro_DBModel.tbl_adminBank" />
+    <EntitySet Name="tbl_adminTransaction" EntityType="Karenro_DBModel.tbl_adminTransaction" />
+    <EntitySet Name="tbl_autoCharges" EntityType="Karenro_DBModel.tbl_autoCharges" />
+    <EntitySet Name="tbl_book" EntityType="Karenro_DBModel.tbl_book" />
+    <EntitySet Name="tbl_chat" EntityType="Karenro_DBModel.tbl_chat" />
+    <EntitySet Name="tbl_chatDetails" EntityType="Karenro_DBModel.tbl_chatDetails" />
+    <EntitySet Name="tbl_cities" EntityType="Karenro_DBModel.tbl_cities" />
+    <EntitySet Name="tbl_commissionFee" EntityType="Karenro_DBModel.tbl_commissionFee" />
+    <EntitySet Name="tbl_company" EntityType="Karenro_DBModel.tbl_company" />
+    <EntitySet Name="tbl_companyDetail" EntityType="Karenro_DBModel.tbl_companyDetail" />
+    <EntitySet Name="tbl_complaint" EntityType="Karenro_DBModel.tbl_complaint" />
+    <EntitySet Name="tbl_discountCode" EntityType="Karenro_DBModel.tbl_discountCode" />
+    <EntitySet Name="tbl_discountDetails" EntityType="Karenro_DBModel.tbl_discountDetails" />
+    <EntitySet Name="tbl_fastRide" EntityType="Karenro_DBModel.tbl_fastRide" />
+    <EntitySet Name="tbl_fastRide_canceled" EntityType="Karenro_DBModel.tbl_fastRide_canceled" />
+    <EntitySet Name="tbl_fastRideDetails" EntityType="Karenro_DBModel.tbl_fastRideDetails" />
+    <EntitySet Name="tbl_fastTrack" EntityType="Karenro_DBModel.tbl_fastTrack" />
+    <EntitySet Name="tbl_fastTransDetails" EntityType="Karenro_DBModel.tbl_fastTransDetails" />
+    <EntitySet Name="tbl_fastUserRating" EntityType="Karenro_DBModel.tbl_fastUserRating" />
+    <EntitySet Name="tbl_general" EntityType="Karenro_DBModel.tbl_general" />
+    <EntitySet Name="tbl_government" EntityType="Karenro_DBModel.tbl_government" />
+    <EntitySet Name="tbl_governmentDetail" EntityType="Karenro_DBModel.tbl_governmentDetail" />
+    <EntitySet Name="tbl_kmCharges" EntityType="Karenro_DBModel.tbl_kmCharges" />
+    <EntitySet Name="tbl_Notification" EntityType="Karenro_DBModel.tbl_Notification" />
+    <EntitySet Name="tbl_offerRide" EntityType="Karenro_DBModel.tbl_offerRide" />
+    <EntitySet Name="tbl_profile" EntityType="Karenro_DBModel.tbl_profile" />
+    <EntitySet Name="tbl_transDetails" EntityType="Karenro_DBModel.tbl_transDetails" />
+    <EntitySet Name="tbl_userComesFrom" EntityType="Karenro_DBModel.tbl_userComesFrom" />
+    <EntitySet Name="tbl_userRating" EntityType="Karenro_DBModel.tbl_userRating" />
+    <EntitySet Name="tbl_vehicle" EntityType="Karenro_DBModel.tbl_vehicle" />
+    <EntitySet Name="tbl_vehicleBrands" EntityType="Karenro_DBModel.tbl_vehicleBrands" />
+    <EntitySet Name="tbl_vehicleColors" EntityType="Karenro_DBModel.tbl_vehicleColors" />
+    <EntitySet Name="tbl_vehicleTypes" EntityType="Karenro_DBModel.tbl_vehicleTypes" />
+    <EntitySet Name="tbl_WalletTransaction" EntityType="Karenro_DBModel.tbl_WalletTransaction" />
+    <AssociationSet Name="FK_tbl_accountDetail_tbl_profile" Association="Karenro_DBModel.FK_tbl_accountDetail_tbl_profile">
+      <End Role="tbl_profile" EntitySet="tbl_profile" />
+      <End Role="tbl_accountDetail" EntitySet="tbl_accountDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_adminTransaction_tbl_profile" Association="Karenro_DBModel.FK_tbl_adminTransaction_tbl_profile">
+      <End Role="tbl_profile" EntitySet="tbl_profile" />
+      <End Role="tbl_adminTransaction" EntitySet="tbl_adminTransaction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_autoCharges_tbl_cities" Association="Karenro_DBModel.FK_tbl_autoCharges_tbl_cities">
+      <End Role="tbl_cities" EntitySet="tbl_cities" />
+      <End Role="tbl_autoCharges" EntitySet="tbl_autoCharges" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_autoCharges_tbl_cities1" Association="Karenro_DBModel.FK_tbl_autoCharges_tbl_cities1">
+      <End Role="tbl_cities" EntitySet="tbl_cities" />
+      <End Role="tbl_autoCharges" EntitySet="tbl_autoCharges" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_book_tbl_offerRide" Association="Karenro_DBModel.FK_tbl_book_tbl_offerRide">
+      <End Role="tbl_offerRide" EntitySet="tbl_offerRide" />
+      <End Role="tbl_book" EntitySet="tbl_book" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_book_tbl_profile" Association="Karenro_DBModel.FK_tbl_book_tbl_profile">
+      <End Role="tbl_profile" EntitySet="tbl_profile" />
+      <End Role="tbl_book" EntitySet="tbl_book" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_chat_tbl_profile" Association="Karenro_DBModel.FK_tbl_chat_tbl_profile">
+      <End Role="tbl_profile" EntitySet="tbl_profile" />
+      <End Role="tbl_chat" EntitySet="tbl_chat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_chatDetails_tbl_chat" Association="Karenro_DBModel.FK_tbl_chatDetails_tbl_chat">
+      <End Role="tbl_chat" EntitySet="tbl_chat" />
+      <End Role="tbl_chatDetails" EntitySet="tbl_chatDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_chatDetails_tbl_profile" Association="Karenro_DBModel.FK_tbl_chatDetails_tbl_profile">
+      <End Role="tbl_profile" EntitySet="tbl_profile" />
+      <End Role="tbl_chatDetails" EntitySet="tbl_chatDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_companyDetail_tbl_company" Association="Karenro_DBModel.FK_tbl_companyDetail_tbl_company">
+      <End Role="tbl_company" EntitySet="tbl_company" />
+      <End Role="tbl_companyDetail" EntitySet="tbl_companyDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_governmentDetail_tbl_company" Association="Karenro_DBModel.FK_tbl_governmentDetail_tbl_company">
+      <End Role="tbl_company" EntitySet="tbl_company" />
+      <End Role="tbl_governmentDetail" EntitySet="tbl_governmentDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_companyDetail_tbl_profile" Association="Karenro_DBModel.FK_tbl_companyDetail_tbl_profile">
+      <End Role="tbl_profile" EntitySet="tbl_profile" />
+      <End Role="tbl_companyDetail" EntitySet="tbl_companyDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_complaint_tbl_offerRide" Association="Karenro_DBModel.FK_tbl_complaint_tbl_offerRide">
+      <End Role="tbl_offerRide" EntitySet="tbl_offerRide" />
+      <End Role="tbl_complaint" EntitySet="tbl_complaint" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_complaint_tbl_profile" Association="Karenro_DBModel.FK_tbl_complaint_tbl_profile">
+      <End Role="tbl_profile" EntitySet="tbl_profile" />
+      <End Role="tbl_complaint" EntitySet="tbl_complaint" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_discountDetails_tbl_discountCode" Association="Karenro_DBModel.FK_tbl_discountDetails_tbl_discountCode">
+      <End Role="tbl_discountCode" EntitySet="tbl_discountCode" />
+      <End Role="tbl_discountDetails" EntitySet="tbl_discountDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_discountDetails_tbl_profile" Association="Karenro_DBModel.FK_tbl_discountDetails_tbl_profile">
+      <End Role="tbl_profile" EntitySet="tbl_profile" />
+      <End Role="tbl_discountDetails" EntitySet="tbl_discountDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_fastRide_canceled_tbl_fastRide" Association="Karenro_DBModel.FK_tbl_fastRide_canceled_tbl_fastRide">
+      <End Role="tbl_fastRide" EntitySet="tbl_fastRide" />
+      <End Role="tbl_fastRide_canceled" EntitySet="tbl_fastRide_canceled" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_fastRide_tbl_profile" Association="Karenro_DBModel.FK_tbl_fastRide_tbl_profile">
+      <End Role="tbl_profile" EntitySet="tbl_profile" />
+      <End Role="tbl_fastRide" EntitySet="tbl_fastRide" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_fastRideDetails_tbl_fastRide" Association="Karenro_DBModel.FK_tbl_fastRideDetails_tbl_fastRide">
+      <End Role="tbl_fastRide" EntitySet="tbl_fastRide" />
+      <End Role="tbl_fastRideDetails" EntitySet="tbl_fastRideDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_fastUserRating_tbl_fastRide" Association="Karenro_DBModel.FK_tbl_fastUserRating_tbl_fastRide">
+      <End Role="tbl_fastRide" EntitySet="tbl_fastRide" />
+      <End Role="tbl_fastUserRating" EntitySet="tbl_fastUserRating" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_fastRide_canceled_tbl_profile" Association="Karenro_DBModel.FK_tbl_fastRide_canceled_tbl_profile">
+      <End Role="tbl_profile" EntitySet="tbl_profile" />
+      <End Role="tbl_fastRide_canceled" EntitySet="tbl_fastRide_canceled" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_fastRideDetails_tbl_profile" Association="Karenro_DBModel.FK_tbl_fastRideDetails_tbl_profile">
+      <End Role="tbl_profile" EntitySet="tbl_profile" />
+      <End Role="tbl_fastRideDetails" EntitySet="tbl_fastRideDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_fastRideDetails_tbl_vehicle" Association="Karenro_DBModel.FK_tbl_fastRideDetails_tbl_vehicle">
+      <End Role="tbl_vehicle" EntitySet="tbl_vehicle" />
+      <End Role="tbl_fastRideDetails" EntitySet="tbl_fastRideDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_fastTrack_tbl_profile" Association="Karenro_DBModel.FK_tbl_fastTrack_tbl_profile">
+      <End Role="tbl_profile" EntitySet="tbl_profile" />
+      <End Role="tbl_fastTrack" EntitySet="tbl_fastTrack" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_fastTrack_tbl_vehicle" Association="Karenro_DBModel.FK_tbl_fastTrack_tbl_vehicle">
+      <End Role="tbl_vehicle" EntitySet="tbl_vehicle" />
+      <End Role="tbl_fastTrack" EntitySet="tbl_fastTrack" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_fastTransDetails_tbl_WalletTransaction" Association="Karenro_DBModel.FK_tbl_fastTransDetails_tbl_WalletTransaction">
+      <End Role="tbl_WalletTransaction" EntitySet="tbl_WalletTransaction" />
+      <End Role="tbl_fastTransDetails" EntitySet="tbl_fastTransDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_governmentDetail_tbl_government" Association="Karenro_DBModel.FK_tbl_governmentDetail_tbl_government">
+      <End Role="tbl_government" EntitySet="tbl_government" />
+      <End Role="tbl_governmentDetail" EntitySet="tbl_governmentDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_offerRide_tbl_profile" Association="Karenro_DBModel.FK_tbl_offerRide_tbl_profile">
+      <End Role="tbl_profile" EntitySet="tbl_profile" />
+      <End Role="tbl_offerRide" EntitySet="tbl_offerRide" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_offerRide_tbl_vehicle" Association="Karenro_DBModel.FK_tbl_offerRide_tbl_vehicle">
+      <End Role="tbl_vehicle" EntitySet="tbl_vehicle" />
+      <End Role="tbl_offerRide" EntitySet="tbl_offerRide" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_userComesFrom_tbl_profile" Association="Karenro_DBModel.FK_tbl_userComesFrom_tbl_profile">
+      <End Role="tbl_profile" EntitySet="tbl_profile" />
+      <End Role="tbl_userComesFrom" EntitySet="tbl_userComesFrom" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_vehicle_tbl_profile" Association="Karenro_DBModel.FK_tbl_vehicle_tbl_profile">
+      <End Role="tbl_profile" EntitySet="tbl_profile" />
+      <End Role="tbl_vehicle" EntitySet="tbl_vehicle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_WalletTransaction_tbl_profile" Association="Karenro_DBModel.FK_tbl_WalletTransaction_tbl_profile">
+      <End Role="tbl_profile" EntitySet="tbl_profile" />
+      <End Role="tbl_WalletTransaction" EntitySet="tbl_WalletTransaction" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="tbl_accountDetail">
+    <Key>
+      <PropertyRef Name="AccountDetail_ID" />
+    </Key>
+    <Property Name="AccountDetail_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="accountNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="bankName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="shabaNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="accountHolder" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_profile" Relationship="Karenro_DBModel.FK_tbl_accountDetail_tbl_profile" FromRole="tbl_accountDetail" ToRole="tbl_profile" />
+  </EntityType>
+  <EntityType Name="tbl_admin">
+    <Key>
+      <PropertyRef Name="admin_id" />
+    </Key>
+    <Property Name="admin_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_adminBank">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="amount" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="userType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="offerRide_ID" Type="Int32" />
+    <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+    <Property Name="paymentStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="transaction_ID" Type="Int32" />
+    <Property Name="book_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbl_adminTransaction">
+    <Key>
+      <PropertyRef Name="transaction_ID" />
+    </Key>
+    <Property Name="transaction_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int32" />
+    <Property Name="type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="transaction_Title" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="transaction_datetime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="receivedCommission" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Debit" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Credit" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Balance" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_profile" Relationship="Karenro_DBModel.FK_tbl_adminTransaction_tbl_profile" FromRole="tbl_adminTransaction" ToRole="tbl_profile" />
+  </EntityType>
+  <EntityType Name="tbl_autoCharges">
+    <Key>
+      <PropertyRef Name="chargesID" />
+    </Key>
+    <Property Name="chargesID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="from_city" Type="Int32" Nullable="false" />
+    <Property Name="to_city" Type="Int32" Nullable="false" />
+    <Property Name="charges" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VehicleTypeIsNormal" Type="Boolean" />
+    <Property Name="createdAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="updatedAt" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_cities" Relationship="Karenro_DBModel.FK_tbl_autoCharges_tbl_cities" FromRole="tbl_autoCharges" ToRole="tbl_cities" />
+    <NavigationProperty Name="tbl_cities1" Relationship="Karenro_DBModel.FK_tbl_autoCharges_tbl_cities1" FromRole="tbl_autoCharges" ToRole="tbl_cities" />
+  </EntityType>
+  <EntityType Name="tbl_book">
+    <Key>
+      <PropertyRef Name="book_id" />
+    </Key>
+    <Property Name="book_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="offerRide_ID" Type="Int32" Nullable="false" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="datetime" Type="DateTime" Precision="3" />
+    <Property Name="passengerCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_offerRide" Relationship="Karenro_DBModel.FK_tbl_book_tbl_offerRide" FromRole="tbl_book" ToRole="tbl_offerRide" />
+    <NavigationProperty Name="tbl_profile" Relationship="Karenro_DBModel.FK_tbl_book_tbl_profile" FromRole="tbl_book" ToRole="tbl_profile" />
+  </EntityType>
+  <EntityType Name="tbl_chat">
+    <Key>
+      <PropertyRef Name="chat_ID" />
+    </Key>
+    <Property Name="chat_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="offerRide_ID" Type="Int32" Nullable="false" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="userType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="createdAt" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="tbl_profile" Relationship="Karenro_DBModel.FK_tbl_chat_tbl_profile" FromRole="tbl_chat" ToRole="tbl_profile" />
+    <NavigationProperty Name="tbl_chatDetails" Relationship="Karenro_DBModel.FK_tbl_chatDetails_tbl_chat" FromRole="tbl_chat" ToRole="tbl_chatDetails" />
+  </EntityType>
+  <EntityType Name="tbl_chatDetails">
+    <Key>
+      <PropertyRef Name="chatDetail_id" />
+    </Key>
+    <Property Name="chatDetail_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="chat_ID" Type="Int32" Nullable="false" />
+    <Property Name="message" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="createdAt" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="tbl_chat" Relationship="Karenro_DBModel.FK_tbl_chatDetails_tbl_chat" FromRole="tbl_chatDetails" ToRole="tbl_chat" />
+    <NavigationProperty Name="tbl_profile" Relationship="Karenro_DBModel.FK_tbl_chatDetails_tbl_profile" FromRole="tbl_chatDetails" ToRole="tbl_profile" />
+  </EntityType>
+  <EntityType Name="tbl_cities">
+    <Key>
+      <PropertyRef Name="cityID" />
+    </Key>
+    <Property Name="cityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cityName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="createdAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="updatedAt" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_autoCharges" Relationship="Karenro_DBModel.FK_tbl_autoCharges_tbl_cities" FromRole="tbl_cities" ToRole="tbl_autoCharges" />
+    <NavigationProperty Name="tbl_autoCharges1" Relationship="Karenro_DBModel.FK_tbl_autoCharges_tbl_cities1" FromRole="tbl_cities" ToRole="tbl_autoCharges" />
+  </EntityType>
+  <EntityType Name="tbl_commissionFee">
+    <Key>
+      <PropertyRef Name="FeeID" />
+    </Key>
+    <Property Name="FeeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="driversFee" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="persianPassengerFee" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="foreignPassengerFee" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="minFastInBalance" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="createdAt" Type="DateTime" Precision="3" />
+    <Property Name="updatedAt" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbl_company">
+    <Key>
+      <PropertyRef Name="company_id" />
+    </Key>
+    <Property Name="company_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="company_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="phoneNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="comeFrom" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ceoID_path" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="permissions_path" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="companyCertificate_path" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="isConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="createdAt" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="tbl_companyDetail" Relationship="Karenro_DBModel.FK_tbl_companyDetail_tbl_company" FromRole="tbl_company" ToRole="tbl_companyDetail" />
+    <NavigationProperty Name="tbl_governmentDetail" Relationship="Karenro_DBModel.FK_tbl_governmentDetail_tbl_company" FromRole="tbl_company" ToRole="tbl_governmentDetail" />
+  </EntityType>
+  <EntityType Name="tbl_companyDetail">
+    <Key>
+      <PropertyRef Name="companyDetail_id" />
+    </Key>
+    <Property Name="companyDetail_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="company_id" Type="Int32" Nullable="false" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_company" Relationship="Karenro_DBModel.FK_tbl_companyDetail_tbl_company" FromRole="tbl_companyDetail" ToRole="tbl_company" />
+    <NavigationProperty Name="tbl_profile" Relationship="Karenro_DBModel.FK_tbl_companyDetail_tbl_profile" FromRole="tbl_companyDetail" ToRole="tbl_profile" />
+  </EntityType>
+  <EntityType Name="tbl_complaint">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="offerRide_ID" Type="Int32" Nullable="false" />
+    <Property Name="message" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="datetime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_offerRide" Relationship="Karenro_DBModel.FK_tbl_complaint_tbl_offerRide" FromRole="tbl_complaint" ToRole="tbl_offerRide" />
+    <NavigationProperty Name="tbl_profile" Relationship="Karenro_DBModel.FK_tbl_complaint_tbl_profile" FromRole="tbl_complaint" ToRole="tbl_profile" />
+  </EntityType>
+  <EntityType Name="tbl_discountCode">
+    <Key>
+      <PropertyRef Name="discountID" />
+    </Key>
+    <Property Name="discountID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="discountFee" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="discountCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="availableNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="expireDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="createdAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="updatedAt" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_discountDetails" Relationship="Karenro_DBModel.FK_tbl_discountDetails_tbl_discountCode" FromRole="tbl_discountCode" ToRole="tbl_discountDetails" />
+  </EntityType>
+  <EntityType Name="tbl_discountDetails">
+    <Key>
+      <PropertyRef Name="discountDetailsID" />
+    </Key>
+    <Property Name="discountDetailsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="discountID" Type="Int32" Nullable="false" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_discountCode" Relationship="Karenro_DBModel.FK_tbl_discountDetails_tbl_discountCode" FromRole="tbl_discountDetails" ToRole="tbl_discountCode" />
+    <NavigationProperty Name="tbl_profile" Relationship="Karenro_DBModel.FK_tbl_discountDetails_tbl_profile" FromRole="tbl_discountDetails" ToRole="tbl_profile" />
+  </EntityType>
+  <EntityType Name="tbl_fastRide">
+    <Key>
+      <PropertyRef Name="fastRide_ID" />
+    </Key>
+    <Property Name="fastRide_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="from_place" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="to_place" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="from_place_persian" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="to_place_persian" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="statusType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LatLong" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="createdAt" Type="DateTime" Precision="3" />
+    <Property Name="vehicleType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="VehicleTypeIsNormal" Type="Boolean" />
+    <Property Name="from_LatLong" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="to_LatLong" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_fastRide_canceled" Relationship="Karenro_DBModel.FK_tbl_fastRide_canceled_tbl_fastRide" FromRole="tbl_fastRide" ToRole="tbl_fastRide_canceled" />
+    <NavigationProperty Name="tbl_profile" Relationship="Karenro_DBModel.FK_tbl_fastRide_tbl_profile" FromRole="tbl_fastRide" ToRole="tbl_profile" />
+    <NavigationProperty Name="tbl_fastRideDetails" Relationship="Karenro_DBModel.FK_tbl_fastRideDetails_tbl_fastRide" FromRole="tbl_fastRide" ToRole="tbl_fastRideDetails" />
+    <NavigationProperty Name="tbl_fastUserRating" Relationship="Karenro_DBModel.FK_tbl_fastUserRating_tbl_fastRide" FromRole="tbl_fastRide" ToRole="tbl_fastUserRating" />
+  </EntityType>
+  <EntityType Name="tbl_fastRide_canceled">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fastRide_ID" Type="Int32" Nullable="false" />
+    <Property Name="driver_id" Type="Int32" Nullable="false" />
+    <Property Name="createdAt" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="tbl_fastRide" Relationship="Karenro_DBModel.FK_tbl_fastRide_canceled_tbl_fastRide" FromRole="tbl_fastRide_canceled" ToRole="tbl_fastRide" />
+    <NavigationProperty Name="tbl_profile" Relationship="Karenro_DBModel.FK_tbl_fastRide_canceled_tbl_profile" FromRole="tbl_fastRide_canceled" ToRole="tbl_profile" />
+  </EntityType>
+  <EntityType Name="tbl_fastRideDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fastRide_ID" Type="Int32" Nullable="false" />
+    <Property Name="driver_id" Type="Int32" Nullable="false" />
+    <Property Name="vehicle_id" Type="Int32" Nullable="false" />
+    <Property Name="startAt" Type="DateTime" Precision="3" />
+    <Property Name="endAt" Type="DateTime" Precision="3" />
+    <Property Name="startLatLong" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="endLatLong" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="price" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PayBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_fastRide" Relationship="Karenro_DBModel.FK_tbl_fastRideDetails_tbl_fastRide" FromRole="tbl_fastRideDetails" ToRole="tbl_fastRide" />
+    <NavigationProperty Name="tbl_profile" Relationship="Karenro_DBModel.FK_tbl_fastRideDetails_tbl_profile" FromRole="tbl_fastRideDetails" ToRole="tbl_profile" />
+    <NavigationProperty Name="tbl_vehicle" Relationship="Karenro_DBModel.FK_tbl_fastRideDetails_tbl_vehicle" FromRole="tbl_fastRideDetails" ToRole="tbl_vehicle" />
+  </EntityType>
+  <EntityType Name="tbl_fastTrack">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="userType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="InDatetime" Type="DateTime" Precision="3" />
+    <Property Name="OutDatetime" Type="DateTime" Precision="3" />
+    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LatLong" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="vehicle_id" Type="Int32" />
+    <Property Name="cityName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cityName_persian" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_profile" Relationship="Karenro_DBModel.FK_tbl_fastTrack_tbl_profile" FromRole="tbl_fastTrack" ToRole="tbl_profile" />
+    <NavigationProperty Name="tbl_vehicle" Relationship="Karenro_DBModel.FK_tbl_fastTrack_tbl_vehicle" FromRole="tbl_fastTrack" ToRole="tbl_vehicle" />
+  </EntityType>
+  <EntityType Name="tbl_fastTransDetails">
+    <Key>
+      <PropertyRef Name="transDetail_ID" />
+    </Key>
+    <Property Name="transDetail_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="transaction_ID" Type="Int32" Nullable="false" />
+    <Property Name="fastRide_ID" Type="Int32" Nullable="false" />
+    <Property Name="userType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="amount" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="KarenroDetect" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="total" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_WalletTransaction" Relationship="Karenro_DBModel.FK_tbl_fastTransDetails_tbl_WalletTransaction" FromRole="tbl_fastTransDetails" ToRole="tbl_WalletTransaction" />
+  </EntityType>
+  <EntityType Name="tbl_fastUserRating">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ratingCount" Type="Int32" Nullable="false" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="rate_user_id" Type="Int32" Nullable="false" />
+    <Property Name="rateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="fastRide_ID" Type="Int32" />
+    <NavigationProperty Name="tbl_fastRide" Relationship="Karenro_DBModel.FK_tbl_fastUserRating_tbl_fastRide" FromRole="tbl_fastUserRating" ToRole="tbl_fastRide" />
+  </EntityType>
+  <EntityType Name="tbl_general">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="percentDetect" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="passengerDetect" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="fastTrackAmount" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="perKM" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="hostAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="termConditionPath" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="aboutPath" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="privacyPolicyPath" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_government">
+    <Key>
+      <PropertyRef Name="government_id" />
+    </Key>
+    <Property Name="government_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="government_code" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="createdAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="updatedAt" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_governmentDetail" Relationship="Karenro_DBModel.FK_tbl_governmentDetail_tbl_government" FromRole="tbl_government" ToRole="tbl_governmentDetail" />
+  </EntityType>
+  <EntityType Name="tbl_governmentDetail">
+    <Key>
+      <PropertyRef Name="govDetail_id" />
+    </Key>
+    <Property Name="govDetail_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="government_id" Type="Int32" Nullable="false" />
+    <Property Name="company_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_company" Relationship="Karenro_DBModel.FK_tbl_governmentDetail_tbl_company" FromRole="tbl_governmentDetail" ToRole="tbl_company" />
+    <NavigationProperty Name="tbl_government" Relationship="Karenro_DBModel.FK_tbl_governmentDetail_tbl_government" FromRole="tbl_governmentDetail" ToRole="tbl_government" />
+  </EntityType>
+  <EntityType Name="tbl_kmCharges">
+    <Key>
+      <PropertyRef Name="chargesID" />
+    </Key>
+    <Property Name="chargesID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="charges" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VehicleTypeIsNormal" Type="Boolean" Nullable="false" />
+    <Property Name="createdAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="updatedAt" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbl_Notification">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="notification_user_id" Type="Int32" Nullable="false" />
+    <Property Name="message" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="notificationDatetime" Type="DateTime" Precision="3" />
+    <Property Name="isDeleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tbl_offerRide">
+    <Key>
+      <PropertyRef Name="offerRide_ID" />
+    </Key>
+    <Property Name="offerRide_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="vehicle_id" Type="Int32" />
+    <Property Name="from_place" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="to_place" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="from_place_persian" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="to_place_persian" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="datetime" Type="DateTime" Precision="3" />
+    <Property Name="vehicle_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="no_seats" Type="Int32" />
+    <Property Name="middleSeat" Type="Boolean" Nullable="false" />
+    <Property Name="charter" Type="Boolean" />
+    <Property Name="ride_comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="price" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="statusType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Cigarette" Type="Boolean" />
+    <Property Name="Music" Type="Boolean" />
+    <Property Name="AC" Type="Boolean" />
+    <Property Name="complaint" Type="Boolean" />
+    <Property Name="createdAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="from_latlong" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="to_latlong" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="isAllowFemale" Type="Boolean" />
+    <NavigationProperty Name="tbl_book" Relationship="Karenro_DBModel.FK_tbl_book_tbl_offerRide" FromRole="tbl_offerRide" ToRole="tbl_book" />
+    <NavigationProperty Name="tbl_complaint" Relationship="Karenro_DBModel.FK_tbl_complaint_tbl_offerRide" FromRole="tbl_offerRide" ToRole="tbl_complaint" />
+    <NavigationProperty Name="tbl_profile" Relationship="Karenro_DBModel.FK_tbl_offerRide_tbl_profile" FromRole="tbl_offerRide" ToRole="tbl_profile" />
+    <NavigationProperty Name="tbl_vehicle" Relationship="Karenro_DBModel.FK_tbl_offerRide_tbl_vehicle" FromRole="tbl_offerRide" ToRole="tbl_vehicle" />
+  </EntityType>
+  <EntityType Name="tbl_profile">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="full_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="birthday" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="profile_pic" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="gender" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="approved" Type="Boolean" />
+    <Property Name="deviceToken" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="createdAt" Type="DateTime" Precision="3" />
+    <Property Name="forgetPasswordToken" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="cnic_frant" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="cnic_back" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="latLong" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_accountDetail" Relationship="Karenro_DBModel.FK_tbl_accountDetail_tbl_profile" FromRole="tbl_profile" ToRole="tbl_accountDetail" />
+    <NavigationProperty Name="tbl_adminTransaction" Relationship="Karenro_DBModel.FK_tbl_adminTransaction_tbl_profile" FromRole="tbl_profile" ToRole="tbl_adminTransaction" />
+    <NavigationProperty Name="tbl_book" Relationship="Karenro_DBModel.FK_tbl_book_tbl_profile" FromRole="tbl_profile" ToRole="tbl_book" />
+    <NavigationProperty Name="tbl_chat" Relationship="Karenro_DBModel.FK_tbl_chat_tbl_profile" FromRole="tbl_profile" ToRole="tbl_chat" />
+    <NavigationProperty Name="tbl_chatDetails" Relationship="Karenro_DBModel.FK_tbl_chatDetails_tbl_profile" FromRole="tbl_profile" ToRole="tbl_chatDetails" />
+    <NavigationProperty Name="tbl_companyDetail" Relationship="Karenro_DBModel.FK_tbl_companyDetail_tbl_profile" FromRole="tbl_profile" ToRole="tbl_companyDetail" />
+    <NavigationProperty Name="tbl_complaint" Relationship="Karenro_DBModel.FK_tbl_complaint_tbl_profile" FromRole="tbl_profile" ToRole="tbl_complaint" />
+    <NavigationProperty Name="tbl_discountDetails" Relationship="Karenro_DBModel.FK_tbl_discountDetails_tbl_profile" FromRole="tbl_profile" ToRole="tbl_discountDetails" />
+    <NavigationProperty Name="tbl_fastRide" Relationship="Karenro_DBModel.FK_tbl_fastRide_tbl_profile" FromRole="tbl_profile" ToRole="tbl_fastRide" />
+    <NavigationProperty Name="tbl_fastRide_canceled" Relationship="Karenro_DBModel.FK_tbl_fastRide_canceled_tbl_profile" FromRole="tbl_profile" ToRole="tbl_fastRide_canceled" />
+    <NavigationProperty Name="tbl_fastRideDetails" Relationship="Karenro_DBModel.FK_tbl_fastRideDetails_tbl_profile" FromRole="tbl_profile" ToRole="tbl_fastRideDetails" />
+    <NavigationProperty Name="tbl_fastTrack" Relationship="Karenro_DBModel.FK_tbl_fastTrack_tbl_profile" FromRole="tbl_profile" ToRole="tbl_fastTrack" />
+    <NavigationProperty Name="tbl_offerRide" Relationship="Karenro_DBModel.FK_tbl_offerRide_tbl_profile" FromRole="tbl_profile" ToRole="tbl_offerRide" />
+    <NavigationProperty Name="tbl_userComesFrom" Relationship="Karenro_DBModel.FK_tbl_userComesFrom_tbl_profile" FromRole="tbl_profile" ToRole="tbl_userComesFrom" />
+    <NavigationProperty Name="tbl_vehicle" Relationship="Karenro_DBModel.FK_tbl_vehicle_tbl_profile" FromRole="tbl_profile" ToRole="tbl_vehicle" />
+    <NavigationProperty Name="tbl_WalletTransaction" Relationship="Karenro_DBModel.FK_tbl_WalletTransaction_tbl_profile" FromRole="tbl_profile" ToRole="tbl_WalletTransaction" />
+  </EntityType>
+  <EntityType Name="tbl_transDetails">
+    <Key>
+      <PropertyRef Name="transDetail_ID" />
+    </Key>
+    <Property Name="transDetail_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="transaction_ID" Type="Int32" Nullable="false" />
+    <Property Name="offerRide_ID" Type="Int32" Nullable="false" />
+    <Property Name="userType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="amount" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="KarenroDetect" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="total" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_userComesFrom">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="company_id" Type="Int32" />
+    <Property Name="individual" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="tbl_profile" Relationship="Karenro_DBModel.FK_tbl_userComesFrom_tbl_profile" FromRole="tbl_userComesFrom" ToRole="tbl_profile" />
+  </EntityType>
+  <EntityType Name="tbl_userRating">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ratingCount" Type="Int32" Nullable="false" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="rate_user_id" Type="Int32" Nullable="false" />
+    <Property Name="rateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="offerRide_ID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbl_vehicle">
+    <Key>
+      <PropertyRef Name="vehicle_id" />
+    </Key>
+    <Property Name="vehicle_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="brand" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="model" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="color" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="plateNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="approved" Type="Boolean" Nullable="false" />
+    <Property Name="carPhoto" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="carLicense" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="createdAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="updatedAt" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_fastRideDetails" Relationship="Karenro_DBModel.FK_tbl_fastRideDetails_tbl_vehicle" FromRole="tbl_vehicle" ToRole="tbl_fastRideDetails" />
+    <NavigationProperty Name="tbl_fastTrack" Relationship="Karenro_DBModel.FK_tbl_fastTrack_tbl_vehicle" FromRole="tbl_vehicle" ToRole="tbl_fastTrack" />
+    <NavigationProperty Name="tbl_offerRide" Relationship="Karenro_DBModel.FK_tbl_offerRide_tbl_vehicle" FromRole="tbl_vehicle" ToRole="tbl_offerRide" />
+    <NavigationProperty Name="tbl_profile" Relationship="Karenro_DBModel.FK_tbl_vehicle_tbl_profile" FromRole="tbl_vehicle" ToRole="tbl_profile" />
+  </EntityType>
+  <EntityType Name="tbl_vehicleBrands">
+    <Key>
+      <PropertyRef Name="brand_id" />
+    </Key>
+    <Property Name="brand_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="brand" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="model" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="createdAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="updatedAt" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbl_vehicleColors">
+    <Key>
+      <PropertyRef Name="color_id" />
+    </Key>
+    <Property Name="color_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="color" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="createdAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="updatedAt" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbl_vehicleTypes">
+    <Key>
+      <PropertyRef Name="type_id" />
+    </Key>
+    <Property Name="type_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="createdAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="updatedAt" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbl_WalletTransaction">
+    <Key>
+      <PropertyRef Name="transaction_ID" />
+    </Key>
+    <Property Name="transaction_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="transaction_Title" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="transaction_datetime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Debit" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Credit" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Balance" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="rechargedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_fastTransDetails" Relationship="Karenro_DBModel.FK_tbl_fastTransDetails_tbl_WalletTransaction" FromRole="tbl_WalletTransaction" ToRole="tbl_fastTransDetails" />
+    <NavigationProperty Name="tbl_profile" Relationship="Karenro_DBModel.FK_tbl_WalletTransaction_tbl_profile" FromRole="tbl_WalletTransaction" ToRole="tbl_profile" />
+  </EntityType>
+  <Association Name="FK_tbl_accountDetail_tbl_profile">
+    <End Type="Karenro_DBModel.tbl_profile" Role="tbl_profile" Multiplicity="1" />
+    <End Type="Karenro_DBModel.tbl_accountDetail" Role="tbl_accountDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_profile">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="tbl_accountDetail">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_adminTransaction_tbl_profile">
+    <End Type="Karenro_DBModel.tbl_profile" Role="tbl_profile" Multiplicity="0..1" />
+    <End Type="Karenro_DBModel.tbl_adminTransaction" Role="tbl_adminTransaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_profile">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="tbl_adminTransaction">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_autoCharges_tbl_cities">
+    <End Type="Karenro_DBModel.tbl_cities" Role="tbl_cities" Multiplicity="1" />
+    <End Type="Karenro_DBModel.tbl_autoCharges" Role="tbl_autoCharges" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_cities">
+        <PropertyRef Name="cityID" />
+      </Principal>
+      <Dependent Role="tbl_autoCharges">
+        <PropertyRef Name="from_city" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_autoCharges_tbl_cities1">
+    <End Type="Karenro_DBModel.tbl_cities" Role="tbl_cities" Multiplicity="1" />
+    <End Type="Karenro_DBModel.tbl_autoCharges" Role="tbl_autoCharges" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_cities">
+        <PropertyRef Name="cityID" />
+      </Principal>
+      <Dependent Role="tbl_autoCharges">
+        <PropertyRef Name="to_city" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_book_tbl_offerRide">
+    <End Type="Karenro_DBModel.tbl_offerRide" Role="tbl_offerRide" Multiplicity="1" />
+    <End Type="Karenro_DBModel.tbl_book" Role="tbl_book" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_offerRide">
+        <PropertyRef Name="offerRide_ID" />
+      </Principal>
+      <Dependent Role="tbl_book">
+        <PropertyRef Name="offerRide_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_book_tbl_profile">
+    <End Type="Karenro_DBModel.tbl_profile" Role="tbl_profile" Multiplicity="1" />
+    <End Type="Karenro_DBModel.tbl_book" Role="tbl_book" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_profile">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="tbl_book">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_chat_tbl_profile">
+    <End Type="Karenro_DBModel.tbl_profile" Role="tbl_profile" Multiplicity="1" />
+    <End Type="Karenro_DBModel.tbl_chat" Role="tbl_chat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_profile">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="tbl_chat">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_chatDetails_tbl_chat">
+    <End Type="Karenro_DBModel.tbl_chat" Role="tbl_chat" Multiplicity="1" />
+    <End Type="Karenro_DBModel.tbl_chatDetails" Role="tbl_chatDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_chat">
+        <PropertyRef Name="chat_ID" />
+      </Principal>
+      <Dependent Role="tbl_chatDetails">
+        <PropertyRef Name="chat_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_chatDetails_tbl_profile">
+    <End Type="Karenro_DBModel.tbl_profile" Role="tbl_profile" Multiplicity="1" />
+    <End Type="Karenro_DBModel.tbl_chatDetails" Role="tbl_chatDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_profile">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="tbl_chatDetails">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_companyDetail_tbl_company">
+    <End Type="Karenro_DBModel.tbl_company" Role="tbl_company" Multiplicity="1" />
+    <End Type="Karenro_DBModel.tbl_companyDetail" Role="tbl_companyDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_company">
+        <PropertyRef Name="company_id" />
+      </Principal>
+      <Dependent Role="tbl_companyDetail">
+        <PropertyRef Name="company_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_governmentDetail_tbl_company">
+    <End Type="Karenro_DBModel.tbl_company" Role="tbl_company" Multiplicity="1" />
+    <End Type="Karenro_DBModel.tbl_governmentDetail" Role="tbl_governmentDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_company">
+        <PropertyRef Name="company_id" />
+      </Principal>
+      <Dependent Role="tbl_governmentDetail">
+        <PropertyRef Name="company_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_companyDetail_tbl_profile">
+    <End Type="Karenro_DBModel.tbl_profile" Role="tbl_profile" Multiplicity="1" />
+    <End Type="Karenro_DBModel.tbl_companyDetail" Role="tbl_companyDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_profile">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="tbl_companyDetail">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_complaint_tbl_offerRide">
+    <End Type="Karenro_DBModel.tbl_offerRide" Role="tbl_offerRide" Multiplicity="1" />
+    <End Type="Karenro_DBModel.tbl_complaint" Role="tbl_complaint" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_offerRide">
+        <PropertyRef Name="offerRide_ID" />
+      </Principal>
+      <Dependent Role="tbl_complaint">
+        <PropertyRef Name="offerRide_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_complaint_tbl_profile">
+    <End Type="Karenro_DBModel.tbl_profile" Role="tbl_profile" Multiplicity="1" />
+    <End Type="Karenro_DBModel.tbl_complaint" Role="tbl_complaint" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_profile">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="tbl_complaint">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_discountDetails_tbl_discountCode">
+    <End Type="Karenro_DBModel.tbl_discountCode" Role="tbl_discountCode" Multiplicity="1" />
+    <End Type="Karenro_DBModel.tbl_discountDetails" Role="tbl_discountDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_discountCode">
+        <PropertyRef Name="discountID" />
+      </Principal>
+      <Dependent Role="tbl_discountDetails">
+        <PropertyRef Name="discountID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_discountDetails_tbl_profile">
+    <End Type="Karenro_DBModel.tbl_profile" Role="tbl_profile" Multiplicity="1" />
+    <End Type="Karenro_DBModel.tbl_discountDetails" Role="tbl_discountDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_profile">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="tbl_discountDetails">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_fastRide_canceled_tbl_fastRide">
+    <End Type="Karenro_DBModel.tbl_fastRide" Role="tbl_fastRide" Multiplicity="1" />
+    <End Type="Karenro_DBModel.tbl_fastRide_canceled" Role="tbl_fastRide_canceled" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_fastRide">
+        <PropertyRef Name="fastRide_ID" />
+      </Principal>
+      <Dependent Role="tbl_fastRide_canceled">
+        <PropertyRef Name="fastRide_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_fastRide_tbl_profile">
+    <End Type="Karenro_DBModel.tbl_profile" Role="tbl_profile" Multiplicity="1" />
+    <End Type="Karenro_DBModel.tbl_fastRide" Role="tbl_fastRide" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_profile">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="tbl_fastRide">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_fastRideDetails_tbl_fastRide">
+    <End Type="Karenro_DBModel.tbl_fastRide" Role="tbl_fastRide" Multiplicity="1" />
+    <End Type="Karenro_DBModel.tbl_fastRideDetails" Role="tbl_fastRideDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_fastRide">
+        <PropertyRef Name="fastRide_ID" />
+      </Principal>
+      <Dependent Role="tbl_fastRideDetails">
+        <PropertyRef Name="fastRide_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_fastUserRating_tbl_fastRide">
+    <End Type="Karenro_DBModel.tbl_fastRide" Role="tbl_fastRide" Multiplicity="0..1" />
+    <End Type="Karenro_DBModel.tbl_fastUserRating" Role="tbl_fastUserRating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_fastRide">
+        <PropertyRef Name="fastRide_ID" />
+      </Principal>
+      <Dependent Role="tbl_fastUserRating">
+        <PropertyRef Name="fastRide_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_fastRide_canceled_tbl_profile">
+    <End Type="Karenro_DBModel.tbl_profile" Role="tbl_profile" Multiplicity="1" />
+    <End Type="Karenro_DBModel.tbl_fastRide_canceled" Role="tbl_fastRide_canceled" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_profile">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="tbl_fastRide_canceled">
+        <PropertyRef Name="driver_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_fastRideDetails_tbl_profile">
+    <End Type="Karenro_DBModel.tbl_profile" Role="tbl_profile" Multiplicity="1" />
+    <End Type="Karenro_DBModel.tbl_fastRideDetails" Role="tbl_fastRideDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_profile">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="tbl_fastRideDetails">
+        <PropertyRef Name="driver_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_fastRideDetails_tbl_vehicle">
+    <End Type="Karenro_DBModel.tbl_vehicle" Role="tbl_vehicle" Multiplicity="1" />
+    <End Type="Karenro_DBModel.tbl_fastRideDetails" Role="tbl_fastRideDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_vehicle">
+        <PropertyRef Name="vehicle_id" />
+      </Principal>
+      <Dependent Role="tbl_fastRideDetails">
+        <PropertyRef Name="vehicle_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_fastTrack_tbl_profile">
+    <End Type="Karenro_DBModel.tbl_profile" Role="tbl_profile" Multiplicity="1" />
+    <End Type="Karenro_DBModel.tbl_fastTrack" Role="tbl_fastTrack" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_profile">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="tbl_fastTrack">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_fastTrack_tbl_vehicle">
+    <End Type="Karenro_DBModel.tbl_vehicle" Role="tbl_vehicle" Multiplicity="0..1" />
+    <End Type="Karenro_DBModel.tbl_fastTrack" Role="tbl_fastTrack" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_vehicle">
+        <PropertyRef Name="vehicle_id" />
+      </Principal>
+      <Dependent Role="tbl_fastTrack">
+        <PropertyRef Name="vehicle_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_fastTransDetails_tbl_WalletTransaction">
+    <End Type="Karenro_DBModel.tbl_WalletTransaction" Role="tbl_WalletTransaction" Multiplicity="1" />
+    <End Type="Karenro_DBModel.tbl_fastTransDetails" Role="tbl_fastTransDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_WalletTransaction">
+        <PropertyRef Name="transaction_ID" />
+      </Principal>
+      <Dependent Role="tbl_fastTransDetails">
+        <PropertyRef Name="transaction_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_governmentDetail_tbl_government">
+    <End Type="Karenro_DBModel.tbl_government" Role="tbl_government" Multiplicity="1" />
+    <End Type="Karenro_DBModel.tbl_governmentDetail" Role="tbl_governmentDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_government">
+        <PropertyRef Name="government_id" />
+      </Principal>
+      <Dependent Role="tbl_governmentDetail">
+        <PropertyRef Name="government_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_offerRide_tbl_profile">
+    <End Type="Karenro_DBModel.tbl_profile" Role="tbl_profile" Multiplicity="1" />
+    <End Type="Karenro_DBModel.tbl_offerRide" Role="tbl_offerRide" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_profile">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="tbl_offerRide">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_offerRide_tbl_vehicle">
+    <End Type="Karenro_DBModel.tbl_vehicle" Role="tbl_vehicle" Multiplicity="0..1" />
+    <End Type="Karenro_DBModel.tbl_offerRide" Role="tbl_offerRide" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_vehicle">
+        <PropertyRef Name="vehicle_id" />
+      </Principal>
+      <Dependent Role="tbl_offerRide">
+        <PropertyRef Name="vehicle_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_userComesFrom_tbl_profile">
+    <End Type="Karenro_DBModel.tbl_profile" Role="tbl_profile" Multiplicity="1" />
+    <End Type="Karenro_DBModel.tbl_userComesFrom" Role="tbl_userComesFrom" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_profile">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="tbl_userComesFrom">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_vehicle_tbl_profile">
+    <End Type="Karenro_DBModel.tbl_profile" Role="tbl_profile" Multiplicity="1" />
+    <End Type="Karenro_DBModel.tbl_vehicle" Role="tbl_vehicle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_profile">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="tbl_vehicle">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_WalletTransaction_tbl_profile">
+    <End Type="Karenro_DBModel.tbl_profile" Role="tbl_profile" Multiplicity="1" />
+    <End Type="Karenro_DBModel.tbl_WalletTransaction" Role="tbl_WalletTransaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_profile">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="tbl_WalletTransaction">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

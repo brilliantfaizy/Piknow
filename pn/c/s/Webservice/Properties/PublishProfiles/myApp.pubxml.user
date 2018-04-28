@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>ftp://208.109.189.86/CleaningSolutionService</_PublishTargetUrl>
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA+cqY4l+bzU2hOhLSWJGtHQAAAAACAAAAAAAQZgAAAAEAACAAAAAs7JXz8nv9TghMhBov5X8NzltkCRh/Oh0deioObauSdAAAAAAOgAAAAAIAACAAAABerYVwkvELOLwHVC8C867jn32pETt8I2kRWBfliUCStCAAAAAOJCfsR7rO1qFvBZ9RmJJowfRgsNu8brFrX4Yk6qt/NEAAAADeVeu05J3w8BFDqPKE9SQiOfrwhUyUuBSlGMXtPmFF/vcu3HyXN52gT8BjA2w13Uf4Uxba4KQJiBp9lbLZmW9K</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>07/03/2017 11:55:57</publishTime>
+    </File>
+    <File Include="bin/KarenroWebservice.dll">
+      <publishTime>09/22/2017 10:57:51</publishTime>
+    </File>
+    <File Include="bin/KarenroWebservice.pdb">
+      <publishTime>09/22/2017 10:57:51</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Threading.Tasks.dll">
+      <publishTime>09/29/2017 12:16:39</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Threading.Tasks.Extensions.Desktop.dll">
+      <publishTime>09/29/2017 12:16:39</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Threading.Tasks.Extensions.dll">
+      <publishTime>09/29/2017 12:16:39</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>07/03/2017 12:40:51</publishTime>
+    </File>
+    <File Include="bin/PersianDate.dll">
+      <publishTime>09/05/2017 14:36:58</publishTime>
+    </File>
+    <File Include="bin/System.IO.dll">
+      <publishTime>07/22/2017 15:45:57</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.dll">
+      <publishTime>07/22/2017 15:46:00</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Extensions.dll">
+      <publishTime>07/22/2017 15:46:00</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Primitives.dll">
+      <publishTime>07/22/2017 15:46:00</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.WebRequest.dll">
+      <publishTime>07/22/2017 15:46:00</publishTime>
+    </File>
+    <File Include="bin/System.Runtime.dll">
+      <publishTime>07/22/2017 15:45:57</publishTime>
+    </File>
+    <File Include="bin/System.Threading.Tasks.dll">
+      <publishTime>07/22/2017 15:45:57</publishTime>
+    </File>
+    <File Include="bin/Webservice.dll">
+      <publishTime>01/01/2018 17:23:45</publishTime>
+    </File>
+    <File Include="bin/Webservice.pdb">
+      <publishTime>12/28/2017 19:30:45</publishTime>
+    </File>
+    <File Include="html/about.html">
+      <publishTime>07/22/2017 14:19:25</publishTime>
+    </File>
+    <File Include="html/aboutPersian.html">
+      <publishTime>08/31/2017 17:49:47</publishTime>
+    </File>
+    <File Include="html/privacyPolicy.html">
+      <publishTime>07/22/2017 14:17:06</publishTime>
+    </File>
+    <File Include="html/privacyPolicyPersian.html">
+      <publishTime>08/31/2017 17:51:11</publishTime>
+    </File>
+    <File Include="html/termCondition.html">
+      <publishTime>07/22/2017 14:20:40</publishTime>
+    </File>
+    <File Include="html/termConditionPersian.html">
+      <publishTime>08/31/2017 17:51:39</publishTime>
+    </File>
+    <File Include="Model1.edmx.diagram">
+      <publishTime>09/20/2017 20:43:06</publishTime>
+    </File>
+    <File Include="Model2.edmx.diagram">
+      <publishTime>01/01/2018 16:59:55</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>09/29/2017 12:16:43</publishTime>
+    </File>
+    <File Include="services.asmx">
+      <publishTime>12/28/2017 19:16:38</publishTime>
+    </File>
+    <File Include="upload/00c30fb1-6117-4323-97dd-c74d8b31edf3.png">
+      <publishTime>08/02/2017 13:00:58</publishTime>
+    </File>
+    <File Include="upload/27b68f4c-0233-464e-b4cf-422a415fc721.png">
+      <publishTime>07/12/2017 18:19:26</publishTime>
+    </File>
+    <File Include="upload/4c3baf3c-c6cc-4e4a-97c1-dd4372ddfa2b.png">
+      <publishTime>07/18/2017 01:23:24</publishTime>
+    </File>
+    <File Include="upload/502e8c65-bdc2-46a6-a2ac-978b556f60dc.png">
+      <publishTime>07/20/2017 11:59:57</publishTime>
+    </File>
+    <File Include="upload/6546fe8a-f19c-42ff-b61d-f7bd62c644fe.png">
+      <publishTime>07/18/2017 01:23:25</publishTime>
+    </File>
+    <File Include="upload/6ec8dbf5-1324-4d86-965e-94150ea24c2f.png">
+      <publishTime>07/18/2017 01:23:29</publishTime>
+    </File>
+    <File Include="upload/6f76280e-aac3-415f-9d4b-58acea3b5728.png">
+      <publishTime>07/12/2017 18:19:26</publishTime>
+    </File>
+    <File Include="upload/841c1c2a-87c0-4beb-ab9f-dd55fd7e075b.png">
+      <publishTime>07/12/2017 18:19:26</publishTime>
+    </File>
+    <File Include="upload/8d5373a6-15f4-4941-bef4-76ec8e1450eb.png">
+      <publishTime>07/12/2017 18:19:26</publishTime>
+    </File>
+    <File Include="upload/d3dee8e8-dfa5-41e2-836c-f903f8bcbfa4.png">
+      <publishTime>07/12/2017 18:19:26</publishTime>
+    </File>
+    <File Include="upload/df08ddb0-e6f6-4530-9d4f-d873b5106c3c.png">
+      <publishTime>07/20/2017 11:59:57</publishTime>
+    </File>
+    <File Include="upload/e01e6a73-c324-422d-9fe7-4e66f0e95f36.png">
+      <publishTime>07/18/2017 01:24:50</publishTime>
+    </File>
+    <File Include="upload/f3be5268-b73c-413b-958c-68e8b665757c.png">
+      <publishTime>07/18/2017 01:24:59</publishTime>
+    </File>
+    <File Include="upload/fd29f62c-2f9c-4bb3-9070-0c0ce0716845.png">
+      <publishTime>07/20/2017 11:59:57</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>01/01/2018 17:23:52</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

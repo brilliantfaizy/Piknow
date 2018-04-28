@@ -1,0 +1,64 @@
+D:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\bin\KarenroWebservice.dll.config
+D:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\bin\KarenroWebservice.dll
+D:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\bin\KarenroWebservice.pdb
+D:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\bin\EntityFramework.dll
+D:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\bin\Newtonsoft.Json.dll
+D:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\bin\PersianDate.dll
+D:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\bin\System.IO.dll
+D:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\bin\System.Net.Http.dll
+D:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\bin\System.Net.Http.Extensions.dll
+D:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\bin\System.Net.Http.Primitives.dll
+D:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\bin\System.Net.Http.WebRequest.dll
+D:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\bin\System.Runtime.dll
+D:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\bin\System.Threading.Tasks.dll
+D:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\bin\EntityFramework.xml
+D:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\bin\Newtonsoft.Json.xml
+D:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\bin\System.IO.xml
+D:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\bin\System.Net.Http.xml
+D:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\bin\System.Net.Http.Extensions.xml
+D:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\bin\System.Net.Http.Primitives.xml
+D:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\bin\System.Net.Http.WebRequest.xml
+D:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\bin\System.Runtime.xml
+D:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\bin\System.Threading.Tasks.xml
+D:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\obj\Debug\KarenroWebservice.csproj.App.config
+D:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\obj\Debug\KarenroWebservice.dll
+D:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\obj\Debug\KarenroWebservice.pdb
+D:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\obj\Debug\KarenroWebservice.csprojResolveAssemblyReference.cache
+D:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\bin\Microsoft.Threading.Tasks.dll
+D:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\bin\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+D:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\bin\Microsoft.Threading.Tasks.Extensions.dll
+D:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\bin\Microsoft.Threading.Tasks.xml
+D:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\bin\Microsoft.Threading.Tasks.Extensions.xml
+D:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\bin\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+G:\Desktop Data\CleaningSolutions\code\service\KarenroWebservice\bin\KarenroWebservice.dll.config
+G:\Desktop Data\CleaningSolutions\code\service\KarenroWebservice\bin\KarenroWebservice.dll
+G:\Desktop Data\CleaningSolutions\code\service\KarenroWebservice\bin\KarenroWebservice.pdb
+G:\Desktop Data\CleaningSolutions\code\service\KarenroWebservice\bin\EntityFramework.dll
+G:\Desktop Data\CleaningSolutions\code\service\KarenroWebservice\bin\Microsoft.Threading.Tasks.dll
+G:\Desktop Data\CleaningSolutions\code\service\KarenroWebservice\bin\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+G:\Desktop Data\CleaningSolutions\code\service\KarenroWebservice\bin\Microsoft.Threading.Tasks.Extensions.dll
+G:\Desktop Data\CleaningSolutions\code\service\KarenroWebservice\bin\Newtonsoft.Json.dll
+G:\Desktop Data\CleaningSolutions\code\service\KarenroWebservice\bin\PersianDate.dll
+G:\Desktop Data\CleaningSolutions\code\service\KarenroWebservice\bin\System.IO.dll
+G:\Desktop Data\CleaningSolutions\code\service\KarenroWebservice\bin\System.Net.Http.dll
+G:\Desktop Data\CleaningSolutions\code\service\KarenroWebservice\bin\System.Net.Http.Extensions.dll
+G:\Desktop Data\CleaningSolutions\code\service\KarenroWebservice\bin\System.Net.Http.Primitives.dll
+G:\Desktop Data\CleaningSolutions\code\service\KarenroWebservice\bin\System.Net.Http.WebRequest.dll
+G:\Desktop Data\CleaningSolutions\code\service\KarenroWebservice\bin\System.Runtime.dll
+G:\Desktop Data\CleaningSolutions\code\service\KarenroWebservice\bin\System.Threading.Tasks.dll
+G:\Desktop Data\CleaningSolutions\code\service\KarenroWebservice\bin\EntityFramework.xml
+G:\Desktop Data\CleaningSolutions\code\service\KarenroWebservice\bin\Microsoft.Threading.Tasks.xml
+G:\Desktop Data\CleaningSolutions\code\service\KarenroWebservice\bin\Microsoft.Threading.Tasks.Extensions.xml
+G:\Desktop Data\CleaningSolutions\code\service\KarenroWebservice\bin\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+G:\Desktop Data\CleaningSolutions\code\service\KarenroWebservice\bin\Newtonsoft.Json.xml
+G:\Desktop Data\CleaningSolutions\code\service\KarenroWebservice\bin\System.IO.xml
+G:\Desktop Data\CleaningSolutions\code\service\KarenroWebservice\bin\System.Net.Http.xml
+G:\Desktop Data\CleaningSolutions\code\service\KarenroWebservice\bin\System.Net.Http.Extensions.xml
+G:\Desktop Data\CleaningSolutions\code\service\KarenroWebservice\bin\System.Net.Http.Primitives.xml
+G:\Desktop Data\CleaningSolutions\code\service\KarenroWebservice\bin\System.Net.Http.WebRequest.xml
+G:\Desktop Data\CleaningSolutions\code\service\KarenroWebservice\bin\System.Runtime.xml
+G:\Desktop Data\CleaningSolutions\code\service\KarenroWebservice\bin\System.Threading.Tasks.xml
+G:\Desktop Data\CleaningSolutions\code\service\KarenroWebservice\obj\Debug\KarenroWebservice.csproj.App.config
+G:\Desktop Data\CleaningSolutions\code\service\KarenroWebservice\obj\Debug\KarenroWebservice.csprojResolveAssemblyReference.cache
+G:\Desktop Data\CleaningSolutions\code\service\KarenroWebservice\obj\Debug\KarenroWebservice.dll
+G:\Desktop Data\CleaningSolutions\code\service\KarenroWebservice\obj\Debug\KarenroWebservice.pdb

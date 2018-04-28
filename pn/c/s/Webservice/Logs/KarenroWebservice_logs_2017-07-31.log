@@ -1,0 +1,7 @@
+
+********************  Error Log - 7/31/2017 4:54:52 PM*********************
+
+Exception Type : NullReferenceException
+Error Message : Object reference not set to an instance of an object.
+Error Source : KarenroWebservice
+Error Trace :    at KarenroWebservice.Repo.FastTrackRepo.getDriverInfo(Int32 fastRide_ID) in d:\Visual Studio Projects\KarenroWebservice\KarenroWebservice\Repo\FastTrackRepo.cs:line 490

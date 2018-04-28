@@ -1,0 +1,568 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\Visual Studio Projects\pn\c\w\publishweb</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include=".user.ini">
+      <publishTime>01/17/2018 23:42:03</publishTime>
+    </File>
+    <File Include="about.aspx">
+      <publishTime>04/07/2018 20:31:11</publishTime>
+    </File>
+    <File Include="about.html">
+      <publishTime>01/17/2018 23:42:03</publishTime>
+    </File>
+    <File Include="bin/w.dll">
+      <publishTime>04/04/2018 10:50:04</publishTime>
+    </File>
+    <File Include="blog-detail.html">
+      <publishTime>01/17/2018 23:42:03</publishTime>
+    </File>
+    <File Include="blog-sidebar.html">
+      <publishTime>01/17/2018 23:42:03</publishTime>
+    </File>
+    <File Include="blog.html">
+      <publishTime>01/17/2018 23:42:03</publishTime>
+    </File>
+    <File Include="booking.aspx">
+      <publishTime>03/02/2018 19:32:24</publishTime>
+    </File>
+    <File Include="booking.html">
+      <publishTime>01/17/2018 23:42:03</publishTime>
+    </File>
+    <File Include="contact-us.aspx">
+      <publishTime>03/02/2018 19:32:21</publishTime>
+    </File>
+    <File Include="contact-us.html">
+      <publishTime>01/17/2018 23:42:03</publishTime>
+    </File>
+    <File Include="contact-us2.html">
+      <publishTime>01/17/2018 23:42:03</publishTime>
+    </File>
+    <File Include="css/bootstrap.css">
+      <publishTime>03/02/2018 19:36:29</publishTime>
+    </File>
+    <File Include="css/custom.css">
+      <publishTime>04/03/2018 10:50:47</publishTime>
+    </File>
+    <File Include="css/font-awesome.min.css">
+      <publishTime>03/02/2018 19:36:27</publishTime>
+    </File>
+    <File Include="css/icomoon.css">
+      <publishTime>03/02/2018 19:36:26</publishTime>
+    </File>
+    <File Include="css/owl.carousel.css">
+      <publishTime>03/02/2018 19:36:25</publishTime>
+    </File>
+    <File Include="css/responsive.css">
+      <publishTime>03/02/2018 19:36:25</publishTime>
+    </File>
+    <File Include="css/theme-color.css">
+      <publishTime>03/02/2018 19:36:24</publishTime>
+    </File>
+    <File Include="default.aspx">
+      <publishTime>04/10/2018 23:33:13</publishTime>
+    </File>
+    <File Include="faq-sidebar.html">
+      <publishTime>01/17/2018 23:42:03</publishTime>
+    </File>
+    <File Include="faq-terms.aspx">
+      <publishTime>04/07/2018 23:04:22</publishTime>
+    </File>
+    <File Include="faq-terms.html">
+      <publishTime>01/17/2018 23:42:03</publishTime>
+    </File>
+    <File Include="faq.aspx">
+      <publishTime>01/19/2018 01:45:59</publishTime>
+    </File>
+    <File Include="faq.html">
+      <publishTime>01/17/2018 23:42:03</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.eot">
+      <publishTime>03/02/2018 19:36:17</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.svg">
+      <publishTime>03/02/2018 19:36:18</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.ttf">
+      <publishTime>03/02/2018 19:36:15</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.woff">
+      <publishTime>03/02/2018 19:36:15</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.woff2">
+      <publishTime>03/02/2018 19:36:13</publishTime>
+    </File>
+    <File Include="fonts/FontAwesome.otf">
+      <publishTime>03/02/2018 19:36:13</publishTime>
+    </File>
+    <File Include="fonts/icomoon.eot">
+      <publishTime>03/02/2018 19:36:11</publishTime>
+    </File>
+    <File Include="fonts/icomoon.svg">
+      <publishTime>03/02/2018 19:36:11</publishTime>
+    </File>
+    <File Include="fonts/icomoon.ttf">
+      <publishTime>03/02/2018 19:36:10</publishTime>
+    </File>
+    <File Include="fonts/icomoon.woff">
+      <publishTime>03/02/2018 19:36:09</publishTime>
+    </File>
+    <File Include="form.php">
+      <publishTime>01/17/2018 23:42:03</publishTime>
+    </File>
+    <File Include="gallery-2.html">
+      <publishTime>01/17/2018 23:42:03</publishTime>
+    </File>
+    <File Include="gallery-3.html">
+      <publishTime>01/17/2018 23:42:03</publishTime>
+    </File>
+    <File Include="gallery-full.html">
+      <publishTime>01/17/2018 23:42:03</publishTime>
+    </File>
+    <File Include="gallery.html">
+      <publishTime>01/17/2018 23:42:03</publishTime>
+    </File>
+    <File Include="images/about-img1.png">
+      <publishTime>03/02/2018 19:35:43</publishTime>
+    </File>
+    <File Include="images/advertising-after-img.png">
+      <publishTime>03/02/2018 19:35:41</publishTime>
+    </File>
+    <File Include="images/advertising-before-img.png">
+      <publishTime>03/02/2018 19:35:41</publishTime>
+    </File>
+    <File Include="images/advertising-sm-thumb-01.png">
+      <publishTime>03/02/2018 19:35:40</publishTime>
+    </File>
+    <File Include="images/advertising-sm-thumb-02.png">
+      <publishTime>03/02/2018 19:35:40</publishTime>
+    </File>
+    <File Include="images/advertising-sm-thumb-03.png">
+      <publishTime>03/02/2018 19:35:39</publishTime>
+    </File>
+    <File Include="images/animate-bus.png">
+      <publishTime>03/02/2018 19:35:38</publishTime>
+    </File>
+    <File Include="images/animate-bus2.png">
+      <publishTime>03/02/2018 19:35:38</publishTime>
+    </File>
+    <File Include="images/app-img.png">
+      <publishTime>04/03/2018 10:18:03</publishTime>
+    </File>
+    <File Include="images/author-sm-img-01.jpg">
+      <publishTime>03/02/2018 19:35:37</publishTime>
+    </File>
+    <File Include="images/awwards-bg-img.jpg">
+      <publishTime>03/02/2018 19:35:36</publishTime>
+    </File>
+    <File Include="images/banner/banner-before-img.png">
+      <publishTime>03/02/2018 19:36:03</publishTime>
+    </File>
+    <File Include="images/banner/banner-before-img2.png">
+      <publishTime>03/02/2018 19:36:01</publishTime>
+    </File>
+    <File Include="images/banner/banner-img-01.jpg">
+      <publishTime>04/02/2018 20:08:30</publishTime>
+    </File>
+    <File Include="images/banner/banner-img-02.jpg">
+      <publishTime>04/02/2018 20:07:35</publishTime>
+    </File>
+    <File Include="images/banner/banner-img-03.jpg">
+      <publishTime>04/02/2018 20:15:47</publishTime>
+    </File>
+    <File Include="images/banner/inner-banner-img-01.jpg">
+      <publishTime>03/02/2018 19:35:58</publishTime>
+    </File>
+    <File Include="images/banner/inner-banner-img-02.jpg">
+      <publishTime>03/02/2018 19:35:56</publishTime>
+    </File>
+    <File Include="images/banner/inner-banner-img-03.jpg">
+      <publishTime>03/02/2018 19:35:54</publishTime>
+    </File>
+    <File Include="images/banner/inner-banner-img-04.jpg">
+      <publishTime>03/02/2018 19:35:56</publishTime>
+    </File>
+    <File Include="images/banner/inner-banner-img-05.jpg">
+      <publishTime>03/02/2018 19:35:53</publishTime>
+    </File>
+    <File Include="images/banner/inner-banner-img-06.jpg">
+      <publishTime>03/02/2018 19:35:52</publishTime>
+    </File>
+    <File Include="images/banner/inner-banner-img-07.jpg">
+      <publishTime>03/02/2018 19:35:49</publishTime>
+    </File>
+    <File Include="images/banner/inner-banner-img-08.jpg">
+      <publishTime>03/02/2018 19:35:49</publishTime>
+    </File>
+    <File Include="images/banner/inner-banner-img-09.jpg">
+      <publishTime>03/02/2018 19:35:47</publishTime>
+    </File>
+    <File Include="images/banner/inner-banner-img-10.jpg">
+      <publishTime>03/02/2018 19:35:47</publishTime>
+    </File>
+    <File Include="images/banner/inner-banner-img-11.jpg">
+      <publishTime>03/02/2018 19:35:45</publishTime>
+    </File>
+    <File Include="images/blog-thumb-01.jpg">
+      <publishTime>03/02/2018 19:35:35</publishTime>
+    </File>
+    <File Include="images/blog-thumb-02.jpg">
+      <publishTime>03/02/2018 19:35:34</publishTime>
+    </File>
+    <File Include="images/blog-thumb-03.jpg">
+      <publishTime>03/02/2018 19:35:34</publishTime>
+    </File>
+    <File Include="images/car-sm-01.jpg">
+      <publishTime>03/02/2018 19:35:33</publishTime>
+    </File>
+    <File Include="images/comments-img-01.png">
+      <publishTime>03/02/2018 19:35:32</publishTime>
+    </File>
+    <File Include="images/company-logo1.jpg">
+      <publishTime>03/02/2018 19:35:30</publishTime>
+    </File>
+    <File Include="images/company-logo2.jpg">
+      <publishTime>03/02/2018 19:35:29</publishTime>
+    </File>
+    <File Include="images/company-logo3.jpg">
+      <publishTime>03/02/2018 19:35:32</publishTime>
+    </File>
+    <File Include="images/company-logo4.jpg">
+      <publishTime>03/02/2018 19:35:28</publishTime>
+    </File>
+    <File Include="images/cp-logo.png">
+      <publishTime>03/02/2018 19:35:28</publishTime>
+    </File>
+    <File Include="images/cp-logo2.png">
+      <publishTime>03/02/2018 19:35:27</publishTime>
+    </File>
+    <File Include="images/deals-thumb-img-01.jpg">
+      <publishTime>03/02/2018 19:35:26</publishTime>
+    </File>
+    <File Include="images/deals-thumb-img-02.jpg">
+      <publishTime>03/02/2018 19:35:25</publishTime>
+    </File>
+    <File Include="images/deals-thumb-img-03.jpg">
+      <publishTime>03/02/2018 19:35:25</publishTime>
+    </File>
+    <File Include="images/deals-thumb-img-04.jpg">
+      <publishTime>03/02/2018 19:35:24</publishTime>
+    </File>
+    <File Include="images/dot-img.jpg">
+      <publishTime>03/02/2018 19:35:24</publishTime>
+    </File>
+    <File Include="images/driver-img-01.jpg">
+      <publishTime>03/02/2018 19:35:23</publishTime>
+    </File>
+    <File Include="images/driver-img-02.jpg">
+      <publishTime>03/02/2018 19:35:23</publishTime>
+    </File>
+    <File Include="images/driver-img-03.jpg">
+      <publishTime>03/02/2018 19:35:22</publishTime>
+    </File>
+    <File Include="images/driver-img-04.jpg">
+      <publishTime>03/02/2018 19:35:21</publishTime>
+    </File>
+    <File Include="images/flickr-img-01.jpg">
+      <publishTime>03/02/2018 19:35:20</publishTime>
+    </File>
+    <File Include="images/flickr-img-02.jpg">
+      <publishTime>03/02/2018 19:35:20</publishTime>
+    </File>
+    <File Include="images/flickr-img-03.jpg">
+      <publishTime>03/02/2018 19:35:19</publishTime>
+    </File>
+    <File Include="images/flickr-img-04.jpg">
+      <publishTime>03/02/2018 19:35:18</publishTime>
+    </File>
+    <File Include="images/flickr-img-05.jpg">
+      <publishTime>03/02/2018 19:35:18</publishTime>
+    </File>
+    <File Include="images/flickr-img-06.jpg">
+      <publishTime>03/02/2018 19:35:17</publishTime>
+    </File>
+    <File Include="images/flickr-img-07.jpg">
+      <publishTime>03/02/2018 19:35:17</publishTime>
+    </File>
+    <File Include="images/flickr-img-08.jpg">
+      <publishTime>03/02/2018 19:35:15</publishTime>
+    </File>
+    <File Include="images/footer-bottom-img.jpg">
+      <publishTime>03/02/2018 19:35:14</publishTime>
+    </File>
+    <File Include="images/footer-md-img.jpg">
+      <publishTime>03/02/2018 19:35:15</publishTime>
+    </File>
+    <File Include="images/g-play-img.png">
+      <publishTime>04/03/2018 10:19:57</publishTime>
+    </File>
+    <File Include="images/gallery-col-1-img-01.jpg">
+      <publishTime>03/02/2018 19:35:13</publishTime>
+    </File>
+    <File Include="images/gallery-col-1-img-02.jpg">
+      <publishTime>03/02/2018 19:35:12</publishTime>
+    </File>
+    <File Include="images/gallery-col-1-img-03.jpg">
+      <publishTime>03/02/2018 19:35:12</publishTime>
+    </File>
+    <File Include="images/gallery-col-1-img-04.jpg">
+      <publishTime>03/02/2018 19:35:11</publishTime>
+    </File>
+    <File Include="images/gallery-col-2-img-01.jpg">
+      <publishTime>03/02/2018 19:35:11</publishTime>
+    </File>
+    <File Include="images/gallery-col-2-img-02.jpg">
+      <publishTime>03/02/2018 19:35:09</publishTime>
+    </File>
+    <File Include="images/gallery-col-2-img-03.jpg">
+      <publishTime>03/02/2018 19:35:09</publishTime>
+    </File>
+    <File Include="images/gallery-col-2-img-04.jpg">
+      <publishTime>03/02/2018 19:35:08</publishTime>
+    </File>
+    <File Include="images/gallery-col-2-img-05.jpg">
+      <publishTime>03/02/2018 19:35:08</publishTime>
+    </File>
+    <File Include="images/gallery-col-2-img-06.jpg">
+      <publishTime>03/02/2018 19:35:07</publishTime>
+    </File>
+    <File Include="images/gallery-col-2-img-07.jpg">
+      <publishTime>03/02/2018 19:35:07</publishTime>
+    </File>
+    <File Include="images/gallery-col-2-img-08.jpg">
+      <publishTime>03/02/2018 19:35:06</publishTime>
+    </File>
+    <File Include="images/gallery-col-3-img-01.jpg">
+      <publishTime>03/02/2018 19:35:06</publishTime>
+    </File>
+    <File Include="images/gallery-col-3-img-02.jpg">
+      <publishTime>03/02/2018 19:35:05</publishTime>
+    </File>
+    <File Include="images/gallery-col-3-img-03.jpg">
+      <publishTime>03/02/2018 19:35:04</publishTime>
+    </File>
+    <File Include="images/gallery-col-3-img-04.jpg">
+      <publishTime>03/02/2018 19:35:03</publishTime>
+    </File>
+    <File Include="images/gallery-col-3-img-05.jpg">
+      <publishTime>03/02/2018 19:35:03</publishTime>
+    </File>
+    <File Include="images/gallery-col-3-img-06.jpg">
+      <publishTime>03/02/2018 19:35:02</publishTime>
+    </File>
+    <File Include="images/gallery-col-3-img-07.jpg">
+      <publishTime>03/02/2018 19:35:02</publishTime>
+    </File>
+    <File Include="images/gallery-col-3-img-08.jpg">
+      <publishTime>03/02/2018 19:35:01</publishTime>
+    </File>
+    <File Include="images/gallery-col-3-img-09.jpg">
+      <publishTime>03/02/2018 19:35:01</publishTime>
+    </File>
+    <File Include="images/gallery-col-3-img-10.jpg">
+      <publishTime>03/02/2018 19:35:00</publishTime>
+    </File>
+    <File Include="images/gallery-col-3-img-11.jpg">
+      <publishTime>03/02/2018 19:35:00</publishTime>
+    </File>
+    <File Include="images/gallery-col-3-img-12.jpg">
+      <publishTime>03/02/2018 19:34:58</publishTime>
+    </File>
+    <File Include="images/gallery-col-4-img-01.jpg">
+      <publishTime>03/02/2018 19:34:58</publishTime>
+    </File>
+    <File Include="images/gallery-col-4-img-02.jpg">
+      <publishTime>03/02/2018 19:34:57</publishTime>
+    </File>
+    <File Include="images/gallery-col-4-img-03.jpg">
+      <publishTime>03/02/2018 19:34:57</publishTime>
+    </File>
+    <File Include="images/gallery-col-4-img-04.jpg">
+      <publishTime>03/02/2018 19:34:56</publishTime>
+    </File>
+    <File Include="images/gallery-col-4-img-05.jpg">
+      <publishTime>03/02/2018 19:34:56</publishTime>
+    </File>
+    <File Include="images/gallery-col-4-img-06.jpg">
+      <publishTime>03/02/2018 19:34:55</publishTime>
+    </File>
+    <File Include="images/gallery-col-4-img-07.jpg">
+      <publishTime>03/02/2018 19:34:55</publishTime>
+    </File>
+    <File Include="images/gallery-col-4-img-08.jpg">
+      <publishTime>03/02/2018 19:34:54</publishTime>
+    </File>
+    <File Include="images/gallery-col-4-img-09.jpg">
+      <publishTime>03/02/2018 19:34:54</publishTime>
+    </File>
+    <File Include="images/gallery-col-4-img-10.jpg">
+      <publishTime>03/02/2018 19:34:52</publishTime>
+    </File>
+    <File Include="images/gallery-col-4-img-11.jpg">
+      <publishTime>03/02/2018 19:34:52</publishTime>
+    </File>
+    <File Include="images/gallery-col-4-img-12.jpg">
+      <publishTime>03/02/2018 19:34:51</publishTime>
+    </File>
+    <File Include="images/gallery-col-4-img-13.jpg">
+      <publishTime>03/02/2018 19:34:51</publishTime>
+    </File>
+    <File Include="images/gallery-col-4-img-14.jpg">
+      <publishTime>03/02/2018 19:34:50</publishTime>
+    </File>
+    <File Include="images/gallery-col-4-img-15.jpg">
+      <publishTime>03/02/2018 19:34:50</publishTime>
+    </File>
+    <File Include="images/gallery-col-4-img-16.jpg">
+      <publishTime>03/02/2018 19:34:49</publishTime>
+    </File>
+    <File Include="images/heading-after-img.png">
+      <publishTime>03/02/2018 19:34:49</publishTime>
+    </File>
+    <File Include="images/heading-before-img.png">
+      <publishTime>03/02/2018 19:34:48</publishTime>
+    </File>
+    <File Include="images/mobile-img-01.png">
+      <publishTime>03/02/2018 19:34:47</publishTime>
+    </File>
+    <File Include="images/mobile-img-02.png">
+      <publishTime>03/02/2018 19:34:46</publishTime>
+    </File>
+    <File Include="images/mobile-md-img.png">
+      <publishTime>03/02/2018 19:34:46</publishTime>
+    </File>
+    <File Include="images/offers-bg-img.jpg">
+      <publishTime>03/02/2018 19:34:45</publishTime>
+    </File>
+    <File Include="images/popular-sm-01.jpg">
+      <publishTime>03/02/2018 19:34:45</publishTime>
+    </File>
+    <File Include="images/popular-sm-02.jpg">
+      <publishTime>03/02/2018 19:34:44</publishTime>
+    </File>
+    <File Include="images/popular-sm-03.jpg">
+      <publishTime>03/02/2018 19:34:44</publishTime>
+    </File>
+    <File Include="images/popular-sm-04.jpg">
+      <publishTime>03/02/2018 19:34:43</publishTime>
+    </File>
+    <File Include="images/select-img.png">
+      <publishTime>03/02/2018 19:34:42</publishTime>
+    </File>
+    <File Include="images/taxi-icon.png">
+      <publishTime>03/02/2018 19:34:42</publishTime>
+    </File>
+    <File Include="images/taxi-img-01.jpg">
+      <publishTime>03/02/2018 19:34:41</publishTime>
+    </File>
+    <File Include="images/taxi-img-02.jpg">
+      <publishTime>03/02/2018 19:34:40</publishTime>
+    </File>
+    <File Include="images/taxi-img-03.jpg">
+      <publishTime>03/02/2018 19:34:40</publishTime>
+    </File>
+    <File Include="images/test-sm-thumb.jpg">
+      <publishTime>03/02/2018 19:34:39</publishTime>
+    </File>
+    <File Include="images/testimonial-bg-img.jpg">
+      <publishTime>03/02/2018 19:34:39</publishTime>
+    </File>
+    <File Include="images/testimonial-thumb-01.jpg">
+      <publishTime>03/02/2018 19:34:37</publishTime>
+    </File>
+    <File Include="images/testimonial-thumb-02.jpg">
+      <publishTime>03/02/2018 19:34:37</publishTime>
+    </File>
+    <File Include="images/testimonial-thumb-03.jpg">
+      <publishTime>03/02/2018 19:34:36</publishTime>
+    </File>
+    <File Include="images/testimonial-thumb-04.jpg">
+      <publishTime>03/02/2018 19:34:36</publishTime>
+    </File>
+    <File Include="images/testimonial-thumb-05.jpg">
+      <publishTime>03/02/2018 19:34:35</publishTime>
+    </File>
+    <File Include="images/testimonial-thumb-06.jpg">
+      <publishTime>03/02/2018 19:34:34</publishTime>
+    </File>
+    <File Include="images/testimonial-thumb-07.jpg">
+      <publishTime>03/02/2018 19:34:34</publishTime>
+    </File>
+    <File Include="images/testimonial-thumb-08.jpg">
+      <publishTime>03/02/2018 19:34:33</publishTime>
+    </File>
+    <File Include="images/testimonial-thumb-09.jpg">
+      <publishTime>03/02/2018 19:34:32</publishTime>
+    </File>
+    <File Include="images/why-choose-img-01.png">
+      <publishTime>03/02/2018 19:34:32</publishTime>
+    </File>
+    <File Include="images/why-choose-img-02.png">
+      <publishTime>03/02/2018 19:34:31</publishTime>
+    </File>
+    <File Include="images/why-choose-img-03.png">
+      <publishTime>03/02/2018 19:34:31</publishTime>
+    </File>
+    <File Include="images/why-choose-taxi-bg-img.jpg">
+      <publishTime>03/02/2018 19:34:30</publishTime>
+    </File>
+    <File Include="index.html">
+      <publishTime>01/19/2018 01:00:34</publishTime>
+    </File>
+    <File Include="js/bootstrap.min.js">
+      <publishTime>03/02/2018 19:36:08</publishTime>
+    </File>
+    <File Include="js/custom-script.js">
+      <publishTime>03/02/2018 19:36:07</publishTime>
+    </File>
+    <File Include="js/html5shiv.js">
+      <publishTime>03/02/2018 19:36:06</publishTime>
+    </File>
+    <File Include="js/jquery-1.11.3.min.js">
+      <publishTime>03/02/2018 19:36:06</publishTime>
+    </File>
+    <File Include="js/map.js">
+      <publishTime>03/02/2018 19:36:04</publishTime>
+    </File>
+    <File Include="js/migrate.js">
+      <publishTime>03/02/2018 19:36:05</publishTime>
+    </File>
+    <File Include="js/owl.carousel.min.js">
+      <publishTime>03/02/2018 19:36:03</publishTime>
+    </File>
+    <File Include="login.html">
+      <publishTime>01/17/2018 23:42:03</publishTime>
+    </File>
+    <File Include="offers.html">
+      <publishTime>01/17/2018 23:42:03</publishTime>
+    </File>
+    <File Include="privacypolicy.aspx">
+      <publishTime>04/07/2018 22:36:27</publishTime>
+    </File>
+    <File Include="reservation.html">
+      <publishTime>01/17/2018 23:42:03</publishTime>
+    </File>
+    <File Include="Site1.Master">
+      <publishTime>04/10/2018 23:13:06</publishTime>
+    </File>
+    <File Include="testimonial.html">
+      <publishTime>01/17/2018 23:42:03</publishTime>
+    </File>
+    <File Include="version.txt">
+      <publishTime>01/17/2018 23:42:03</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>03/02/2018 19:42:05</publishTime>
+    </File>
+    <File Include="WebForm1.aspx">
+      <publishTime>01/19/2018 00:58:56</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

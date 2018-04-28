@@ -1,0 +1,420 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Karenro_DBModelStoreContainer" CdmEntityContainer="Karenro_DBEntities">
+    <EntitySetMapping Name="tbl_admin">
+      <EntityTypeMapping TypeName="Karenro_DBModel.tbl_admin">
+        <MappingFragment StoreEntitySet="tbl_admin">
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="admin_id" ColumnName="admin_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_adminBank">
+      <EntityTypeMapping TypeName="Karenro_DBModel.tbl_adminBank">
+        <MappingFragment StoreEntitySet="tbl_adminBank">
+          <ScalarProperty Name="book_id" ColumnName="book_id" />
+          <ScalarProperty Name="transaction_ID" ColumnName="transaction_ID" />
+          <ScalarProperty Name="paymentStatus" ColumnName="paymentStatus" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="offerRide_ID" ColumnName="offerRide_ID" />
+          <ScalarProperty Name="userType" ColumnName="userType" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_adminTransaction">
+      <EntityTypeMapping TypeName="Karenro_DBModel.tbl_adminTransaction">
+        <MappingFragment StoreEntitySet="tbl_adminTransaction">
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="Credit" ColumnName="Credit" />
+          <ScalarProperty Name="Debit" ColumnName="Debit" />
+          <ScalarProperty Name="receivedCommission" ColumnName="receivedCommission" />
+          <ScalarProperty Name="transaction_datetime" ColumnName="transaction_datetime" />
+          <ScalarProperty Name="transaction_Title" ColumnName="transaction_Title" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="transaction_ID" ColumnName="transaction_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_autoCharges">
+      <EntityTypeMapping TypeName="Karenro_DBModel.tbl_autoCharges">
+        <MappingFragment StoreEntitySet="tbl_autoCharges">
+          <ScalarProperty Name="updatedAt" ColumnName="updatedAt" />
+          <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+          <ScalarProperty Name="VehicleTypeIsNormal" ColumnName="VehicleTypeIsNormal" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="charges" ColumnName="charges" />
+          <ScalarProperty Name="to_city" ColumnName="to_city" />
+          <ScalarProperty Name="from_city" ColumnName="from_city" />
+          <ScalarProperty Name="chargesID" ColumnName="chargesID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_book">
+      <EntityTypeMapping TypeName="Karenro_DBModel.tbl_book">
+        <MappingFragment StoreEntitySet="tbl_book">
+          <ScalarProperty Name="passengerCode" ColumnName="passengerCode" />
+          <ScalarProperty Name="datetime" ColumnName="datetime" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="offerRide_ID" ColumnName="offerRide_ID" />
+          <ScalarProperty Name="book_id" ColumnName="book_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_cities">
+      <EntityTypeMapping TypeName="Karenro_DBModel.tbl_cities">
+        <MappingFragment StoreEntitySet="tbl_cities">
+          <ScalarProperty Name="updatedAt" ColumnName="updatedAt" />
+          <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+          <ScalarProperty Name="cityName" ColumnName="cityName" />
+          <ScalarProperty Name="cityID" ColumnName="cityID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_commissionFee">
+      <EntityTypeMapping TypeName="Karenro_DBModel.tbl_commissionFee">
+        <MappingFragment StoreEntitySet="tbl_commissionFee">
+          <ScalarProperty Name="updatedAt" ColumnName="updatedAt" />
+          <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+          <ScalarProperty Name="minFastInBalance" ColumnName="minFastInBalance" />
+          <ScalarProperty Name="foreignPassengerFee" ColumnName="foreignPassengerFee" />
+          <ScalarProperty Name="persianPassengerFee" ColumnName="persianPassengerFee" />
+          <ScalarProperty Name="driversFee" ColumnName="driversFee" />
+          <ScalarProperty Name="FeeID" ColumnName="FeeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_company">
+      <EntityTypeMapping TypeName="Karenro_DBModel.tbl_company">
+        <MappingFragment StoreEntitySet="tbl_company">
+          <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+          <ScalarProperty Name="isConfirmed" ColumnName="isConfirmed" />
+          <ScalarProperty Name="companyCertificate_path" ColumnName="companyCertificate_path" />
+          <ScalarProperty Name="permissions_path" ColumnName="permissions_path" />
+          <ScalarProperty Name="ceoID_path" ColumnName="ceoID_path" />
+          <ScalarProperty Name="comeFrom" ColumnName="comeFrom" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="company_name" ColumnName="company_name" />
+          <ScalarProperty Name="company_id" ColumnName="company_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_complaint">
+      <EntityTypeMapping TypeName="Karenro_DBModel.tbl_complaint">
+        <MappingFragment StoreEntitySet="tbl_complaint">
+          <ScalarProperty Name="datetime" ColumnName="datetime" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="offerRide_ID" ColumnName="offerRide_ID" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_discountCode">
+      <EntityTypeMapping TypeName="Karenro_DBModel.tbl_discountCode">
+        <MappingFragment StoreEntitySet="tbl_discountCode">
+          <ScalarProperty Name="updatedAt" ColumnName="updatedAt" />
+          <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+          <ScalarProperty Name="expireDate" ColumnName="expireDate" />
+          <ScalarProperty Name="availableNumber" ColumnName="availableNumber" />
+          <ScalarProperty Name="discountCode" ColumnName="discountCode" />
+          <ScalarProperty Name="discountFee" ColumnName="discountFee" />
+          <ScalarProperty Name="discountID" ColumnName="discountID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_discountDetails">
+      <EntityTypeMapping TypeName="Karenro_DBModel.tbl_discountDetails">
+        <MappingFragment StoreEntitySet="tbl_discountDetails">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="discountID" ColumnName="discountID" />
+          <ScalarProperty Name="discountDetailsID" ColumnName="discountDetailsID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_fastRide">
+      <EntityTypeMapping TypeName="Karenro_DBModel.tbl_fastRide">
+        <MappingFragment StoreEntitySet="tbl_fastRide">
+          <ScalarProperty Name="to_LatLong" ColumnName="to_LatLong" />
+          <ScalarProperty Name="from_LatLong" ColumnName="from_LatLong" />
+          <ScalarProperty Name="VehicleTypeIsNormal" ColumnName="VehicleTypeIsNormal" />
+          <ScalarProperty Name="vehicleType" ColumnName="vehicleType" />
+          <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+          <ScalarProperty Name="LatLong" ColumnName="LatLong" />
+          <ScalarProperty Name="statusType" ColumnName="statusType" />
+          <ScalarProperty Name="to_place" ColumnName="to_place" />
+          <ScalarProperty Name="from_place" ColumnName="from_place" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="fastRide_ID" ColumnName="fastRide_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_fastRide_canceled">
+      <EntityTypeMapping TypeName="Karenro_DBModel.tbl_fastRide_canceled">
+        <MappingFragment StoreEntitySet="tbl_fastRide_canceled">
+          <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+          <ScalarProperty Name="driver_id" ColumnName="driver_id" />
+          <ScalarProperty Name="fastRide_ID" ColumnName="fastRide_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_fastRideDetails">
+      <EntityTypeMapping TypeName="Karenro_DBModel.tbl_fastRideDetails">
+        <MappingFragment StoreEntitySet="tbl_fastRideDetails">
+          <ScalarProperty Name="PayBy" ColumnName="PayBy" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="endLatLong" ColumnName="endLatLong" />
+          <ScalarProperty Name="startLatLong" ColumnName="startLatLong" />
+          <ScalarProperty Name="endAt" ColumnName="endAt" />
+          <ScalarProperty Name="startAt" ColumnName="startAt" />
+          <ScalarProperty Name="vehicle_id" ColumnName="vehicle_id" />
+          <ScalarProperty Name="driver_id" ColumnName="driver_id" />
+          <ScalarProperty Name="fastRide_ID" ColumnName="fastRide_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_fastTrack">
+      <EntityTypeMapping TypeName="Karenro_DBModel.tbl_fastTrack">
+        <MappingFragment StoreEntitySet="tbl_fastTrack">
+          <ScalarProperty Name="vehicle_id" ColumnName="vehicle_id" />
+          <ScalarProperty Name="LatLong" ColumnName="LatLong" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="OutDatetime" ColumnName="OutDatetime" />
+          <ScalarProperty Name="InDatetime" ColumnName="InDatetime" />
+          <ScalarProperty Name="userType" ColumnName="userType" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_fastTransDetails">
+      <EntityTypeMapping TypeName="Karenro_DBModel.tbl_fastTransDetails">
+        <MappingFragment StoreEntitySet="tbl_fastTransDetails">
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="KarenroDetect" ColumnName="KarenroDetect" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="userType" ColumnName="userType" />
+          <ScalarProperty Name="fastRide_ID" ColumnName="fastRide_ID" />
+          <ScalarProperty Name="transaction_ID" ColumnName="transaction_ID" />
+          <ScalarProperty Name="transDetail_ID" ColumnName="transDetail_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_fastUserRating">
+      <EntityTypeMapping TypeName="Karenro_DBModel.tbl_fastUserRating">
+        <MappingFragment StoreEntitySet="tbl_fastUserRating">
+          <ScalarProperty Name="fastRide_ID" ColumnName="fastRide_ID" />
+          <ScalarProperty Name="rateDatetime" ColumnName="rateDatetime" />
+          <ScalarProperty Name="rate_user_id" ColumnName="rate_user_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="ratingCount" ColumnName="ratingCount" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_general">
+      <EntityTypeMapping TypeName="Karenro_DBModel.tbl_general">
+        <MappingFragment StoreEntitySet="tbl_general">
+          <ScalarProperty Name="privacyPolicyPath" ColumnName="privacyPolicyPath" />
+          <ScalarProperty Name="aboutPath" ColumnName="aboutPath" />
+          <ScalarProperty Name="termConditionPath" ColumnName="termConditionPath" />
+          <ScalarProperty Name="hostAddress" ColumnName="hostAddress" />
+          <ScalarProperty Name="perKM" ColumnName="perKM" />
+          <ScalarProperty Name="fastTrackAmount" ColumnName="fastTrackAmount" />
+          <ScalarProperty Name="passengerDetect" ColumnName="passengerDetect" />
+          <ScalarProperty Name="percentDetect" ColumnName="percentDetect" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_kmCharges">
+      <EntityTypeMapping TypeName="Karenro_DBModel.tbl_kmCharges">
+        <MappingFragment StoreEntitySet="tbl_kmCharges">
+          <ScalarProperty Name="updatedAt" ColumnName="updatedAt" />
+          <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+          <ScalarProperty Name="VehicleTypeIsNormal" ColumnName="VehicleTypeIsNormal" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="charges" ColumnName="charges" />
+          <ScalarProperty Name="chargesID" ColumnName="chargesID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Notification">
+      <EntityTypeMapping TypeName="Karenro_DBModel.tbl_Notification">
+        <MappingFragment StoreEntitySet="tbl_Notification">
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="notificationDatetime" ColumnName="notificationDatetime" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="notification_user_id" ColumnName="notification_user_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_offerRide">
+      <EntityTypeMapping TypeName="Karenro_DBModel.tbl_offerRide">
+        <MappingFragment StoreEntitySet="tbl_offerRide">
+          <ScalarProperty Name="complaint" ColumnName="complaint" />
+          <ScalarProperty Name="AC" ColumnName="AC" />
+          <ScalarProperty Name="Music" ColumnName="Music" />
+          <ScalarProperty Name="Cigarette" ColumnName="Cigarette" />
+          <ScalarProperty Name="statusType" ColumnName="statusType" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="ride_comment" ColumnName="ride_comment" />
+          <ScalarProperty Name="charter" ColumnName="charter" />
+          <ScalarProperty Name="no_seats" ColumnName="no_seats" />
+          <ScalarProperty Name="vehicle_type" ColumnName="vehicle_type" />
+          <ScalarProperty Name="datetime" ColumnName="datetime" />
+          <ScalarProperty Name="to_place" ColumnName="to_place" />
+          <ScalarProperty Name="from_place" ColumnName="from_place" />
+          <ScalarProperty Name="vehicle_id" ColumnName="vehicle_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="offerRide_ID" ColumnName="offerRide_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_profile">
+      <EntityTypeMapping TypeName="Karenro_DBModel.tbl_profile">
+        <MappingFragment StoreEntitySet="tbl_profile">
+          <ScalarProperty Name="forgetPasswordToken" ColumnName="forgetPasswordToken" />
+          <ScalarProperty Name="fastTrackIsAuto" ColumnName="fastTrackIsAuto" />
+          <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+          <ScalarProperty Name="deviceToken" ColumnName="deviceToken" />
+          <ScalarProperty Name="approved" ColumnName="approved" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="receive_email" ColumnName="receive_email" />
+          <ScalarProperty Name="language" ColumnName="language" />
+          <ScalarProperty Name="profile_pic" ColumnName="profile_pic" />
+          <ScalarProperty Name="id_card_back" ColumnName="id_card_back" />
+          <ScalarProperty Name="id_card_front" ColumnName="id_card_front" />
+          <ScalarProperty Name="birthday" ColumnName="birthday" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="number" ColumnName="number" />
+          <ScalarProperty Name="full_name" ColumnName="full_name" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_transDetails">
+      <EntityTypeMapping TypeName="Karenro_DBModel.tbl_transDetails">
+        <MappingFragment StoreEntitySet="tbl_transDetails">
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="KarenroDetect" ColumnName="KarenroDetect" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="userType" ColumnName="userType" />
+          <ScalarProperty Name="offerRide_ID" ColumnName="offerRide_ID" />
+          <ScalarProperty Name="transaction_ID" ColumnName="transaction_ID" />
+          <ScalarProperty Name="transDetail_ID" ColumnName="transDetail_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_userComesFrom">
+      <EntityTypeMapping TypeName="Karenro_DBModel.tbl_userComesFrom">
+        <MappingFragment StoreEntitySet="tbl_userComesFrom">
+          <ScalarProperty Name="individual" ColumnName="individual" />
+          <ScalarProperty Name="company_id" ColumnName="company_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_userRating">
+      <EntityTypeMapping TypeName="Karenro_DBModel.tbl_userRating">
+        <MappingFragment StoreEntitySet="tbl_userRating">
+          <ScalarProperty Name="offerRide_ID" ColumnName="offerRide_ID" />
+          <ScalarProperty Name="rateDatetime" ColumnName="rateDatetime" />
+          <ScalarProperty Name="rate_user_id" ColumnName="rate_user_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="ratingCount" ColumnName="ratingCount" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_vehicle">
+      <EntityTypeMapping TypeName="Karenro_DBModel.tbl_vehicle">
+        <MappingFragment StoreEntitySet="tbl_vehicle">
+          <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+          <ScalarProperty Name="VehicleTypeIsNormal" ColumnName="VehicleTypeIsNormal" />
+          <ScalarProperty Name="picture" ColumnName="picture" />
+          <ScalarProperty Name="approved" ColumnName="approved" />
+          <ScalarProperty Name="plateNumber" ColumnName="plateNumber" />
+          <ScalarProperty Name="insuranceNumber" ColumnName="insuranceNumber" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="model" ColumnName="model" />
+          <ScalarProperty Name="brand" ColumnName="brand" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="vehicle_id" ColumnName="vehicle_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_vehicleBrands">
+      <EntityTypeMapping TypeName="Karenro_DBModel.tbl_vehicleBrands">
+        <MappingFragment StoreEntitySet="tbl_vehicleBrands">
+          <ScalarProperty Name="updatedAt" ColumnName="updatedAt" />
+          <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+          <ScalarProperty Name="model" ColumnName="model" />
+          <ScalarProperty Name="brand" ColumnName="brand" />
+          <ScalarProperty Name="brand_id" ColumnName="brand_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_WalletTransaction">
+      <EntityTypeMapping TypeName="Karenro_DBModel.tbl_WalletTransaction">
+        <MappingFragment StoreEntitySet="tbl_WalletTransaction">
+          <ScalarProperty Name="rechargedBy" ColumnName="rechargedBy" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="Credit" ColumnName="Credit" />
+          <ScalarProperty Name="Debit" ColumnName="Debit" />
+          <ScalarProperty Name="transaction_datetime" ColumnName="transaction_datetime" />
+          <ScalarProperty Name="transaction_Title" ColumnName="transaction_Title" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="transaction_ID" ColumnName="transaction_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_government">
+      <EntityTypeMapping TypeName="Karenro_DBModel.tbl_government">
+        <MappingFragment StoreEntitySet="tbl_government">
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="updatedAt" ColumnName="updatedAt" />
+          <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+          <ScalarProperty Name="government_code" ColumnName="government_code" />
+          <ScalarProperty Name="government_id" ColumnName="government_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_companyDetail">
+      <EntityTypeMapping TypeName="Karenro_DBModel.tbl_companyDetail">
+        <MappingFragment StoreEntitySet="tbl_companyDetail">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="company_id" ColumnName="company_id" />
+          <ScalarProperty Name="companyDetail_id" ColumnName="companyDetail_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_governmentDetail">
+      <EntityTypeMapping TypeName="Karenro_DBModel.tbl_governmentDetail">
+        <MappingFragment StoreEntitySet="tbl_governmentDetail">
+          <ScalarProperty Name="company_id" ColumnName="company_id" />
+          <ScalarProperty Name="government_id" ColumnName="government_id" />
+          <ScalarProperty Name="govDetail_id" ColumnName="govDetail_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

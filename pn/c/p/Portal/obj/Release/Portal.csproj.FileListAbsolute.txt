@@ -1,0 +1,8 @@
+D:\Visual Studio Projects\pn\c\p\Portal\bin\Portal.dll.config
+D:\Visual Studio Projects\pn\c\p\Portal\bin\Portal.dll
+D:\Visual Studio Projects\pn\c\p\Portal\bin\Portal.pdb
+D:\Visual Studio Projects\pn\c\p\Portal\bin\EntityFramework.dll
+D:\Visual Studio Projects\pn\c\p\Portal\bin\EntityFramework.xml
+D:\Visual Studio Projects\pn\c\p\Portal\obj\Release\Portal.csprojResolveAssemblyReference.cache
+D:\Visual Studio Projects\pn\c\p\Portal\obj\Release\Portal.dll
+D:\Visual Studio Projects\pn\c\p\Portal\obj\Release\Portal.pdb
